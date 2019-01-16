@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoaderStore } from './_core/stores/loader.store';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'InternetBanking';
+
+  constructor(public loaderStore: LoaderStore) {
+    
+  }
+
 }

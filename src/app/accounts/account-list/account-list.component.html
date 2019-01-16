@@ -1,0 +1,40 @@
+<div style="text-align:center">
+  <div class="container">
+      <h3 class="bg-primary text-white">Hesap listesi   <button class="btn btn-info" type="button" (click)="this.accountStore.fetchAccounts(true)">Yenile</button></h3> 
+  </div>
+
+  <table class="table table-hover table-sm">
+    <thead>
+      <tr>
+        <th></th>
+        <th scope="col">Hesap No</th>
+        <th scope="col">Şube Adı</th>
+        <th scope="col">Hesap Adı</th>
+        <th scope="col">Bakiye</th>
+        <th scope="col">Kullanılabilir Bakiye</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let account of accountStore.customerAccountsData | async">
+        <th scope="row" style="align-content: center"><input class="form-check-input" type="radio" name="accountRadio" id="accountRadio" value="accountRadio1"></th>
+        <td>{{ account.number }}</td>
+        <td>{{ account.branchName }}</td>
+        <td>{{ account.name }}</td>
+        <td>{{ account.balance }}</td>
+        <td>{{ account.availableBalance }}</td>
+        <td><button class="btn btn-info" type="button" (click)="onDetailsButtonClick(account)" data-toggle="modal"
+            data-target="#exampleModalCenter">Detay</button></td>
+        <td><button class="btn btn-info" type="button" (click)="onActivitiesButtonClick(account['id'])">Hareketler</button></td>
+        <!--[routerLink]="['/accounts/account-activities',account['id']]" -->
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+<app-account-detail [account]="selectedAccountForDetails"></app-account-detail>

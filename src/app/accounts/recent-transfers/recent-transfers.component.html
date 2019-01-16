@@ -1,0 +1,33 @@
+<!-- <div style="text-align:center; vertical-align:middle" *ngIf="recentTransfersList == null">
+  <span>
+    <i class="fa fa-spinner fa-spin" style="font-size: 72px"></i>
+    Data yükleniyor
+  </span>
+</div> -->
+<div style="text-align:center" *ngIf="recentTransfersList != null">
+  <h3>Son Transferler</h3>
+  <table class="table table-hover table-sm">
+    <thead>
+      <tr>
+        <th></th>
+        <th scope="col">Kaynak Hesap No</th>
+        <th scope="col">Tutar</th>
+        <th scope="col">Döviz Kodu</th>
+        <th scope="col">Alıcı Hesap</th>
+        <th scope="col">Alıcı Adı</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of recentTransfersList.transactions">
+        <th scope="row" style="align-content: center"><input class="form-check-input" type="radio" name="exampleRadios"
+            id="exampleRadios1" value="option1"></th>
+        <td>{{ t['sourceBranchCode']+'-'+t['sourceCustomerNumber']+'-'+t['sourceExtensionNumber'] }}</td>
+        <td>{{ t['amount'] }}</td>
+        <td>{{ t['currency'] }}</td>
+        <td>{{ t['destinationBranchCode']+'-'+t['destinationCustomerNumber']+'-'+t['destinationExtensionNumber'] }}</td>
+        <td>{{ t['receiverName'] }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

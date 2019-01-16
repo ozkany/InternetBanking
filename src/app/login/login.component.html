@@ -1,0 +1,75 @@
+<div class="alert alert-danger" role="alert" *ngIf="errorMessage != null && errorMessage.toString().length> 0">
+    {{ errorMessage }}
+</div>
+<div class="container">
+  <div class="row" *ngIf="loginStep == 1">
+    <form [formGroup]="loginUserForm" (ngSubmit)="onLoginUserFormSubmit()">
+      <div class="form-group">
+        <label for="username">Kullanıcı Adı</label>
+        <input
+          type="text"
+          id="username"
+          formControlName="username"
+          class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="password">Parola</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="form-control">
+      </div>
+      <button class="btn btn-primary" 
+        type="submit"
+        [disabled]="!loginUserForm.valid || (loaderStore.isLoading | async)">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loaderStore.isLoading | async"></span>
+            {{ (loaderStore.isLoading | async) ? "Yükleniyor" : "Devam"  }}
+        </button>
+
+
+    </form>
+  </div>
+
+  <div class="row" *ngIf="loginStep == 2 || loginStep == 3">
+    <form [formGroup]="otpValidationForm" (ngSubmit)="onOtpValidationFormSubmit()">
+      <div class="form-group">
+        <h3>{{ loginUserResponse.firstName + ' ' + loginUserResponse.lastName }}</h3>
+      </div>
+      <div class="form-group">
+        <span>Güvenlik Resminiz:</span>
+        <br/>
+          <img 
+            id="securityImage"
+            [attr.src]="getsecurityImageHtmlData()" />
+      </div>
+      <div class="form-group">
+          <button class="btn btn-primary" 
+            type="button" 
+            id="createOTPButton" 
+            name="createOTPButton" 
+            (click)="onCreateOTPButtonClicked()">Sms Şifre Gönder</button>
+      </div>
+
+      <div class="form-group" *ngIf="createOtpResponse != null">
+        <span>Sms şifreniz {{ createOtpResponse['maskedPhoneNumber'] }} nolu telefona gönderilmiştir.</span>
+        <span>{{ createOtpResponse['expiresIn'] }} sn. içerisinde şifrenizi giriniz.</span>
+      </div>
+
+      <div class="form-group">
+        <label for="smscode">SMS Şifre</label>
+        <input
+          type="text"
+          id="smscode"
+          formControlName="smscode"
+          class="form-control"
+          autocomplete="off">
+      </div>
+      <div class="form-group">
+          <button class="btn btn-primary" 
+            type="submit"
+            [disabled]="!otpValidationForm.valid">Giriş</button>
+      </div>
+    </form>
+  </div>
+</div>

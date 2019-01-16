@@ -1,0 +1,31 @@
+<div style="text-align:center" *ngIf="activityData != null">
+  <h3>Hesap Hareketleri</h3>
+  <table class="table table-hover table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Tarih</th>
+        <th scope="col">İşlem Türü</th>
+        <th scope="col">İşlem Tutarı</th>
+        <th scope="col">Döviz Kodu</th>
+        <th scope="col">Kalan Bakiye</th>
+        <th scope="col">İşlem Açıklaması</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let activity of activityData.activities">
+        <td>{{ activity['time'] }}</td>
+        <td>{{ activity['transactionDescription'] }}</td>
+        <td>{{ activity['amount'] }}</td>
+        <td>{{ activity['currencyCode'] }}</td>
+        <td>{{ activity['remainingBalance'] }}</td>
+        <td>{{ activity['description'] }}</td>
+        <td><button class="btn btn-info" type="button" (click)="onReceiptButtonClick(activity['receiptId'])"
+            data-toggle="modal" data-target="#receiptModalCenter">Dekont</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<app-receipt></app-receipt>

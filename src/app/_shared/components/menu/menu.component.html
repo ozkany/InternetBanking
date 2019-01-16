@@ -1,0 +1,39 @@
+<div class="container" *ngIf="authService.isUserLoggedIn$ | async">
+  <div class="panel-group" id="accordionMenu" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapseOne" aria-expanded="true"
+          aria-controls="collapseOne" class="list-group-item list-group-item-action">Hesaplar</a>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div class="list-group" id="list-tab" role="tablist" style="padding-left:20px;">
+          <a class="list-group-item list-group-item-action" id="list-home-list" [routerLink]="['/accounts/account-list']">Hesap Listesi</a>
+          <a class="list-group-item list-group-item-action" id="list-profile-list" [routerLink]="['/accounts/assets']">Varlıklarım</a>
+          <a class="list-group-item list-group-item-action" id="list-profile-list" [routerLink]="['/accounts/recent-transfers']">Son Transferler</a>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="heading2">
+          <a role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapse2" aria-expanded="true"
+            aria-controls="collapse2" class="list-group-item list-group-item-action">Kartlar</a>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2">
+        <div class="list-group" id="list-tab" role="tablist" style="padding-left:20px;">
+          <a class="list-group-item list-group-item-action" id="list-home-list" [routerLink]="['/cards/card-list']">Kart Listesi</a>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+          <a role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapseThree" aria-expanded="true"
+            aria-controls="collapseThree" class="list-group-item list-group-item-action">Ödemeler</a>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="list-group" id="list-tab" role="tablist" style="padding-left:20px;">
+          <a class="list-group-item list-group-item-action" id="list-home-list" [routerLink]="['misc/payment-activities']">Ödeme Listesi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

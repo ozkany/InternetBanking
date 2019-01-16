@@ -1,0 +1,15 @@
+<!-- Spinner Modal -->
+<div class="modal fade show" id="loadMe" tabindex="-1" role="dialog" aria-labelledby="loadMeLabel" style="display: block;" *ngIf="(authService.isUserLoggedIn$ | async) && (loaderStore.isLoading | async)">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <div class="loader"></div>
+          <div clas="loader-txt">
+            <p>Data yükleniyor<br><br><small>Lütfen bekleyin</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop fade show" *ngIf="(authService.isUserLoggedIn$ | async) && (loaderStore.isLoading | async)"></div>

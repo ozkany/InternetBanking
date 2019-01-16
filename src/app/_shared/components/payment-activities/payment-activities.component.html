@@ -1,0 +1,25 @@
+<div style="text-align:center" *ngIf="paymentActivityList != null">
+  <h3>Ödeme Hareketleri</h3>
+  <table class="table table-hover table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Kurum Kodu</th>
+        <th scope="col">Abone No</th>
+        <th scope="col">Ödeme Tutarı</th>
+        <th scope="col">Döviz Kodu</th>
+        <th scope="col">Ödeme Tarihi</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of paymentActivityList.lastPaymentsDetails">
+        <td>{{ p['associationCode'] }}</td>
+        <td>{{ p['subscriberNumber'] }}</td>
+        <td>{{ p['paymentAmount'] }}</td>
+        <td>{{ p['currency'] }}</td>
+        <td>{{ p['paymentDate'] }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>  

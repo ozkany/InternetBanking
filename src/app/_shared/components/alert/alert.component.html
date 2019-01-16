@@ -1,0 +1,13 @@
+<div *ngIf="message">
+    <div [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text
+        | shortenStr:150}}  <button *ngIf="message.text.length>150" class="btn btn-sm btn-outline-danger" type="button" data-toggle="collapse" data-target="#alertCollapse" aria-expanded="false"
+        aria-controls="alertCollapse">
+        Hata Detayı
+    </button></div>
+
+    <div class="collapse" id="alertCollapse" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">
+        
+            {{message.text}}
+        
+    </div>
+</div>

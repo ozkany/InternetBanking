@@ -1,0 +1,22 @@
+<!-- Modal -->
+<div class="modal fade" id="receiptModalCenter" tabindex="-1" role="dialog" aria-labelledby="receiptModalCenterTitle"
+  aria-hidden="true" [class.show]="!!(accountStore?.receiptImageData | async)">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:710px;"  >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="receiptModalCenterTitle">Dekont</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body" *ngIf="(accountStore?.receiptImageData | async) as receiptImageData; else loadingTemplate">
+        <img id="receiptImage" [attr.src]="receiptImageData" />
+      </div>
+      <ng-template #loadingTemplate>Dekont Yükleniyor...</ng-template>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Kapat</button>
+      </div>
+    </div>
+  </div>
+</div>
