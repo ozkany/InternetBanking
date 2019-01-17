@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let account of accountStore.customerAccountsData | async">
+      <tr *ngFor="let account of accountStore.customerAccountsData$ | async">
         <th scope="row" style="align-content: center"><input class="form-check-input" type="radio" name="accountRadio" id="accountRadio" value="accountRadio1"></th>
         <td>{{ account.number }}</td>
         <td>{{ account.branchName }}</td>

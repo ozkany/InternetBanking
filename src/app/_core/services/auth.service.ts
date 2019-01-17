@@ -5,6 +5,7 @@ import { map, tap } from 'rxjs/operators';
 import { User } from '../models/user.model';
 import { AuthToken } from '../models/auth-token.model';
 import { environment } from 'src/environments/environment';
+import { tapLog } from '../extensions/tap-log';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -45,7 +46,8 @@ export class AuthService {
         };
 
         return this.http.post<AuthToken>(`${environment.apiUrl}/auth/token`, request)
-            .pipe(tap(tokenResponse => {
+            .pipe(tapLog(),
+                tap(tokenResponse => {
                 this._authToken$.next(tokenResponse);
                 this._tokenStr = tokenResponse.token;
             }));

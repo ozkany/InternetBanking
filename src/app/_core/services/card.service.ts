@@ -12,7 +12,7 @@ export class CardService {
 
   }
 
-  fetchCardListByHttp() {
+  getCards() {
     return this.http.get<GetCardListRootResponse>(`${environment.apiUrl}/cards`);
   }
 

@@ -7,13 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { InterceptorModule } from './_core/interceptors/interceptor.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { CampaignsComponent } from './_shared/components/campaigns/campaigns.component';
-import { PaymentActivitiesComponent } from './_shared/components/payment-activities/payment-activities.component';
-import { MenuComponent } from './_shared/components/menu/menu.component';
-import { SpinnerComponent } from './_shared/components/spinner/spinner.component';
-import { TransformStr } from './_shared/pipes/transform-str.pipe';
-import { AlertComponent } from './_shared/components/alert/alert.component';
-import { ShortenStr } from './_shared/pipes/shorten-str.pipe';
+import { CampaignsComponent } from './shared/campaigns/campaigns.component';
+import { PaymentActivitiesComponent } from './shared/payment-activities/payment-activities.component';
+import { MenuComponent } from './shared/menu/menu.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { AlertComponent } from './shared/alert/alert.component';
+import { TransformStr } from './_core/pipes/transform-str.pipe';
+import { ShortenStr } from './_core/pipes/shorten-str.pipe';
 
 @NgModule({
   declarations: [

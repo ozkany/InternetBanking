@@ -18,7 +18,7 @@ export class ErrorInterceptor implements HttpInterceptor {
             }
 
             this.alertService.error("Api çağrısında hata: " + err['error']['Message']);
-            console.log(err);
+            //console.log(err);
 
             const error = err.error.message || err.statusText;
             return throwError(error);

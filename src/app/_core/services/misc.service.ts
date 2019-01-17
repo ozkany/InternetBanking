@@ -11,7 +11,7 @@ export class MiscService {
 
   }
 
-  makeGetPaymentActivitiesCall() {
+  getPaymentActivities() {
     return this.http.get(`${environment.apiUrl}/payments/activities?typeGroup=invoice&limit=50`);
   }
 

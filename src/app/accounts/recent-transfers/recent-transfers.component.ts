@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AccountService } from 'src/app/_core/services/account.service';
 
 @Component({
@@ -6,15 +6,17 @@ import { AccountService } from 'src/app/_core/services/account.service';
   templateUrl: './recent-transfers.component.html',
   styleUrls: ['./recent-transfers.component.css']
 })
-export class RecentTransfersComponent implements OnInit {
+export class RecentTransfersComponent implements OnInit, OnDestroy {
 
   constructor(private accountService: AccountService) { }
 
   recentTransfersList: Object;
 
+  subscription;
+
   ngOnInit() {
 
-    this.accountService.makeRecentTransfersCall().subscribe(
+    this.subscription = this.accountService.getRecentTransfers().subscribe(
       (data) => {
         console.log(data);
         this.recentTransfersList = data;
@@ -23,7 +25,10 @@ export class RecentTransfersComponent implements OnInit {
         console.log("Data çekilemedi: " + error);
       }
     );
+  }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }

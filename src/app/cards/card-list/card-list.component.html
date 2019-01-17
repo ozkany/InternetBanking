@@ -16,7 +16,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let card of (cardStore?.cardListData | async)?.creditCardListResponse?.creditCardList">
+        <tr *ngFor="let card of (cardStore?.cardListData$ | async)?.creditCardListResponse?.creditCardList">
           <th scope="row" style="align-content: center"><input class="form-check-input" type="radio" name="cardRadio" id="cardRadio"
               value="cardRadio1"></th>
           <td>{{ card.maskedCardNumber }} </td>
@@ -26,7 +26,7 @@
           <td>{{ card.remainingDebt }}</td>
           <td><img id="cardImage" [attr.src]="card.image" style="max-width: 150px"/></td>
         </tr>
-        <tr *ngFor="let card of (cardStore?.cardListData | async)?.extendCardListResponse?.extendCreditCardList">
+        <tr *ngFor="let card of (cardStore?.cardListData$ | async)?.extendCardListResponse?.extendCreditCardList">
           <th scope="row" style="align-content: center"><input class="form-check-input" type="radio" name="cardRadio" id="cardRadio"
               value="cardRadio1"></th>
           <td>{{ card.maskedCardNumber }} </td>
@@ -57,7 +57,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let card of (cardStore?.cardListData | async)?.virtualCardListResponse?.virtualCardList">
+        <tr *ngFor="let card of (cardStore?.cardListData$ | async)?.virtualCardListResponse?.virtualCardList">
           <th scope="row" style="align-content: center"><input class="form-check-input" type="radio" name="cardRadio" id="cardRadio"
               value="cardRadio1"></th>
           <td>{{ card.clearCardNumber }} </td>

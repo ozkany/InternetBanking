@@ -14,23 +14,23 @@ export class AccountService {
   constructor(private http: HttpClient) {
   }
 
-  fetchAccountListByHttp() {
+  getAccountList() {
     return this.http.get<AccountsRootObject>(`${environment.apiUrl}/accounts`);
   }
   
-  fetchReceiptByHttp(accountId: string, receiptId: string) {
+  getReceipt(accountId: string, receiptId: string) {
     return this.http.get(`${environment.apiUrl}/accounts/${accountId}/activities/${receiptId}/receipt`);
   }
 
-  callAccountGetActivities(accountId: string) {
+  getAccountActivities(accountId: string) {
     return this.http.get(`${environment.apiUrl}/accounts/${accountId}/activities?limit=20`);
   }
 
-  makeRecentTransfersCall() {
+  getRecentTransfers() {
     return this.http.get(`${environment.apiUrl}/transfer/activities`);
   }
 
-  makeGetAssetsCall() {
+  getAssets() {
     return this.http.get<GetAssetsRootResponse>(`${environment.apiUrl}/assets?currencyCode=TRY`);
   }
 }

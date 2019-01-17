@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { PaymentActivitiesComponent } from './_shared/components/payment-activities/payment-activities.component';
 import { AuthGuard } from './_core/guards/auth.guard';
+import { PaymentActivitiesComponent } from './shared/payment-activities/payment-activities.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },

@@ -16,7 +16,7 @@ export class AccountActivitiesComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.dataSubscription = this.accountStore.selectedAccountNumber.subscribe(selectedAccountNumber => {
       console.log("accountid=" + selectedAccountNumber);
-      this.accountService.callAccountGetActivities(selectedAccountNumber).subscribe(
+      this.accountService.getAccountActivities(selectedAccountNumber).subscribe(
         (result) => {
           this.activityData = result;
           console.log("AccountActivities", result);
@@ -34,7 +34,7 @@ export class AccountActivitiesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.dataSubscription.unsubscribe();
+    this.dataSubscription && this.dataSubscription.unsubscribe();
     console.log("dataSubscription is unsubscribed");
   }
 

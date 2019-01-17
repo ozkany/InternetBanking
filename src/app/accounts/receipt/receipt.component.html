@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="receiptModalCenter" tabindex="-1" role="dialog" aria-labelledby="receiptModalCenterTitle"
-  aria-hidden="true" [class.show]="!!(accountStore?.receiptImageData | async)">
+  aria-hidden="true" [class.show]="!!(accountStore?.receiptImageData$ | async)">
   <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:710px;"  >
     <div class="modal-content">
       <div class="modal-header">
@@ -10,7 +10,7 @@
         </button>
       </div>
 
-      <div class="modal-body" *ngIf="(accountStore?.receiptImageData | async) as receiptImageData; else loadingTemplate">
+      <div class="modal-body" *ngIf="(accountStore?.receiptImageData$ | async) as receiptImageData; else loadingTemplate">
         <img id="receiptImage" [attr.src]="receiptImageData" />
       </div>
       <ng-template #loadingTemplate>Dekont Yükleniyor...</ng-template>
