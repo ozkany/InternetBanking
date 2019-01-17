@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LoaderStore } from 'src/app/_core/stores/loader.store';
 import { AuthService } from '../_core/services/auth.service';
 import { AlertService } from '../_core/services/alert.service';
@@ -32,7 +32,8 @@ export class LoginComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private router: Router,
     private authService: AuthService,
-    private alertService: AlertService) {
+    private alertService: AlertService,
+    private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -76,7 +77,7 @@ export class LoginComponent implements OnInit {
     this.authService.validateOtp(this.otpValidationForm.value.smscode).subscribe(
       (data) => {
         console.log("onOtpValidationFormSubmit:", data);
-        this.router.navigate(['/accounts/account-list']);
+        this.router.navigate([this.route.snapshot.queryParams['returnUrl'] || '/accounts/account-list']);
       },
       (error) => {
         console.log("SMS şifresi hatalı girildi: " + error);

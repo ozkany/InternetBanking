@@ -13,7 +13,8 @@ import { tapLog } from '../extensions/tap-log';
 })
 export class AccountStore {
 
-  selectedAccountNumber = new BehaviorSubject<string>('');
+  private _selectedAccountNumber$ = new BehaviorSubject<string>('');
+  public readonly selectedAccountNumber$ = this._selectedAccountNumber$.pipe(tapLog("selectedAccountNumber"));
 
   private _customerAccountsData$: BehaviorSubject<CustomerAccount[]> = new BehaviorSubject([]);
   public readonly customerAccountsData$: Observable<CustomerAccount[]> = this._customerAccountsData$.pipe(tapLog("customerAccountsData"));
@@ -41,7 +42,7 @@ export class AccountStore {
   fetchReceipt(receiptId: string) {
     this._receiptImageData$.next(undefined);
 
-    this.accountService.getReceipt(this.selectedAccountNumber.getValue(), receiptId).subscribe(res => {
+    this.accountService.getReceipt(this._selectedAccountNumber$.getValue(), receiptId).subscribe(res => {
       this._receiptImageData$.next(this.sanitizer.bypassSecurityTrustResourceUrl("data:image/png;base64, " + res['content']));
     });
   }
@@ -52,6 +53,10 @@ export class AccountStore {
       data = [['Varlık Türü', 'Tutarı'], ...data];
       this._assetsData$.next(data);
     });
+  }
+
+  changeSelectedAccountNumber(id: string) {
+    this._selectedAccountNumber$.next(id);
   }
 
 }

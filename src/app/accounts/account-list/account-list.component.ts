@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AccountService } from 'src/app/_core/services/account.service';
 import { AccountStore } from 'src/app/_core/stores/account.store';
 
 @Component({
@@ -12,13 +11,13 @@ export class AccountListComponent implements OnInit {
 
   selectedAccountForDetails;
 
-  constructor(private accountService: AccountService, public accountStore: AccountStore, private router: Router) { }
+  constructor(public accountStore: AccountStore, private router: Router) { }
 
   ngOnInit() {
   }
 
   onActivitiesButtonClick(id: string) {
-    this.accountStore.selectedAccountNumber.next(id);
+    this.accountStore.changeSelectedAccountNumber(id);
     this.router.navigate(['/accounts/account-activities']);
   }
 

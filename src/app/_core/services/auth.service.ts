@@ -21,18 +21,15 @@ export class AuthService {
     public readonly isUserLoggedIn$ = this._isUserLoggedIn$.asObservable();
     public get isUserLoggedIn() : boolean { return this._isUserLoggedIn$.value }
 
-    constructor(private http: HttpClient) {
-    }
-
-    
-
     private _tokenStr = "";
     public get tokenStr(): string {
         return this._tokenStr;
     }
 
+    constructor(private http: HttpClient) { }
+
     createToken() {
-        let request = {
+        const request = {
             "appVersion": "1.0.0",
             "device": {
                 "make": "Xiaomi",
@@ -46,7 +43,7 @@ export class AuthService {
         };
 
         return this.http.post<AuthToken>(`${environment.apiUrl}/auth/token`, request)
-            .pipe(tapLog(),
+            .pipe(tapLog("createToken"),
                 tap(tokenResponse => {
                 this._authToken$.next(tokenResponse);
                 this._tokenStr = tokenResponse.token;

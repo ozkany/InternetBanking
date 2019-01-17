@@ -14,7 +14,7 @@ export class AccountActivitiesComponent implements OnInit, OnDestroy {
   constructor(private accountService: AccountService, public accountStore: AccountStore) { }
 
   ngOnInit() {
-    this.dataSubscription = this.accountStore.selectedAccountNumber.subscribe(selectedAccountNumber => {
+    this.dataSubscription = this.accountStore.selectedAccountNumber$.subscribe(selectedAccountNumber => {
       console.log("accountid=" + selectedAccountNumber);
       this.accountService.getAccountActivities(selectedAccountNumber).subscribe(
         (result) => {
