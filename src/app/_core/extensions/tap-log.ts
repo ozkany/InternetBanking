@@ -7,17 +7,17 @@ export function tapLog(name?: string) {
     source$.pipe(tap(
       res => {
         if(environment.debugObservables) { 
-          console.log(`Observable log (res) : ${name}`, res)
+          console.log(`tapLog (${name}) : res =>`, res);
         }
       },
       err => {
         if(environment.debugObservables) { 
-          console.log(`Observable log (error) : ${name}`, err)
+          console.log(`tapLog (${name}) : error =>`, err);
         }
       },
       () => {
         if(environment.debugObservables) { 
-          console.log(`Observable log (complete) : ${name}`)
+          console.log(`tapLog (${name}) : complete`);
         }
       }
     ));

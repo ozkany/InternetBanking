@@ -17,7 +17,7 @@ export class AccountListComponent implements OnInit {
   }
 
   onActivitiesButtonClick(id: string) {
-    this.accountStore.changeSelectedAccountNumber(id);
+    this.accountStore.setSelectedAccountNumber(id);
     this.router.navigate(['/accounts/account-activities']);
   }
 

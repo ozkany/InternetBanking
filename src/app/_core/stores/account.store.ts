@@ -19,6 +19,9 @@ export class AccountStore {
   private _customerAccountsData$: BehaviorSubject<CustomerAccount[]> = new BehaviorSubject([]);
   public readonly customerAccountsData$: Observable<CustomerAccount[]> = this._customerAccountsData$.pipe(tapLog("customerAccountsData"));
 
+  private _accountActivityData$: BehaviorSubject<Object> = new BehaviorSubject(undefined);
+  public readonly accountActivityData$: Observable<Object> = this._accountActivityData$.pipe(tapLog("accountActivityData"));
+
   private _receiptImageData$: BehaviorSubject<SafeResourceUrl> = new BehaviorSubject("");
   public readonly receiptImageData$: Observable<SafeResourceUrl> = this._receiptImageData$.asObservable().pipe(tapLog("receiptImageData"));
 
@@ -39,6 +42,12 @@ export class AccountStore {
     }
   }
 
+  fetchAccountActivity() {
+    this.accountService.getAccountActivities(this._selectedAccountNumber$.getValue()).subscribe(res => {
+      this._accountActivityData$.next(res);
+    });
+  }
+
   fetchReceipt(receiptId: string) {
     this._receiptImageData$.next(undefined);
 
@@ -55,7 +64,7 @@ export class AccountStore {
     });
   }
 
-  changeSelectedAccountNumber(id: string) {
+  setSelectedAccountNumber(id: string) {
     this._selectedAccountNumber$.next(id);
   }
 

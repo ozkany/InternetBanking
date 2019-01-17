@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './_core/guards/auth.guard';
-import { PaymentActivitiesComponent } from './shared/payment-activities/payment-activities.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -13,7 +12,7 @@ const routes: Routes = [
   { path: 'accounts', loadChildren: './accounts/accounts.module#AccountsModule', canActivate: [AuthGuard] },
   //{ path: 'cards/card-list', component: CardListComponent },
   { path: 'cards', loadChildren: './cards/cards.module#CardsModule', canActivate: [AuthGuard] },
-  { path: 'misc/payment-activities', component: PaymentActivitiesComponent, canActivate: [AuthGuard] }
+  { path: 'payments', loadChildren: './payments/payments.module#PaymentsModule', canActivate: [AuthGuard] }
 ];
 
 @NgModule({

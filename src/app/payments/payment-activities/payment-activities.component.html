@@ -1,5 +1,5 @@
-<div style="text-align:center" *ngIf="paymentActivityList != null">
-  <h3>Ödeme Hareketleri</h3>
+<div style="text-align:center" *ngIf="(paymentStore.paymentActivities$ | async) != null">
+  <h3>Ödeme İşlemleri</h3>
   <table class="table table-hover table-sm">
     <thead>
       <tr>
@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let p of paymentActivityList.lastPaymentsDetails">
+      <tr *ngFor="let p of (paymentStore.paymentActivities$ | async)?.lastPaymentsDetails">
         <td>{{ p['associationCode'] }}</td>
         <td>{{ p['subscriberNumber'] }}</td>
         <td>{{ p['paymentAmount'] }}</td>

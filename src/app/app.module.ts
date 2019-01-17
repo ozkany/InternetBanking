@@ -8,7 +8,6 @@ import { InterceptorModule } from './_core/interceptors/interceptor.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CampaignsComponent } from './shared/campaigns/campaigns.component';
-import { PaymentActivitiesComponent } from './shared/payment-activities/payment-activities.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { AlertComponent } from './shared/alert/alert.component';
@@ -20,7 +19,6 @@ import { ShortenStr } from './_core/pipes/shorten-str.pipe';
     AppComponent,
     LoginComponent,
     CampaignsComponent,
-    PaymentActivitiesComponent,
     MenuComponent,
     SpinnerComponent,
     TransformStr,
