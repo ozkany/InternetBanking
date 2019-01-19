@@ -1,0 +1,290 @@
+{
+    "lastPaymentsDetails": [
+        {
+            "id": "OtNQI0YUnU1oocscXEI/RA==",
+            "subscriberNumber": "047C3AF2232780",
+            "paymentAmount": 21,
+            "paymentDate": "2018-12-10T10:59:30.0000000+03:00",
+            "associationCode": "ISTANBULKART",
+            "currency": "TRY",
+            "associationName": "ISTANBULKART",
+            "paymentTypeCode": "70",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "1F3vTd+J6gCtwQuePgggvg==",
+            "subscriberNumber": "VF000000000202",
+            "paymentAmount": 447.23,
+            "paymentDate": "2018-11-13T9:59:01.0000000+03:00",
+            "associationCode": "VODAFONENET",
+            "currency": "TRY",
+            "associationName": "VODAFONENET",
+            "paymentTypeCode": "1",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "50vWXMYpuyKzoBTWF1HGSg==",
+            "subscriberNumber": "VF000000000202",
+            "paymentAmount": 447.23,
+            "paymentDate": "2018-11-13T9:31:30.0000000+03:00",
+            "associationCode": "VODAFONENET",
+            "currency": "TRY",
+            "associationName": "VODAFONENET",
+            "paymentTypeCode": "1",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "e3w3HDs/BS6MifnFxOMM/Q==",
+            "subscriberNumber": "VF000000000212",
+            "paymentAmount": 41.3,
+            "paymentDate": "2018-10-23T16:32:12.0000000+03:00",
+            "associationCode": "VODAFONENET",
+            "currency": "TRY",
+            "associationName": "VODAFONENET",
+            "paymentTypeCode": "1",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "S3CdR2GaREZi12x+MlUMmQ==",
+            "subscriberNumber": "VF000000000101",
+            "paymentAmount": 665,
+            "paymentDate": "2018-10-23T16:26:20.0000000+03:00",
+            "associationCode": "VODAFONENET",
+            "currency": "TRY",
+            "associationName": "VODAFONENET",
+            "paymentTypeCode": "1",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "ecK+wZ586JbLGriw3K1e3g==",
+            "subscriberNumber": "VF000000000101",
+            "paymentAmount": 128.95,
+            "paymentDate": "2018-10-23T16:24:43.0000000+03:00",
+            "associationCode": "VODAFONENET",
+            "currency": "TRY",
+            "associationName": "VODAFONENET",
+            "paymentTypeCode": "1",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "gcyL8Wz5XWbReKdeMld+Tw==",
+            "subscriberNumber": "5058170021",
+            "paymentAmount": 25.75,
+            "paymentDate": "2018-10-15T14:04:08.0000000+03:00",
+            "associationCode": "AVEA",
+            "currency": "TRY",
+            "associationName": "TÜRK TELEKOM MOBİL",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "i6qXV5Y94tvaUQLrKJ0WwQ==",
+            "subscriberNumber": "5058170068",
+            "paymentAmount": 27.5,
+            "paymentDate": "2018-10-01T11:59:24.0000000+03:00",
+            "associationCode": "AVEA",
+            "currency": "TRY",
+            "associationName": "TÜRK TELEKOM MOBİL",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "SFkX4w55WcoNrT6InGHcCQ==",
+            "subscriberNumber": "5058170084",
+            "paymentAmount": 22.25,
+            "paymentDate": "2018-10-01T11:46:25.0000000+03:00",
+            "associationCode": "AVEA",
+            "currency": "TRY",
+            "associationName": "TÜRK TELEKOM MOBİL",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "14TvULbG5yLUrAbmMfPSVA==",
+            "subscriberNumber": "VF000000000101",
+            "paymentAmount": 665,
+            "paymentDate": "2018-10-01T11:44:23.0000000+03:00",
+            "associationCode": "VODAFONENET",
+            "currency": "TRY",
+            "associationName": "VODAFONENET",
+            "paymentTypeCode": "1",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "2CeF3v7C5N6dN5OgClO6Bw==",
+            "subscriberNumber": "5058170048",
+            "paymentAmount": 21.25,
+            "paymentDate": "2018-09-28T16:40:22.0000000+03:00",
+            "associationCode": "AVEA",
+            "currency": "TRY",
+            "associationName": "TÜRK TELEKOM MOBİL",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "TUG7iGXx57oX9+Nl7OSPKw==",
+            "subscriberNumber": "5423333333",
+            "paymentAmount": 200.15,
+            "paymentDate": "2018-09-27T11:38:04.0000000+03:00",
+            "associationCode": "VODAFONE",
+            "currency": "TRY",
+            "associationName": "VODAFONE",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "sWjSuyHoMt3q1P8a1mUuZg==",
+            "subscriberNumber": "5012250251",
+            "paymentAmount": 1.75,
+            "paymentDate": "2018-09-26T17:45:40.0000000+03:00",
+            "associationCode": "AVEA",
+            "currency": "TRY",
+            "associationName": "TÜRK TELEKOM MOBİL",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "T34aly9gy9DjBG9AKY5zPA==",
+            "subscriberNumber": "5058170082",
+            "paymentAmount": 23.5,
+            "paymentDate": "2018-09-26T14:35:13.0000000+03:00",
+            "associationCode": "AVEA",
+            "currency": "TRY",
+            "associationName": "TÜRK TELEKOM MOBİL",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "URjuSTh44ZNu3plweN7B1w==",
+            "subscriberNumber": "5326983168",
+            "paymentAmount": 142.9,
+            "paymentDate": "2018-09-25T15:07:28.0000000+03:00",
+            "associationCode": "TURKCELL",
+            "currency": "TRY",
+            "associationName": "TURKCELL FATURA ÖDEME",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "J9YwPb8XsX0eplaVo/5+ng==",
+            "subscriberNumber": "VF000000000101",
+            "paymentAmount": 523.92,
+            "paymentDate": "2018-09-25T14:54:41.0000000+03:00",
+            "associationCode": "VODAFONENET",
+            "currency": "TRY",
+            "associationName": "VODAFONENET",
+            "paymentTypeCode": "1",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "Cyb33ka4/WkxNI4tc0iMpw==",
+            "subscriberNumber": "VF000000000214",
+            "paymentAmount": 5725.08,
+            "paymentDate": "2018-09-25T14:38:32.0000000+03:00",
+            "associationCode": "VODAFONENET",
+            "currency": "TRY",
+            "associationName": "VODAFONENET",
+            "paymentTypeCode": "1",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "natlN2l+8CIr4SJE70NQrw==",
+            "subscriberNumber": "5423333343",
+            "paymentAmount": 81.9,
+            "paymentDate": "2018-09-25T14:27:13.0000000+03:00",
+            "associationCode": "VODAFONE",
+            "currency": "TRY",
+            "associationName": "VODAFONE",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "u6nSlSW7ddizklhqmkZ9hg==",
+            "subscriberNumber": "5365817121",
+            "paymentAmount": 26.5,
+            "paymentDate": "2018-09-25T10:25:01.0000000+03:00",
+            "associationCode": "AVEA",
+            "currency": "TRY",
+            "associationName": "TÜRK TELEKOM MOBİL",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "es02Ta2PwzyyIDd+v4xjcQ==",
+            "subscriberNumber": "5423333335",
+            "paymentAmount": 37.6,
+            "paymentDate": "2018-09-25T10:06:31.0000000+03:00",
+            "associationCode": "VODAFONE",
+            "currency": "TRY",
+            "associationName": "VODAFONE",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "lW1xjaq4V4mO4Kn6245PBQ==",
+            "subscriberNumber": "5012250223",
+            "paymentAmount": 11,
+            "paymentDate": "2018-09-24T8:15:08.0000000+03:00",
+            "associationCode": "AVEA",
+            "currency": "TRY",
+            "associationName": "TÜRK TELEKOM MOBİL",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "26G/oFupW+rrmLzrQq1eWQ==",
+            "subscriberNumber": "VF000000000214",
+            "paymentAmount": 34.19,
+            "paymentDate": "2018-09-21T11:40:24.0000000+03:00",
+            "associationCode": "VODAFONENET",
+            "currency": "TRY",
+            "associationName": "VODAFONENET",
+            "paymentTypeCode": "1",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "1jBYQR9AAzbYOynfqaEY9A==",
+            "subscriberNumber": "5423333335",
+            "paymentAmount": 19.1,
+            "paymentDate": "2018-09-17T13:49:47.0000000+03:00",
+            "associationCode": "VODAFONE",
+            "currency": "TRY",
+            "associationName": "VODAFONE",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "Cyr4ZvHT3hSO7f7dV+onLA==",
+            "subscriberNumber": "5426666669",
+            "paymentAmount": 25.9,
+            "paymentDate": "2018-09-17T13:48:06.0000000+03:00",
+            "associationCode": "VODAFONE",
+            "currency": "TRY",
+            "associationName": "VODAFONE",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "z0ZdhSGaZ0JKkfQaNqAfAQ==",
+            "subscriberNumber": "5058143326",
+            "paymentAmount": 39.75,
+            "paymentDate": "2018-09-17T11:58:21.0000000+03:00",
+            "associationCode": "AVEA",
+            "currency": "TRY",
+            "associationName": "TÜRK TELEKOM MOBİL",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        },
+        {
+            "id": "uMQ/qK8ogkot3qbXgH3NhA==",
+            "subscriberNumber": "5058143326",
+            "paymentAmount": 39.75,
+            "paymentDate": "2018-09-14T11:25:48.0000000+03:00",
+            "associationCode": "AVEA",
+            "currency": "TRY",
+            "associationName": "TÜRK TELEKOM MOBİL",
+            "paymentTypeCode": "25",
+            "isApplicationSupported": true
+        }
+    ]
+}

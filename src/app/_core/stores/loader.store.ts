@@ -6,7 +6,7 @@ export class LoaderStore {
     public isLoading = new BehaviorSubject(true);
 
     constructor() {
-        //this.isLoading.subscribe(a => console.log("LoaderStore.isLoading", a));
+        //this.isLoading.subscribe(a => console.log("LoaderStore.isLoading =>", a, new Date().toJSON()));
     }
 }
 

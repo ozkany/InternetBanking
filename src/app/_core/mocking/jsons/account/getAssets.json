@@ -1,0 +1,139 @@
+{
+    "totalAmount": 1069808.155293,
+    "totalDebt": -193.43,
+    "assetTypes": [
+        {
+            "title": "Vadesiz Hesaplarım",
+            "totalAmount": 282332.25,
+            "hexColor": "#663399",
+            "assetContainers": [
+                {
+                    "title": "TL",
+                    "currencyCode": "TRY",
+                    "orginalAmount": -65.25,
+                    "exchanceBalance": -65.25
+                },
+                {
+                    "title": "USD",
+                    "currencyCode": "USD",
+                    "orginalAmount": 1050,
+                    "exchanceBalance": 6594
+                },
+                {
+                    "title": "EUR",
+                    "currencyCode": "EUR",
+                    "orginalAmount": 1050,
+                    "exchanceBalance": 7570.5
+                },
+                {
+                    "title": "GBP",
+                    "currencyCode": "GBP",
+                    "orginalAmount": 1050,
+                    "exchanceBalance": 8631
+                },
+                {
+                    "title": "CAD",
+                    "currencyCode": "CAD",
+                    "orginalAmount": 1050,
+                    "exchanceBalance": 5071.5
+                },
+                {
+                    "title": "XAU",
+                    "currencyCode": "XAU",
+                    "orginalAmount": 1050,
+                    "exchanceBalance": 251506.5
+                },
+                {
+                    "title": "XAG",
+                    "currencyCode": "XAG",
+                    "orginalAmount": 1050,
+                    "exchanceBalance": 3024
+                }
+            ]
+        },
+        {
+            "title": "Vadeli Hesaplarım",
+            "totalAmount": 775813.5,
+            "hexColor": "#2C3E50",
+            "assetContainers": [
+                {
+                    "title": "TL",
+                    "currencyCode": "TRY",
+                    "orginalAmount": 14700,
+                    "exchanceBalance": 14700
+                },
+                {
+                    "title": "USD",
+                    "currencyCode": "USD",
+                    "orginalAmount": 1050,
+                    "exchanceBalance": 6594
+                },
+                {
+                    "title": "Altın",
+                    "currencyCode": "XAU",
+                    "orginalAmount": 3150,
+                    "exchanceBalance": 754519.5
+                }
+            ]
+        },
+        {
+            "title": "Yatırım Hesaplarım",
+            "totalAmount": 164073.05,
+            "hexColor": "#F7CA18",
+            "assetContainers": [
+                {
+                    "title": "Fon (TL)",
+                    "currencyCode": "TRY",
+                    "orginalAmount": 164073.05,
+                    "exchanceBalance": 164073.05
+                }
+            ]
+        },
+        {
+            "title": "BES",
+            "totalAmount": 87589.355293,
+            "hexColor": "#049372",
+            "assetContainers": [
+                {
+                    "title": "Bireysel / GBB",
+                    "currencyCode": "TRY",
+                    "orginalAmount": 87589.355293,
+                    "exchanceBalance": 87589.355293
+                },
+                {
+                    "title": "İGES",
+                    "currencyCode": "TRY",
+                    "orginalAmount": 0,
+                    "exchanceBalance": 0
+                },
+                {
+                    "title": "OKS",
+                    "currencyCode": "TRY",
+                    "orginalAmount": 0,
+                    "exchanceBalance": 0
+                }
+            ]
+        }
+    ],
+    "debtAssetTypes": [
+        {
+            "title": "Krediler",
+            "totalAmount": 0,
+            "hexColor": "#ef4836",
+            "assetContainers": []
+        },
+        {
+            "title": "Kartlar",
+            "totalAmount": -193.43,
+            "hexColor": "#2c3e50",
+            "assetContainers": [
+                {
+                    "title": "",
+                    "currencyCode": "TRY",
+                    "orginalAmount": -193.43,
+                    "exchanceBalance": -193.43
+                }
+            ]
+        }
+    ]
+}

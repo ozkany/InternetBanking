@@ -26,8 +26,6 @@ import { ScriptLoaderService } from 'src/app/_core/services/script-loader.servic
     CommonModule,
     AccountsRoutingModule
   ],
-  providers: [
-    ScriptLoaderService
-  ]
+  providers: []
 })
 export class AccountsModule { }

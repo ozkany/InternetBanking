@@ -1,0 +1,385 @@
+{
+    "creditCardListResponse": {
+        "canApply": false,
+        "isVisible": true,
+        "order": 1,
+        "creditCardList": [
+            {
+                "guid": "c59d14ed-ae8d-4053-9e27-777c823f29b7",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "BONUS BUSINESS",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/174.png",
+                "maskedCardNumber": "5101 18** **** 2250",
+                "statementDate": "10/10/2018",
+                "lastPaymentDate": "22/10/2018",
+                "remainingDebt": "1.175,81 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "71.633,20 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardPaymentButton",
+                    "AccountCard.Cards.CashAdvanceButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 1175.81,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 159.98,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "c6ffe355-78f4-40a2-b883-909d185d42b6",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "Çaykur Rizespor Bonus",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/102.png",
+                "maskedCardNumber": "4090 70** **** 9812",
+                "statementDate": "03/03/2018",
+                "lastPaymentDate": "13/03/2018",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "71.806,57 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardPaymentButton",
+                    "AccountCard.Cards.CashAdvanceButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "7e733618-a33f-42da-aedf-4913f925e26e",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "GÖZ GÖZ CLASSIC BONUS",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/288.png",
+                "maskedCardNumber": "5200 19** **** 7187",
+                "statementDate": "-",
+                "lastPaymentDate": "-",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "71.806,57 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardPaymentButton",
+                    "AccountCard.Cards.CashAdvanceButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "b7f0361f-504d-46be-9da2-54b625971672",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "OrduSpor Bonus",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/284.png",
+                "maskedCardNumber": "4090 70** **** 5392",
+                "statementDate": "-",
+                "lastPaymentDate": "-",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "71.806,57 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardPaymentButton",
+                    "AccountCard.Cards.CashAdvanceButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "807aa6fd-60c3-4c3c-93ea-c46f33f01036",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "KafKaf Bonus",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/401.png",
+                "maskedCardNumber": "5200 19** **** 1200",
+                "statementDate": "-",
+                "lastPaymentDate": "-",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "71.806,57 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardPaymentButton",
+                    "AccountCard.Cards.CashAdvanceButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "1685803e-d08f-422a-a5ec-dc5bd89e2f12",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "AkhisarSpor Bonus",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/406.png",
+                "maskedCardNumber": "4090 70** **** 6047",
+                "statementDate": "10/10/2018",
+                "lastPaymentDate": "22/10/2018",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "71.806,57 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardPaymentButton",
+                    "AccountCard.Cards.CashAdvanceButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "636f5ee4-0a97-45e1-8d41-94b5df0277f0",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "BONUS PLATINUM MASTER",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/600.png",
+                "maskedCardNumber": "5149 24** **** 5986",
+                "statementDate": "-",
+                "lastPaymentDate": "-",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "71.806,57 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardPaymentButton",
+                    "AccountCard.Cards.CashAdvanceButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "60c59f99-eb7b-4701-b391-417df73acb14",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "FENERBAHÇE BONUS CLASSIC",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/174.png",
+                "maskedCardNumber": "4090 70** **** 6388",
+                "statementDate": "-",
+                "lastPaymentDate": "-",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "71.806,57 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardPaymentButton",
+                    "AccountCard.Cards.CashAdvanceButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "e5a2ce54-fc19-4e4f-9ed8-7d2f935e819a",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "Deniz Bonus Klasik",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/77.png",
+                "maskedCardNumber": "4090 70** **** 7218",
+                "statementDate": "-",
+                "lastPaymentDate": "-",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "71.806,57 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardPaymentButton",
+                    "AccountCard.Cards.CashAdvanceButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "2bc4e603-8f9b-456d-8fda-a063397d62f4",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "MERSIN IDMAN YURDU BONUS",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/282.png",
+                "maskedCardNumber": "4090 70** **** 4570",
+                "statementDate": "-",
+                "lastPaymentDate": "-",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "71.806,57 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardPaymentButton",
+                    "AccountCard.Cards.CashAdvanceButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "702d4771-1f8d-4dca-a41e-dbd5d720804e",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "AFİLİ BONUS PREMIUM NETA",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/174.png",
+                "maskedCardNumber": "5544 83** **** 1694",
+                "statementDate": "03/03/2018",
+                "lastPaymentDate": "13/03/2018",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "71.806,57 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardPaymentButton",
+                    "AccountCard.Cards.CashAdvanceButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": -50,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            }
+        ]
+    },
+    "extendCardListResponse": {
+        "canApply": true,
+        "isVisible": true,
+        "order": 3,
+        "extendCreditCardList": [
+            {
+                "guid": "2016bb5e-f363-4552-9183-bbab31ed8a1e",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "Deniz Bonus Klasik Trink",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/93.png",
+                "maskedCardNumber": "4090 70** **** 5597",
+                "statementDate": "22/02/2017",
+                "lastPaymentDate": "22/02/2017",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "44.558,99 TL",
+                "swipeButtons": [],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 15,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "b40f7259-70c7-4ce6-9c1c-bc2927e7baa3",
+                "ownerName": "MASKINGOD MASKINGN MASKINGYD",
+                "name": "BUSINESS KART",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/174.png",
+                "maskedCardNumber": "5585 14** **** 0586",
+                "statementDate": "-",
+                "lastPaymentDate": "-",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "1.100,00 TL",
+                "swipeButtons": [],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "96a55fa7-26c5-4600-b036-dbff934af96a",
+                "ownerName": "TURAN ERDEM",
+                "name": "BONUS BUSINESS",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/174.png",
+                "maskedCardNumber": "5101 18** **** 5636",
+                "statementDate": "10/10/2018",
+                "lastPaymentDate": "22/10/2018",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "25.200,00 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardLimitUpdateButton",
+                    "AccountCard.Cards.IntallmentsButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 159.98,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "c046330e-aea9-47c7-be85-2c596433ae6d",
+                "ownerName": "MUHAMMED ALI JINNA",
+                "name": "BONUS BUSINESS",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/174.png",
+                "maskedCardNumber": "5101 18** **** 9695",
+                "statementDate": "10/10/2018",
+                "lastPaymentDate": "22/10/2018",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "7.200,00 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardLimitUpdateButton",
+                    "AccountCard.Cards.IntallmentsButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            },
+            {
+                "guid": "56a16ab9-e9e1-448f-9754-66a41b0cef8f",
+                "ownerName": "DİLEK ASIM NALÇACI",
+                "name": "AFİLİ BONUS PREMIUM NETA",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/174.png",
+                "maskedCardNumber": "5544 83** **** 3074",
+                "statementDate": "03/03/2018",
+                "lastPaymentDate": "13/03/2018",
+                "remainingDebt": "0,00 TL",
+                "remainingDebtUsd": "",
+                "availableLimit": "21.600,00 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardLimitUpdateButton",
+                    "AccountCard.Cards.IntallmentsButton"
+                ],
+                "isCancelled": false,
+                "remainingDebtDomestic": 0,
+                "remainingDebtForeign": 0,
+                "totalSpendingDomestic": 0,
+                "totalSpendingForeign": 0
+            }
+        ]
+    },
+    "virtualCardListResponse": {
+        "canApply": true,
+        "isVisible": true,
+        "order": 2,
+        "virtualCardList": [
+            {
+                "guid": "eddb5ee5-4642-4773-b17b-63405aeed716",
+                "name": "BONUS SANAL KART",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/79.png",
+                "clearCardNumber": "5203 0300 0193 5361",
+                "expiryDate": "10/21",
+                "cvv2": "024",
+                "availableLimit": "35.000,00 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardLimitUpdateButton",
+                    "AccountCard.Cards.CloseCardButton"
+                ]
+            },
+            {
+                "guid": "56c99b2a-b272-40f6-8123-fe696ebb32d1",
+                "name": "BONUS SANAL KART",
+                "image": "https://www.denizbank.com/_files/md_images/Janus/cards/79.png",
+                "clearCardNumber": "5203 0300 0208 4458",
+                "expiryDate": "10/21",
+                "cvv2": "412",
+                "availableLimit": "500,00 TL",
+                "swipeButtons": [
+                    "AccountCard.Cards.CardLimitUpdateButton",
+                    "AccountCard.Cards.CloseCardButton"
+                ]
+            }
+        ]
+    },
+    "debitCardListResponse": {
+        "canApply": false,
+        "isVisible": false,
+        "order": 4,
+        "debitCardList": []
+    }
+}

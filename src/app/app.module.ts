@@ -32,7 +32,7 @@ import { ShortenStr } from './_core/pipes/shorten-str.pipe';
     AppRoutingModule,
     InterceptorModule,
   ],
-  //providers: [AccountService, MiscService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
