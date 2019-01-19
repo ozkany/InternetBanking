@@ -13,6 +13,7 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { AlertComponent } from './shared/alert/alert.component';
 import { TransformStr } from './_core/pipes/transform-str.pipe';
 import { ShortenStr } from './_core/pipes/shorten-str.pipe';
+import { BypassImgResSecurity } from './_core/pipes/bypassImgResSecurity.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ShortenStr } from './_core/pipes/shorten-str.pipe';
     SpinnerComponent,
     TransformStr,
     ShortenStr,
+    BypassImgResSecurity,
     AlertComponent
   ],
   imports: [
