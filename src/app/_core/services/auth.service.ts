@@ -26,7 +26,9 @@ export class AuthService {
         return this._tokenStr;
     }
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+        if(environment.mock) this._isUserLoggedIn$.next(true);
+    }
 
     createToken() {
         const request = {

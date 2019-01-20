@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   apiUrl: "https://janusdev.denizbank.com/api",
-  debugObservables: true
+  debugObservables: true,
+  mock: true
 };
 
 /*

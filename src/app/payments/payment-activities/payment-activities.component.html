@@ -1,25 +1,22 @@
 <div style="text-align:center" *ngIf="(paymentStore.paymentActivities$ | async) != null">
   <h3>Ödeme İşlemleri</h3>
-  <table class="table table-hover table-sm">
-    <thead>
+  <table class="table table-hover table-striped table-bordered table-sm">
+    <thead class="thead-dark">
       <tr>
         <th scope="col">Kurum Kodu</th>
         <th scope="col">Abone No</th>
-        <th scope="col">Ödeme Tutarı</th>
-        <th scope="col">Döviz Kodu</th>
         <th scope="col">Ödeme Tarihi</th>
-        <th></th>
+        <th scope="col">Ödeme Tutarı</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let p of (paymentStore.paymentActivities$ | async)?.lastPaymentsDetails">
-        <td>{{ p['associationCode'] }}</td>
-        <td>{{ p['subscriberNumber'] }}</td>
-        <td>{{ p['paymentAmount'] }}</td>
-        <td>{{ p['currency'] }}</td>
-        <td>{{ p['paymentDate'] }}</td>
+      <tr *ngFor="let p of paymentStore.paymentActivities$ | async">
+        <td>{{ p.associationCode }}</td>
+        <td>{{ p.subscriberNumber }}</td>
+        <td>{{ p.paymentDate | date: 'dd/MM/yyyy' }}</td>
+        <td class="text-right">{{ p.paymentAmount | number : '1.2-2' }} {{ p.currency }}</td>
       </tr>
 
     </tbody>
   </table>
-</div>  
+</div>
