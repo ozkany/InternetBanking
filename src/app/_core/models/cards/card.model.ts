@@ -75,7 +75,7 @@ export interface DebitCardListResponse {
     debitCardList: any[];
 }
 
-export interface GetCardListRootResponse {
+export interface CardListRootResponse {
     creditCardListResponse: CreditCardListResponse;
     extendCardListResponse: ExtendCardListResponse;
     virtualCardListResponse: VirtualCardListResponse;

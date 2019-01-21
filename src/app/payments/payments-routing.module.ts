@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PaymentActivitiesComponent } from './payment-activities/payment-activities.component';
 
 const routes: Routes = [
-  { path: 'payment-activities', component: PaymentActivitiesComponent }
+  { path: 'payment-activities', component: PaymentActivitiesComponent, data: { title: 'Ödeme Kayıtları' } }
 ];
 
 @NgModule({

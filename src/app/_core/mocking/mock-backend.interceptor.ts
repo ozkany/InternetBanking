@@ -17,7 +17,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
         return of(null).pipe(mergeMap(() => {
 
-            let foundMockResponse = this.mockDataService.jsonData.filter(d => request.url.endsWith(d.path) && d.method == request.method)[0].data;
+            let foundMockResponse = this.mockDataService.jsonData.filter(d => request.url.lastIndexOf(d.path) > 0 && d.method == request.method).reverse()[0].data;
             console.log(logMsg, foundMockResponse);
             //this.loaderStore.isLoading.next(false);
             return of(new HttpResponse({ status: 200, body: foundMockResponse }));

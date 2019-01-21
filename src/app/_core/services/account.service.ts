@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { pipe, BehaviorSubject, Observable } from 'rxjs';
 import { map, flatMap,tap, filter } from 'rxjs/operators';
-import { AccountsRootObject } from '../models/account.model';
-import { GetAssetsRootResponse } from '../models/assets.model';
+import { AccountsRootObject } from '../models/accounts/account.model';
+import { GetAssetsRootResponse } from '../models/accounts/assets.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

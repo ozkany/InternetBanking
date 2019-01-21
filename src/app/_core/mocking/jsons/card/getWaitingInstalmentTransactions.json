@@ -1,0 +1,259 @@
+{
+    "totalAmount": 258.26,
+    "totalAmountStr": "258,26 TL",
+    "currency": "TL",
+    "cardGroupList": [
+        {
+            "statementDate": "31.12.2018",
+            "totalAmount": 51.66,
+            "totalAmountStr": "51,66 TL",
+            "totalProvisionCount": 3,
+            "installmentGroupList": [
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/12/2018",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 4.Tk Anapara",
+                    "currency": "TL",
+                    "installmentAmount": 46.05,
+                    "installmentAmountStr": "46,05 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 4,
+                    "remainingInstallmentAmount": 243.95,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                },
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/12/2018",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 4.Tk Faiz",
+                    "currency": "TL",
+                    "installmentAmount": 5.34,
+                    "installmentAmountStr": "5,34 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 4,
+                    "remainingInstallmentAmount": 0,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                },
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/12/2018",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 4.Tk BSMV",
+                    "currency": "TL",
+                    "installmentAmount": 0.27,
+                    "installmentAmountStr": "0,27 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 4,
+                    "remainingInstallmentAmount": 0,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                }
+            ]
+        },
+        {
+            "statementDate": "28.02.2019",
+            "totalAmount": 51.66,
+            "totalAmountStr": "51,66 TL",
+            "totalProvisionCount": 3,
+            "installmentGroupList": [
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/02/2019",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 6.Tk Anapara",
+                    "currency": "TL",
+                    "installmentAmount": 47.86,
+                    "installmentAmountStr": "47,86 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 6,
+                    "remainingInstallmentAmount": 149.14,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                },
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/02/2019",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 6.Tk Faiz",
+                    "currency": "TL",
+                    "installmentAmount": 3.62,
+                    "installmentAmountStr": "3,62 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 6,
+                    "remainingInstallmentAmount": 0,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                },
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/02/2019",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 6.Tk BSMV",
+                    "currency": "TL",
+                    "installmentAmount": 0.18,
+                    "installmentAmountStr": "0,18 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 6,
+                    "remainingInstallmentAmount": 0,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                }
+            ]
+        },
+        {
+            "statementDate": "31.03.2019",
+            "totalAmount": 51.66,
+            "totalAmountStr": "51,66 TL",
+            "totalProvisionCount": 3,
+            "installmentGroupList": [
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/03/2019",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 7.Tk Anapara",
+                    "currency": "TL",
+                    "installmentAmount": 48.78,
+                    "installmentAmountStr": "48,78 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 7,
+                    "remainingInstallmentAmount": 100.36,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                },
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/03/2019",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 7.Tk Faiz",
+                    "currency": "TL",
+                    "installmentAmount": 2.74,
+                    "installmentAmountStr": "2,74 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 7,
+                    "remainingInstallmentAmount": 0,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                },
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/03/2019",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 7.Tk BSMV",
+                    "currency": "TL",
+                    "installmentAmount": 0.14,
+                    "installmentAmountStr": "0,14 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 7,
+                    "remainingInstallmentAmount": 0,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                }
+            ]
+        },
+        {
+            "statementDate": "30.04.2019",
+            "totalAmount": 51.66,
+            "totalAmountStr": "51,66 TL",
+            "totalProvisionCount": 3,
+            "installmentGroupList": [
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/04/2019",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 8.Tk Anapara",
+                    "currency": "TL",
+                    "installmentAmount": 49.72,
+                    "installmentAmountStr": "49,72 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 8,
+                    "remainingInstallmentAmount": 50.64,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                },
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/04/2019",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 8.Tk Faiz",
+                    "currency": "TL",
+                    "installmentAmount": 1.85,
+                    "installmentAmountStr": "1,85 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 8,
+                    "remainingInstallmentAmount": 0,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                },
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/04/2019",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 8.Tk BSMV",
+                    "currency": "TL",
+                    "installmentAmount": 0.09,
+                    "installmentAmountStr": "0,09 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 8,
+                    "remainingInstallmentAmount": 0,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                }
+            ]
+        },
+        {
+            "statementDate": "31.05.2019",
+            "totalAmount": 51.62,
+            "totalAmountStr": "51,62 TL",
+            "totalProvisionCount": 3,
+            "installmentGroupList": [
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/05/2019",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 9.Tk Anapara",
+                    "currency": "TL",
+                    "installmentAmount": 50.64,
+                    "installmentAmountStr": "50,64 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 9,
+                    "remainingInstallmentAmount": 0,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                },
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/05/2019",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 9.Tk Faiz",
+                    "currency": "TL",
+                    "installmentAmount": 0.93,
+                    "installmentAmountStr": "0,93 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 9,
+                    "remainingInstallmentAmount": 0,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                },
+                {
+                    "transactionDate": "17/05/2018",
+                    "installmentDate": "10/05/2019",
+                    "description": "Öteleme-Taksit. Nakit ISTA IN 9.Tk BSMV",
+                    "currency": "TL",
+                    "installmentAmount": 0.05,
+                    "installmentAmountStr": "0,05 TL",
+                    "installmentCount": 9,
+                    "installmentNumber": 9,
+                    "remainingInstallmentAmount": 0,
+                    "provisionNo": 0,
+                    "totalInstallmentAmount": 400,
+                    "totalInstallmentAmountStr": "400,00 TL"
+                }
+            ]
+        }
+    ]
+}
+
+

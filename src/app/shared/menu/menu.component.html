@@ -1,39 +1,120 @@
-<div class="container" *ngIf="authService.isUserLoggedIn$ | async">
-  <div class="panel-group" id="accordionMenu" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingOne">
-        <a role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapseOne" aria-expanded="true"
-          aria-controls="collapseOne" class="list-group-item list-group-item-action">Hesaplar</a>
-      </div>
-      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-        <div class="list-group" id="list-tab" role="tablist" style="padding-left:20px;">
-          <a class="list-group-item list-group-item-action" id="list-home-list" [routerLink]="['/accounts/account-list']">Hesap Listesi</a>
-          <a class="list-group-item list-group-item-action" id="list-profile-list" [routerLink]="['/accounts/assets']">Varlıklarım</a>
-          <a class="list-group-item list-group-item-action" id="list-profile-list" [routerLink]="['/accounts/recent-transfers']">Son Transferler</a>
-        </div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="heading2">
-          <a role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapse2" aria-expanded="true"
-            aria-controls="collapse2" class="list-group-item list-group-item-action">Kartlar</a>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2">
-        <div class="list-group" id="list-tab" role="tablist" style="padding-left:20px;">
-          <a class="list-group-item list-group-item-action" id="list-home-list" [routerLink]="['/cards/card-list']">Kart Listesi</a>
-        </div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingThree">
-          <a role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapseThree" aria-expanded="true"
-            aria-controls="collapseThree" class="list-group-item list-group-item-action">Ödemeler</a>
-      </div>
-      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-        <div class="list-group" id="list-tab" role="tablist" style="padding-left:20px;">
-          <a class="list-group-item list-group-item-action" id="list-home-list" [routerLink]="['payments/payment-activities']">Ödeme Listesi</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<nav id="sidebar" class="col-md-2 d-none d-md-block bg-light sidebar" *ngIf="authService.isUserLoggedIn$ | async">
+
+  <ul class="list-unstyled components nav flex-column" data-toggle="collapse" data-target="#hesaplaritems">
+
+    <li class="active">
+      <a href="#accountsSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle nav-link">
+        <svg version="1.1" id="Capa_2" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px" y="0px" viewBox="0 0 448 448" style="enable-background:new 0 0 448 448;" xml:space="preserve">
+          <g>
+            <g>
+              <g>
+                <rect x="64" y="192" width="64" height="149.333" />
+                <rect x="21.333" y="384" width="405.333" height="64" />
+                <rect x="192" y="192" width="64" height="149.333" />
+                <polygon points="224,0 21.333,106.667 21.333,149.333 426.667,149.333 426.667,106.667 			" />
+                <rect x="320" y="192" width="64" height="149.333" />
+              </g>
+            </g>
+          </g>
+        </svg>
+        Hesaplar</a>
+      <ul class="list-unstyled collapse show" id="accountsSubmenu">
+        <li>
+          <a [routerLink]="['/accounts/account-list']" class="nav-link" style="padding-left: 30px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            Hesap Listesi</a>
+        </li>
+        <li>
+          <a [routerLink]="['/accounts/assets']" class="nav-link" style="padding-left: 30px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+            Varlıklarım</a>
+        </li>
+        <li>
+          <a [routerLink]="['/accounts/recent-transfers']" class="nav-link" style="padding-left: 30px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            Son Transferler</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="active">
+      <a href="#cardsSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle nav-link">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px"
+          y="0px" width="16px" height="16px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve"
+          class="">
+          <g transform="matrix(0.932065 0 0 0.932065 17.3233 17.3233)">
+            <g>
+              <g id="credit-card">
+                <path d="M459,51H51C22.95,51,0,73.95,0,102v306c0,28.05,22.95,51,51,51h408c28.05,0,51-22.95,51-51V102    C510,73.95,487.05,51,459,51z M459,408H51V255h408V408z M459,153H51v-51h408V153z"
+                  data-original="#000000" class="active-path" fill="#000000" />
+              </g>
+            </g>
+          </g>
+        </svg>
+        Kartlar</a>
+      <ul class="list-unstyled collapse show" id="cardsSubmenu">
+        <li>
+          <a [routerLink]="['/cards/card-list']" class="nav-link" style="padding-left: 30px"><svg xmlns="http://www.w3.org/2000/svg"
+              width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+              <polyline points="13 2 13 9 20 9"></polyline>
+            </svg> Kart Listesi</a>
+        </li>
+        <li>
+          <a [routerLink]="['/cards/interm-records']" class="nav-link" style="padding-left: 30px"><svg xmlns="http://www.w3.org/2000/svg"
+              width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+              <polyline points="13 2 13 9 20 9"></polyline>
+            </svg> Dönem İçi İşlemler</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="active">
+      <a href="#paymentsSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle nav-link">
+        <svg version="1.1" id="Capa_3" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+          <g>
+            <g>
+              <path d="M373.333,32l-32-32l-32,32l-32-32l-32,32l-32-32l-32,32l-32-32l-32,32l-32-32l-32,32l-32-32v426.667l32-32l32,32l32-32
+                 l32,32l32-32l32,32l32-32l32,32l32-32l32,32l32-32l32,32V0L373.333,32z M341.333,320h-256v-42.667h256V320z M341.333,234.667h-256
+                 V192h256V234.667z M341.333,149.333h-256v-42.667h256V149.333z" />
+            </g>
+          </g>
+        </svg>
+        Ödemeler</a>
+      <ul class="list-unstyled collapse show" id="paymentsSubmenu">
+        <li>
+          <a [routerLink]="['payments/payment-activities']" class="nav-link" style="padding-left: 30px"><svg xmlns="http://www.w3.org/2000/svg"
+              width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+              <polyline points="13 2 13 9 20 9"></polyline>
+            </svg> Ödeme Listesi</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

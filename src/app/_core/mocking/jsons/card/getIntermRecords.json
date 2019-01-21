@@ -1,0 +1,85 @@
+{
+    "selectedCardIntermRecordList": {
+        "fullName": "MASKINGOD MASKINGN MASKINGYD",
+        "cardNumber": "5101 18** **** 2250",
+        "cardType": 1,
+        "productName": "BONUS BUSINESS",
+        "totalSpendingDomestic": "159,98 TL",
+        "totalSpendingForeign": "0,00 USD",
+        "guid": "3e7640c7-d5bf-461b-bf6f-6208a75d64ab",
+        "shadowCardNumber": "2018122400000101",
+        "intermRecordList": [
+            {
+                "bonus": 0,
+                "bonusWithCurrency": "0,00 TL",
+                "transactionCurrency": "",
+                "currency": "TL",
+                "originalCurrency": "",
+                "provisionNumber": "",
+                "transactionDate": "14.12.2018",
+                "transactionName": "Kredi Kartı Gecikme Borç Tahsilatı",
+                "transactionType": "A",
+                "transactionAmount": "60,00 TL",
+                "installmentNumber": 0,
+                "installmentCount": 0,
+                "description": "Kredi Kartı Gecikme Borç Tahsilatı",
+                "isSuitableForInstallment": false,
+                "orgTransactionDate": "2018-12-14T0:00:00.0000000+03:00"
+            },
+            {
+                "bonus": 0,
+                "bonusWithCurrency": "0,00 TL",
+                "transactionCurrency": "",
+                "currency": "TL",
+                "originalCurrency": "",
+                "provisionNumber": "",
+                "transactionDate": "13.12.2018",
+                "transactionName": "Kredi Kartı Gecikme Borç Tahsilatı",
+                "transactionType": "A",
+                "transactionAmount": "20,00 TL",
+                "installmentNumber": 0,
+                "installmentCount": 0,
+                "description": "Kredi Kartı Gecikme Borç Tahsilatı",
+                "isSuitableForInstallment": false,
+                "orgTransactionDate": "2018-12-13T0:00:00.0000000+03:00"
+            },
+            {
+                "bonus": 0,
+                "bonusWithCurrency": "0,00 TL",
+                "transactionCurrency": "",
+                "currency": "TL",
+                "originalCurrency": "",
+                "provisionNumber": "",
+                "transactionDate": "13.12.2018",
+                "transactionName": "Kredi Kartı Gecikme Borç Tahsilatı",
+                "transactionType": "A",
+                "transactionAmount": "10,00 TL",
+                "installmentNumber": 0,
+                "installmentCount": 0,
+                "description": "Kredi Kartı Gecikme Borç Tahsilatı",
+                "isSuitableForInstallment": false,
+                "orgTransactionDate": "2018-12-13T0:00:00.0000000+03:00"
+            },
+            {
+                "bonus": 0,
+                "bonusWithCurrency": "0,00 TL",
+                "transactionCurrency": "",
+                "currency": "TL",
+                "originalCurrency": "",
+                "provisionNumber": "",
+                "transactionDate": "22.11.2018",
+                "transactionName": "Hesaptan Ödeme",
+                "transactionType": "A",
+                "transactionAmount": "10,00 TL",
+                "installmentNumber": 0,
+                "installmentCount": 0,
+                "description": "Hesaptan Ödeme",
+                "isSuitableForInstallment": false,
+                "orgTransactionDate": "2018-11-22T0:00:00.0000000+03:00"
+            }
+        ]
+    },
+    "extendedCardRecordList": []
+}
+
+

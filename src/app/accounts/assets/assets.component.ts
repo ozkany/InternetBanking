@@ -10,7 +10,6 @@ import { GooglePieChartConfig } from 'src/app/shared/google-charts/google-pie-ch
 })
 export class AssetsComponent implements OnInit, OnDestroy {
 
-  title = 'Varlıklarım';
   config: GooglePieChartConfig;
   elementId: String;
 

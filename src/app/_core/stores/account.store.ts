@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { CustomerAccount } from '../models/account.model';
+import { CustomerAccount } from '../models/accounts/account.model';
 import { Observable } from "rxjs";
 import { AccountService } from '../services/account.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { GetAssetsRootResponse } from '../models/assets.model';
+import { GetAssetsRootResponse } from '../models/accounts/assets.model';
 import { map, tap } from 'rxjs/operators';
 import { tapLog } from '../extensions/tap-log';
 
