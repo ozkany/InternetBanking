@@ -5,7 +5,7 @@ import { LoaderInterceptor } from './loader.interceptor';
 import { HeaderInterceptor } from './header.interceptor';
 import { LoggingInterceptor } from './logging.interceptor';
 import { ErrorInterceptor } from './error.interceptor';
-import { FakeBackendInterceptor, fakeBackendProvider } from '../mocking/mock-backend.interceptor';
+import { fakeBackendProvider } from '../mocking/mock-backend.interceptor';
 
 @NgModule({
   providers: [

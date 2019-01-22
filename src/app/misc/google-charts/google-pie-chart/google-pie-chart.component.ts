@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GooglePieChartConfig } from 'src/app/shared/google-charts/google-pie-chart-config.model';
-import { GooglePieChartService } from 'src/app/shared/google-charts/google-pie-chart.service';
+import { GooglePieChartConfig } from 'src/app/misc/google-charts/google-pie-chart-config.model';
+import { GooglePieChartService } from 'src/app/misc/google-charts/google-pie-chart.service';
 import { ScriptLoaderService } from 'src/app/_core/services/script-loader.service';
 import { BehaviorSubject } from 'rxjs';
 

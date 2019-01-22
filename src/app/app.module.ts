@@ -6,33 +6,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { InterceptorModule } from './_core/interceptors/interceptor.module';
 import { AppComponent } from './app.component';
+import { MenuComponent } from './misc/menu/menu.component';
 import { LoginComponent } from './login/login.component';
-import { CampaignsComponent } from './shared/campaigns/campaigns.component';
-import { MenuComponent } from './shared/menu/menu.component';
-import { SpinnerComponent } from './shared/spinner/spinner.component';
-import { AlertComponent } from './shared/alert/alert.component';
-import { TransformStr } from './_core/pipes/transform-str.pipe';
-import { ShortenStr } from './_core/pipes/shorten-str.pipe';
-import { BypassImgResSecurity } from './_core/pipes/bypassImgResSecurity.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    CampaignsComponent,
     MenuComponent,
-    SpinnerComponent,
-    TransformStr,
-    ShortenStr,
-    BypassImgResSecurity,
-    AlertComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    InterceptorModule,
+    InterceptorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

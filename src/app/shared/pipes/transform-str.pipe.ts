@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({name: 'transformStr'})
+@Pipe({
+  name: 'transformStr'
+})
 export class TransformStr implements PipeTransform {
+
   transform(value: string, type: string): string {
     let newStr: string = "";
     if(type == "cardimg") {
@@ -9,4 +12,5 @@ export class TransformStr implements PipeTransform {
     }
     return value;
   }
+
 }

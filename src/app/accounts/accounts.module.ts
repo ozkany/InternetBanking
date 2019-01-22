@@ -9,8 +9,9 @@ import { ReceiptComponent } from './receipt/receipt.component';
 import { AccountDetailComponent } from './account-detail/account-detail.component';
 import { RecentTransfersComponent } from './recent-transfers/recent-transfers.component';
 import { AssetsComponent } from './assets/assets.component';
-import { GooglePieChartComponent } from 'src/app/shared/google-charts/google-pie-chart/google-pie-chart.component';
+import { GooglePieChartComponent } from 'src/app/misc/google-charts/google-pie-chart/google-pie-chart.component';
 import { ScriptLoaderService } from 'src/app/_core/services/script-loader.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ScriptLoaderService } from 'src/app/_core/services/script-loader.servic
   ],
   imports: [
     CommonModule,
-    AccountsRoutingModule
+    AccountsRoutingModule,
+    SharedModule
   ],
   providers: []
 })

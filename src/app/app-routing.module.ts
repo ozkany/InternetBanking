@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './_core/guards/auth.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, data: { title: 'İnternet Şube Login' } },
+  //{ path: 'login', loadChildren: './login/login.module#LoginModule', data: { title: 'İnternet Şube Login' } },
   // { path: 'accounts/account-list', component: AccountListComponent },
   // { path: 'accounts/account-activities', component: AccountActivitiesComponent },
   // { path: 'accounts/recent-transfers', component: RecentTransfersComponent },

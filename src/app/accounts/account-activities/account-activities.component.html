@@ -13,7 +13,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let activity of (accountStore.accountActivityData$ | async)?.activities">
-        <td>{{ activity['time'] }}</td>
+        <td>{{ activity['time'] | dateFormat }}</td>
         <td>{{ activity['transactionDescription'] }}</td>
         <td>{{ activity['amount'] }}</td>
         <td>{{ activity['currencyCode'] }}</td>
