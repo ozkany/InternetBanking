@@ -26,7 +26,7 @@
 
   <div class="text-center mb-4">
     <p>Güvenlik Resminiz</p>
-    <img id="securityImage" [attr.src]="securityImageData" />
+    <img id="securityImage" [attr.src]="securityImageData | bypassImgResSecurity" />
   </div>
 
   <div class="text-center mb-4">

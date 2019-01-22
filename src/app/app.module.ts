@@ -7,14 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { InterceptorModule } from './_core/interceptors/interceptor.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './misc/menu/menu.component';
-import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    LoginComponent
+    MenuComponent
   ],
   imports: [
     BrowserModule,
