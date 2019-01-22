@@ -5,13 +5,18 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DateFormatPipe implements PipeTransform {
 
+  constructor() { }
+
   transform(value: Date, format: string): any {
     try {
-      return value.toLocaleDateString();
-    } catch (ex) {
+      const date = new Date(value);
+      const formatted = `${date.getDay()}.${date.getMonth()}.${date.getFullYear()}`;
+      return formatted;
+    }
+    catch (ex) {
       return value;
     }
-    
+
   }
 
 }
