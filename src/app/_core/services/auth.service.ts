@@ -17,9 +17,9 @@ export class AuthService {
     public readonly user$: Observable<User> = this._user$.asObservable();
     public get currentUser(): User { return this._user$.value; }
 
-    private _isUserLoggedIn$ = new BehaviorSubject(false);
-    public readonly isUserLoggedIn$ = this._isUserLoggedIn$.asObservable();
-    public get isUserLoggedIn() : boolean { return this._isUserLoggedIn$.value }
+    private _isLoggedIn$ = new BehaviorSubject(false);
+    public readonly isLoggedIn$ = this._isLoggedIn$.asObservable().pipe(tapLog("isLoggedIn"));
+    public get isLoggedIn() : boolean { return this._isLoggedIn$.value }
 
     private _tokenStr = "";
     public get tokenStr(): string {
@@ -27,7 +27,7 @@ export class AuthService {
     }
 
     constructor(private http: HttpClient) {
-        if(environment.mock) this._isUserLoggedIn$.next(true);
+        if(environment.useMockData) this._isLoggedIn$.next(true);
     }
 
     createToken() {
@@ -76,14 +76,14 @@ export class AuthService {
     validateOtp(smscode: string) {
         return this.http.patch(`${environment.apiUrl}/auth/token?validationType=sms`, { "code": smscode })
             .pipe(map(res => {
-                this._isUserLoggedIn$.next(true);
+                this._isLoggedIn$.next(true);
                 return true;
             }));
     }
 
     logout() {
         this._tokenStr = "";
-        this._isUserLoggedIn$.next(false);
+        this._isLoggedIn$.next(false);
         this._authToken$.next(null);
         this._user$.next(null);
     }

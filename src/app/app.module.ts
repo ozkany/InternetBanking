@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { InterceptorModule } from './_core/interceptors/interceptor.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './misc/menu/menu.component';
+import { SpinnerComponent } from './misc/spinner/spinner.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

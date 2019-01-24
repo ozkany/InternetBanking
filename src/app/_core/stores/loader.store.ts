@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class LoaderStore {
-    public isLoading = new BehaviorSubject(true);
+    public isLoading = new BehaviorSubject(false);
 
     constructor() {
         //this.isLoading.subscribe(a => console.log("LoaderStore.isLoading =>", a, new Date().toJSON()));

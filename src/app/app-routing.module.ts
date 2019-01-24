@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'accounts', loadChildren: './accounts/accounts.module#AccountsModule', canActivate: [AuthGuard] },
   //{ path: 'cards/card-list', component: CardListComponent },
   { path: 'cards', loadChildren: './cards/cards.module#CardsModule', canActivate: [AuthGuard] },
-  { path: 'payments', loadChildren: './payments/payments.module#PaymentsModule', canActivate: [AuthGuard] }
+  { path: 'payments', loadChildren: './payments/payments.module#PaymentsModule', canActivate: [AuthGuard] },
+  { path: 'transfers', loadChildren: './transfers/transfers.module#TransfersModule', canActivate: [AuthGuard] }
 ];
 
 @NgModule({

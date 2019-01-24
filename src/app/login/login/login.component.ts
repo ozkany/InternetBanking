@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../_core/services/auth.service';
+import { LoaderStore } from 'src/app/_core/stores/loader.store';
 
 @Component({
   selector: 'app-login',
@@ -20,13 +21,14 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private authService: AuthService
+    private authService: AuthService,
+    private loaderStore: LoaderStore
   ) {}
 
   ngOnInit() {
     this.formSignin = new FormGroup({
       'username': new FormControl("cgr91", [Validators.required]),
-      'password': new FormControl("123456", [Validators.required, Validators.minLength(3)])
+      'password': new FormControl("123456", [Validators.required, Validators.minLength(6)])
     });
     this.formOtpValidation = new FormGroup({
       'smscode': new FormControl("123456", [Validators.required, Validators.minLength(6)])

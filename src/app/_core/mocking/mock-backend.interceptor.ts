@@ -4,6 +4,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { MockDataService as MockDataService } from './mock-data.service';
 import { LoaderStore } from '../stores/loader.store';
+import { environment } from 'src/environments/environment';
  
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -11,7 +12,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     constructor(private mockDataService : MockDataService, private loaderStore: LoaderStore) { }
  
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
+        if(!environment.useMockData) { return next.handle(request); }
+        
+        console.log("FakeBackendInterceptor entered");
+        
         this.loaderStore.isLoading.next(true);
         const logMsg = `mocking service response of (${request.url}) with === >`;
 

@@ -13,7 +13,7 @@
       <tr *ngFor="let p of paymentStore.paymentActivities$ | async">
         <td>{{ p.associationCode }}</td>
         <td>{{ p.subscriberNumber }}</td>
-        <td>{{ p.paymentDate | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ p.paymentDate | dateFormat }}</td>
         <td class="text-right">{{ p.paymentAmount | number : '1.2-2' }} {{ p.currency }}</td>
       </tr>
 

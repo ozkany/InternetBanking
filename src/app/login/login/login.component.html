@@ -1,5 +1,5 @@
 <!-- Form 1 -->
-<form class="form-signin" [formGroup]="formSignin" (ngSubmit)="onformSigninSubmit()" *ngIf="loginStep == 1">
+<form class="form-signin" [formGroup]="formSignin" (ngSubmit)="onformSigninSubmit()" *ngIf="loginStep == 1" style="margin-left: 20px;">
   <div class="text-center mb-4">
     <h4 class="h5 mb-3 font-weight-normal">Kullanıcı adı ve şifrenizi giriniz.</h4>
   </div>
@@ -15,11 +15,16 @@
     <label for="password">Şifre</label>
   </div>
 
-  <button class="btn btn-lg btn-outline-primary btn-block" type="submit">Devam</button>
+  <button class="btn btn-lg btn-outline-primary btn-block" type="submit" [disabled]="!formSignin.valid || (loaderStore.isLoading | async)">
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loaderStore.isLoading | async"></span>
+    {{ (loaderStore.isLoading | async) ? "Yükleniyor" : "Devam" }}
+  </button>
+
 </form>
 
 <!-- Form 2 -->
-<form class="form-signin" [formGroup]="formOtpValidation" (ngSubmit)="onformOtpValidationSubmit()" *ngIf="loginStep == 2 || loginStep == 3">
+<form class="form-signin" [formGroup]="formOtpValidation" (ngSubmit)="onformOtpValidationSubmit()" *ngIf="loginStep == 2 || loginStep == 3"
+  style="margin-left: 20px;">
   <div class="text-center mb-4">
     <h1 class="h3 mb-3 font-weight-normal">{{ loginUserResponse.firstName + ' ' + loginUserResponse.lastName }}</h1>
   </div>
@@ -30,8 +35,9 @@
   </div>
 
   <div class="text-center mb-4">
-    <button class="btn btn-lg btn-outline-info" type="button" id="createOTPButton" name="createOTPButton" (click)="onCreateOTPButtonClicked()">Sms
-      Şifre Gönder</button>
+    <button class="btn btn-lg btn-outline-info" type="button" id="createOTPButton" name="createOTPButton" (click)="onCreateOTPButtonClicked()">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loaderStore.isLoading | async"></span>
+      {{ (loaderStore.isLoading | async) ? "Yükleniyor" : "Sms Şifre Gönder" }}</button>
   </div>
 
   <div *ngIf="createOtpResponse != null">
@@ -46,7 +52,10 @@
       <label for="smscode">SMS Şifre</label>
     </div>
 
-    <button class="btn btn-lg btn-outline-primary btn-block" type="submit" [disabled]="!formOtpValidation.valid">Giriş</button>
+    <button class="btn btn-lg btn-outline-primary btn-block" type="submit" [disabled]="!formOtpValidation.valid">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loaderStore.isLoading | async"></span>
+      {{ (loaderStore.isLoading | async) ? "Yükleniyor" : "Giriş" }}
+    </button>
   </div>
 
 </form>

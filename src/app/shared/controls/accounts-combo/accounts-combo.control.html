@@ -1,0 +1,9 @@
+<div [formGroup]='accountsComboForm'>
+  <select class="form-control form-control-lg" 
+    (change)="onChange($event.target.value)" 
+    formControlName='accountId'>
+    <option *ngFor="let account of accountListToView" value="{{ account.id }}">
+      {{ account.number }} {{ account.branchName }} {{ account.availableBalance | number : '1.2-2' }} {{ account.currencyCode }}
+    </option>
+  </select>
+</div>
