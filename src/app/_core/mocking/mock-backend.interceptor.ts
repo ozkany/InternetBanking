@@ -12,6 +12,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     constructor(private mockDataService : MockDataService, private loaderStore: LoaderStore) { }
  
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
         if(!environment.useMockData) { return next.handle(request); }
         
         console.log("FakeBackendInterceptor entered");
@@ -20,8 +21,14 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         const logMsg = `mocking service response of (${request.url}) with === >`;
 
         return of(null).pipe(mergeMap(() => {
+            console.log("interceptor request", request.body);
+            let url = request.url;
 
-            let foundMockResponse = this.mockDataService.jsonData.filter(d => request.url.lastIndexOf(d.path) > 0 && d.method == request.method).reverse()[0].data;
+            if(request.url.lastIndexOf("/transfer/transferapprovev2") > 0) {
+                url += !!request.body.Otp ? "/confirmSms" : "/approveTran";
+            }
+
+            let foundMockResponse = this.mockDataService.jsonData.filter(d => url.lastIndexOf(d.path) > 0 && d.method == request.method).reverse()[0].data;
             console.log(logMsg, foundMockResponse);
             //this.loaderStore.isLoading.next(false);
             return of(new HttpResponse({ status: 200, body: foundMockResponse }));

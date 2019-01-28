@@ -8,7 +8,7 @@ import { CardStore } from 'src/app/_core/stores/card.store';
 })
 export class IntermRecordsComponent implements OnInit {
  @Input() cardId: string;
-  constructor(private cardStore: CardStore) { }
+  constructor(public cardStore: CardStore) { }
 
  ngOnInit() {
    this.cardStore.fetchCardIntermList();

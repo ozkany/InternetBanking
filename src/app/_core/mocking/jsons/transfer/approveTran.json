@@ -1,0 +1,14 @@
+{
+    "type": "ConfirmSms",
+    "isBaseControl": false,
+    "message": "(54*) *** *0 12-180",
+    "receiptId": null,
+    "summaries": [],
+    "contracts": null,
+    "payments": null,
+    "menus": null,
+    "warningMessage": null,
+    "token": "6eDZiHKAUUUKQZSqdqT0Q6qQldWL0gOQZGvjhcc2SgXw1Kud1y8xpZ99McP7Ie8lksWePExgaQZGbBEu7O3NRBsn_uW7Zl0p9gIxqLKaso2xPgNwfNtI_X0QT2h02EP_d6fbwdsKQcj9aSmpwf5ASHEoLaraxq-Q_6uBS3hEzW8c7t0X3SYNgEW7ufqlPwplCTd_73PBu9iJwYd7jrXxxZ7CJkvvDUOi1cyIfIzOlJ3nDfL_hIdOjVEsWXTQiOhw5Ewr4wPoMz4VY2AGWK_jiVH-bh6DII_XoMxBowOAU-2E8ldS6HxL9j7V9VmFuPLWGmU9RQBkUz4DzJDK7Gv1Q9N6tG_WlS8PDLIPP4FDuVpa5RWLLTQd7Pjv4-jYvTxZJf0_sFXb-6XiAwAP0TizfZfmwR4L4W5L0r7NSF2-qC-bi8CPebrBafqzSkZZyZ5b-GtZ2NsIx-1IgLs-ElpGmHyJ-jwB8BwDPq4F0pBzhmikcBs-49sddMx7HkYCy0efg5MMvTjIhUbJKDIIce77as6bAaUnHPMBdwCaBhRQbozQwPBH_8BI_fiDD5kGA6PGRlHscHA4dGG6y-s8xnsqCgPkteZRhR702YFzj32EFXqY_XRHAQkPTU5Uq4flrQYn",
+    "eTag": "lduXDp5Yu4EJqjLDD5XIgLgZO69sOpjlN15DVWLH+71028u0vObrhAKe0fIiqUG+eat3aoMLU7zJ/KSLvwOTyQ==",
+    "controlData": null
+}

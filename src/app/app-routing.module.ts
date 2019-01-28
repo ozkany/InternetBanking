@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './_core/guards/auth.guard';
 import { LoginComponent } from './login/login/login.component';
+import { ApproveComponent } from './approve/approve/approve.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },

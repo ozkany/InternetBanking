@@ -10,6 +10,9 @@ import * as getCards from './jsons/card/getCards.json'
 import * as getIntermRecords from './jsons/card/getIntermRecords.json'
 import * as getRecentTransfers from './jsons/account/getRecentTransfers.json'
 import * as getPaymentActivities from './jsons/payment/getPaymentActivities.json'
+import * as moneyOrder from './jsons/transfer/moneyOrder.json'
+import * as approveTran from './jsons/transfer/approveTran.json'
+import * as confirmSms from './jsons/transfer/confirmSms.json'
 
 import { GetAssetsRootResponse } from '../models/accounts/assets.model.js';
 import { CardListRootResponse } from '../models/cards/card.model.js';
@@ -35,6 +38,9 @@ export class MockDataService {
           { path: "/transfer/activities", method: "GET", data: <any>getRecentTransfers.default },
           { path: "/payments/activities?typeGroup=invoice&limit=50", method: "GET", data: <any>getPaymentActivities.default },
           { path: "GetIntermRecords", method: "GET", data: <CardIntermListRootObject>getIntermRecords.default },
+          { path: "/transfer/moneyorder", method: "POST", data: <any>moneyOrder.default },
+          { path: "/transfer/transferapprovev2/approveTran", method: "POST", data: <any>approveTran.default },
+          { path: "/transfer/transferapprovev2/confirmSms", method: "POST", data: <any>confirmSms.default },
         ];
 
     }

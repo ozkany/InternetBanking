@@ -1,7 +1,9 @@
 <!-- Form 1 -->
 <form class="form-signin" [formGroup]="formMoneyOrder" (ngSubmit)="onSubmit()" style="margin-left: 20px;">
 
-  <div class="input-group input-group-lg form-group">
+  <div class="shadow p-3 mb-5 bg-white rounded"><h6>Para transferi için gerekli bilgileri giriniz.</h6></div>
+
+  <div class="input-group input-group-lg form-group col-md-8">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 180px">Gönderen Hesap</span>
     </div>
@@ -9,7 +11,7 @@
       (accountSelectionChangeEvent)="sourceAccountChanged($event)" (formReady)="formReady('sourceAccount', $event)"></app-accounts-combo-control>
   </div>
 
-  <div class="input-group input-group-lg form-group">
+  <div class="input-group input-group-lg form-group col-md-8">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 180px">Alıcı Hesap</span>
     </div>
@@ -17,7 +19,7 @@
       (accountSelectionChangeEvent)="sourceAccountChanged($event)" (formReady)="formReady('destinationAccount', $event)"></app-accounts-combo-control>
   </div>
 
-  <div class="input-group input-group-lg form-group">
+  <div class="input-group input-group-lg form-group col-md-8">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 130px">Tutar</span>
     </div>
@@ -27,25 +29,21 @@
     </div>
   </div>
 
-  <div class="input-group input-group-lg form-group">
+  <div class="input-group input-group-lg form-group col-md-8">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 130px">Açıklama</span>
     </div>
     <input type="text" formControlName="explanation" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
   </div>
 
-  <div class="input-group input-group-lg form-group">
+  <div class="input-group input-group-lg form-group col-md-8">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 130px">İşlem Tarihi</span>
     </div>
     <input type="text" formControlName="transactionDate" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
   </div>
 
-  <div class="form-group">
+  <div class="form-group col-md-8">
     <button class="btn btn-lg btn-outline-primary btn-block" type="submit">Gönder</button>
   </div>
 </form>
-
-<pre>
-  {{formMoneyOrder.value | json}}
-</pre>

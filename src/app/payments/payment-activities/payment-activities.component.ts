@@ -8,7 +8,7 @@ import { PaymentStore } from 'src/app/_core/stores/payment.store';
 })
 export class PaymentActivitiesComponent implements OnInit {
 
-  constructor(private paymentStore: PaymentStore) { }
+  constructor(public paymentStore: PaymentStore) { }
 
   ngOnInit() {
 

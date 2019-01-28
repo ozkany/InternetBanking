@@ -16,12 +16,14 @@ export class ErrorInterceptor implements HttpInterceptor {
                 this.authenticationService.logout();
                 location.replace('/');
             }
+            
+            try {
+                this.alertService.error("Api çağrısında hata: " + err['error']['Message']);
+            } catch {
+                console.log("Api çağrısında hata: ", err);
+            }
 
-            this.alertService.error("Api çağrısında hata: " + err['error']['Message']);
-            //console.log(err);
-
-            const error = err.error.message || err.statusText;
-            return throwError(error);
+            return throwError(err);
         }));
     }
 }

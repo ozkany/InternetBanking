@@ -3,6 +3,7 @@ import { AccountStore } from 'src/app/_core/stores/account.store';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { CustomerAccount } from 'src/app/_core/models/accounts/account.model';
 import { BehaviorSubject } from 'rxjs';
+import { TransferService } from 'src/app/_core/services/transfer.service';
 
 @Component({
   selector: 'app-money-order',
@@ -16,8 +17,9 @@ export class MoneyOrderComponent implements OnInit {
   sourceAccountCurrencyCode: string;
 
   constructor(
-    private accountStore: AccountStore, 
-    private fb: FormBuilder) { }
+    public accountStore: AccountStore, 
+    private fb: FormBuilder,
+    private transferService: TransferService) { }
 
   ngOnInit() {
     this.createForm();
@@ -27,12 +29,14 @@ export class MoneyOrderComponent implements OnInit {
     this.formMoneyOrder = this.fb.group({
       amount: null,
       explanation: '',
-      transactionDate: null
+      transactionDate: new Date().toISOString().split('T')[0]
     });
   }
 
   onSubmit() {
     console.log("submit clicked", this.formMoneyOrder.value);
+    const f = this.formMoneyOrder.value;
+    this.transferService.makeMoneyOrder(f.sourceAccount.accountId, f.destinationAccount.accountId, f.amount, f.explanation, f.transactionDate);
   }
 
   sourceAccountChanged(account: CustomerAccount) {

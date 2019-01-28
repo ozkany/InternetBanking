@@ -1,0 +1,25 @@
+<div class="container" *ngIf="!!transactionDetails">
+  <div class="row">
+    <div class="col-md-8 order-md-2 mb-4" *ngFor="let detailGroup of transactionDetails">
+      <h5 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">{{ detailGroup.groupName }}</span>
+      </h5>
+      <ul class="list-group mb-3" *ngFor="let summary of detailGroup.summaries">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <h6 class="my-0">{{ summary.label }}</h6>
+          <strong>{{ summary.value }}</strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 order-md-2 mb-4">
+      <button class="btn btn-lg btn-outline-primary btn-block" type="button" (click)="onApprove()">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loaderStore.isLoading | async"></span>
+          {{ (loaderStore.isLoading | async) ? "Yükleniyor" : "Onayla" }}
+      </button>
+    </div>
+  </div>
+
+</div>

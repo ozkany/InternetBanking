@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/_core/services/auth.service';
 })
 export class SpinnerComponent implements OnInit {
 
-  constructor(private loaderStore: LoaderStore, private authService: AuthService) { }
+  constructor(public loaderStore: LoaderStore, public authService: AuthService) { }
 
   ngOnInit() {
   }

@@ -1,0 +1,33 @@
+{
+    "type": "Completed",
+    "isBaseControl": false,
+    "message": "<div align=\"center\">PARA GÖNDERME İŞLEMİNİZ 43709072 NOLU REFERANS İLE TAMAMLANDI</div> <br/><br/> <div align=\"center\">İşlem sonrası 9142-205487-351 nolu hesabınızın kalan kullanılabilir bakiyesi 975.499,74 TL'dir.</div>",
+    "receiptId": "HNB_8YW9Qi1hJbz1FQEfbmTIp4I3iXtkiGSHT4GyGcg",
+    "summaries": [],
+    "contracts": null,
+    "payments": null,
+    "menus": [
+        {
+            "id": 7,
+            "menuKey": 2,
+            "controllerName": "Transfer",
+            "actionName": "TransferApprove",
+            "title": "Dekont Paylaş",
+            "menuOrder": 0,
+            "limitedVersionInfo": null
+        },
+        {
+            "id": 3,
+            "menuKey": 8,
+            "controllerName": "Transfer",
+            "actionName": "TransferApprove",
+            "title": "Tekrar Para Gönder",
+            "menuOrder": 0,
+            "limitedVersionInfo": null
+        }
+    ],
+    "warningMessage": null,
+    "token": "6eDZiHKAUUUKQZSqdqT0Q53ZieRz1n12OyC016e_3Gr_z2F4Qwl5inRg6qKwXSAAikgDFjH7980OtqSWZs-AnJpsexh6pEjFTDHK7-B30-yAX9oSP0slc5YrZeo72QvHyX5OwjKJ1uxtE_TmUbtn-qRnZ8FM-PjhrRK7Q3rJeqwWuABT6MOmBnD5qab63W8R9a8gcsiZ7OnenAi7lf-V4dXcg57mCvtT-Xzj-qom-g4fDhZ43IWZNE5JEBOAb-IXMRs4-XJX62QVkq-t0tfXNVpER4_xto3JokPiyzEI2tY",
+    "eTag": "0FZti8hMsTomz6q9ozeFEermnmkKrSGX5gK78pV5SIOprxJKFsL5kFo3XRR4A0DIQI7QieXZD4FF2l9PTHLJ5w==",
+    "controlData": null
+}

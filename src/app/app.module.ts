@@ -8,20 +8,22 @@ import { InterceptorModule } from './_core/interceptors/interceptor.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './misc/menu/menu.component';
 import { SpinnerComponent } from './misc/spinner/spinner.component';
+import { ApproveModule } from './approve/approve.module';
+import { MiscModule } from './misc/misc.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MenuComponent,
-    SpinnerComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    InterceptorModule
+    InterceptorModule,
+    ApproveModule,
+    MiscModule
   ],
   providers: [],
   bootstrap: [AppComponent]

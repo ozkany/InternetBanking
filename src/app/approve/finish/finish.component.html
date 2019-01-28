@@ -1,0 +1,11 @@
+<ng-container *ngIf="approveService.finishData$ | async as data">
+  <div class="alert alert-success" role="alert">
+    <h6 class="alert-heading">İşleminiz başarıyla tamamlanmıştır !</h6>
+    <hr>
+
+    <h5>
+      <div [innerHTML]="data?.message"></div>
+    </h5>
+
+  </div>
+</ng-container>
