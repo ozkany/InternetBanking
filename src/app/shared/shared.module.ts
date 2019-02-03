@@ -6,10 +6,12 @@ import { TransformStr } from './pipes/transform-str.pipe';
 import { BypassImgResSecurity } from './pipes/bypass-img-res-security.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AccountsComboControl } from './controls/accounts-combo/accounts-combo.control';
+import { ResourcePipe } from './pipes/resource.pipe';
 
 @NgModule({
   declarations: [
     DateFormatPipe,
+    ResourcePipe,
     ShortenStr,
     TransformStr,
     BypassImgResSecurity,
@@ -21,6 +23,7 @@ import { AccountsComboControl } from './controls/accounts-combo/accounts-combo.c
   ],
   exports: [
     DateFormatPipe,
+    ResourcePipe,
     ShortenStr,
     TransformStr,
     BypassImgResSecurity,

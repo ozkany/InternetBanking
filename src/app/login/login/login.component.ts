@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../_core/services/auth.service';
 import { LoaderStore } from 'src/app/_core/stores/loader.store';
+import { ResourceStore } from 'src/app/_core/stores/resource.store';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService,
-    private loaderStore: LoaderStore
+    private loaderStore: LoaderStore,
+    private resourceStore: ResourceStore
   ) {}
 
   ngOnInit() {

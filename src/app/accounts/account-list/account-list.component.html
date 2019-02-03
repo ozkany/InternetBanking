@@ -3,11 +3,11 @@
     <thead class="thead-dark">
       <tr>
         <!-- <th>#</th> -->
-        <th>Hesap No</th>
+        <th>{{ "MissingOrderList.AccountNo.Label" | res }}</th>
         <th>Şube Adı</th>
         <th>Hesap Adı</th>
-        <th>Bakiye</th>
-        <th>Kullanılabilir Bakiye</th>
+        <th>{{ "Accounts.TermDeposit.BalanceLabel" | res }}</th>
+        <th>{{ "Accounts.DemandDeposit.AvailableBalanceLabel" | res }}</th>
         <th></th>
         <th></th>
       </tr>
@@ -22,7 +22,7 @@
         <td>{{ account.availableBalance }}</td>
         <td><button class="btn btn-info" type="button" (click)="onDetailsButtonClick(account)" data-toggle="modal"
             data-target="#accountDetailModalCenter">Detay</button></td>
-        <td><button class="btn btn-info" type="button" (click)="onActivitiesButtonClick(account['id'])">Hareketler</button></td>
+        <td><button class="btn btn-info" type="button" (click)="onActivitiesButtonClick(account['id'])">{{"AccountDetail.AccountTransactionButton" | res}}</button></td>
       </tr>
 
     </tbody>

@@ -6,6 +6,7 @@ import { User } from '../models/user.model';
 import { AuthToken } from '../models/auth-token.model';
 import { environment } from 'src/environments/environment';
 import { tapLog } from '../extensions/tap-log';
+import { ResourceStore } from '../stores/resource.store';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -26,7 +27,7 @@ export class AuthService {
         return this._tokenStr;
     }
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private resourceStore: ResourceStore) {
         if(environment.useMockData) this._isLoggedIn$.next(true);
     }
 
@@ -49,6 +50,8 @@ export class AuthService {
                 tap(tokenResponse => {
                 this._authToken$.next(tokenResponse);
                 this._tokenStr = tokenResponse.token;
+                
+                this.resourceStore.resources$.next(tokenResponse.locale.data);
             }));
     }
 

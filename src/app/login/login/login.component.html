@@ -17,7 +17,7 @@
 
   <button class="btn btn-lg btn-outline-primary btn-block" type="submit" [disabled]="!formSignin.valid || (loaderStore.isLoading | async)">
     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loaderStore.isLoading | async"></span>
-    {{ (loaderStore.isLoading | async) ? "Yükleniyor" : "Devam" }}
+    {{ (loaderStore.isLoading | async) ? "Yükleniyor" : (resourceStore.resources$ | async)['Login.ContinueButton'] }}
   </button>
 
 </form>
@@ -37,7 +37,7 @@
   <div class="text-center mb-4">
     <button class="btn btn-lg btn-outline-info" type="button" id="createOTPButton" name="createOTPButton" (click)="onCreateOTPButtonClicked()">
       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loaderStore.isLoading | async"></span>
-      {{ (loaderStore.isLoading | async) ? "Yükleniyor" : "Sms Şifre Gönder" }}</button>
+      {{ (loaderStore.isLoading | async) ? "Yükleniyor" : (resourceStore.resources$ | async)['Login.ContinueButton'] }}</button>
   </div>
 
   <div *ngIf="createOtpResponse != null">
