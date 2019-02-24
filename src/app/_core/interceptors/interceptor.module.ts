@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoaderStore } from '../stores/loader.store';
+import { CommonStore } from '../store/common/common.store';
 import { LoaderInterceptor } from './loader.interceptor';
 import { HeaderInterceptor } from './header.interceptor';
 import { LoggingInterceptor } from './logging.interceptor';
@@ -9,7 +9,7 @@ import { fakeBackendProvider } from '../mocking/mock-backend.interceptor';
 
 @NgModule({
   providers: [
-    LoaderStore,
+    CommonStore,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoaderInterceptor,

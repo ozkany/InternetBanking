@@ -1,23 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { CardStore } from 'src/app/_core/stores/card.store';
-import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import * as fromApp from '../../_core/store/app.state';
+import * as fromCards from '../../_core/store/card/card.reducers';
+import * as CardActions from 'src/app/_core/store/card/card.actions';
 
 @Component({
- selector: 'app-card-list',
- templateUrl: './card-list.component.html',
- styleUrls: ['./card-list.component.css']
+  selector: 'app-card-list',
+  templateUrl: './card-list.component.html',
+  styleUrls: ['./card-list.component.css']
 })
 export class CardListComponent implements OnInit {
 
- constructor(public cardStore: CardStore, private router: Router) { }
+  cardState$: Observable<fromCards.State>;
 
- ngOnInit() {
- }
+  constructor(private store: Store<fromApp.AppState>) { }
 
- onIntermRecordsButtonClick(id: string) {
-   this.cardStore.setSelectedCardId(id);
-   this.router.navigate(['/cards/interm-records']);
- }
+  ngOnInit() {
+    this.cardState$ = this.store.select('cards');
+    this.store.dispatch(new CardActions.CallGetCard());
+  }
+
+  onIntermRecordsButtonClick(id: string) {
+    this.store.dispatch(new CardActions.NavtoIntermRecords({ cardId: id }));
+  }
 
 }
 

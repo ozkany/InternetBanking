@@ -1,5 +1,9 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { AccountStore } from 'src/app/_core/stores/account.store';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import * as fromApp from 'src/app/_core/store/app.state';
+import * as fromAccounts from '../../_core/store/account/account.reducers';
+import * as AccountActions from 'src/app/_core/store/account/account.actions';
 
 @Component({
   selector: 'app-account-activities',
@@ -8,15 +12,16 @@ import { AccountStore } from 'src/app/_core/stores/account.store';
 })
 export class AccountActivitiesComponent implements OnInit, OnDestroy {
 
-  constructor(public accountStore: AccountStore) { }
+  accountState$: Observable<fromAccounts.State>;
+
+  constructor(private store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
-    this.accountStore.fetchAccountActivity();
+    this.accountState$ = this.store.select('accounts');
   }
 
-  onReceiptButtonClick(receiptId: string) {
-    console.log("onReceiptButtonClick: ", receiptId);
-    this.accountStore.fetchReceipt(receiptId);
+  onReceiptButtonClick(accountId: string, receiptId: string) {
+    this.store.dispatch(new AccountActions.CallReceipt({ accountId, receiptId }));
   }
 
   ngOnDestroy() {

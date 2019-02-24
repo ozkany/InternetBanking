@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApproveService } from 'src/app/_core/services/approve.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { LoaderStore } from 'src/app/_core/stores/loader.store';
+import { CommonStore } from 'src/app/_core/store/common/common.store';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class ConfirmSmsComponent implements OnInit {
 
   formSms: FormGroup;
 
-  constructor(public approveService: ApproveService, public loaderStore: LoaderStore) { }
+  constructor(public approveService: ApproveService, public commonStore: CommonStore) { }
 
   ngOnInit() {
     this.formSms = new FormGroup({

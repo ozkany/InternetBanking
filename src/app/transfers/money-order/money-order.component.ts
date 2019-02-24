@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountStore } from 'src/app/_core/stores/account.store';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { CustomerAccount } from 'src/app/_core/models/accounts/account.model';
-import { BehaviorSubject } from 'rxjs';
 import { TransferService } from 'src/app/_core/services/transfer.service';
 
 @Component({
@@ -17,7 +15,6 @@ export class MoneyOrderComponent implements OnInit {
   sourceAccountCurrencyCode: string;
 
   constructor(
-    public accountStore: AccountStore, 
     private fb: FormBuilder,
     private transferService: TransferService) { }
 

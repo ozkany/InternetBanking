@@ -3,13 +3,13 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { MockDataService as MockDataService } from './mock-data.service';
-import { LoaderStore } from '../stores/loader.store';
+import { CommonStore } from '../store/common/common.store';
 import { environment } from 'src/environments/environment';
  
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
  
-    constructor(private mockDataService : MockDataService, private loaderStore: LoaderStore) { }
+    constructor(private mockDataService : MockDataService, private commonStore: CommonStore) { }
  
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -17,7 +17,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         
         console.log("FakeBackendInterceptor entered");
         
-        this.loaderStore.isLoading.next(true);
+        this.commonStore.isLoading.next(true);
         const logMsg = `mocking service response of (${request.url}) with === >`;
 
         return of(null).pipe(mergeMap(() => {
@@ -30,13 +30,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             let foundMockResponse = this.mockDataService.jsonData.filter(d => url.lastIndexOf(d.path) > 0 && d.method == request.method).reverse()[0].data;
             console.log(logMsg, foundMockResponse);
-            //this.loaderStore.isLoading.next(false);
+            //this.commonStore.isLoading.next(false);
             return of(new HttpResponse({ status: 200, body: foundMockResponse }));
 
 
             //getAccounts
             if (request.url.endsWith('/auth/token?validationType=sms') && request.method === 'PATCH') {
-                this.loaderStore.isLoading.next(false);
+                this.commonStore.isLoading.next(false);
                 return of(new HttpResponse({ status: 200, body: null }));
             }
 

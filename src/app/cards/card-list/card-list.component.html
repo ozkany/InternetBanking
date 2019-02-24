@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let card of (cardStore?.cardListData$ | async)?.creditCardListResponse?.creditCardList">
+      <tr *ngFor="let card of (cardState$ | async)?.cards?.creditCardListResponse?.creditCardList">
         <th scope="row" style="align-content: center"><input type="radio" name="cardRadio" id="cardRadio" value="cardRadio1"></th>
         <td>{{ card.maskedCardNumber }} </td>
         <td>{{ card.name }}</td>
@@ -24,7 +24,7 @@
         <td><button class="btn btn-info" type="button" (click)="onIntermRecordsButtonClick(card.guid)">Dönem İçi
             Hareketler</button></td>
       </tr>
-      <tr *ngFor="let card of (cardStore?.cardListData$ | async)?.extendCardListResponse?.extendCreditCardList">
+      <tr *ngFor="let card of (cardState$ | async)?.cards?.extendCardListResponse?.extendCreditCardList">
         <th scope="row" style="align-content: center"><input type="radio" name="cardRadio" id="cardRadio" value="cardRadio1"></th>
         <td>{{ card.maskedCardNumber }} </td>
         <td>{{ card.name }}</td>
@@ -54,7 +54,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let card of (cardStore?.cardListData$ | async)?.virtualCardListResponse?.virtualCardList">
+      <tr *ngFor="let card of (cardState$ | async)?.cards?.virtualCardListResponse?.virtualCardList">
         <th scope="row" style="align-content: center"><input type="radio" name="cardRadio" id="cardRadio" value="cardRadio1"></th>
         <td>{{ card.clearCardNumber }} </td>
         <td>{{ card.cvv2 }} </td>

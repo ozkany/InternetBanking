@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { GooglePieChartConfig } from 'src/app/misc/google-charts/google-pie-chart-config.model';
 import { GooglePieChartService } from 'src/app/misc/google-charts/google-pie-chart.service';
 import { ScriptLoaderService } from 'src/app/_core/services/script-loader.service';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-google-pie-chart',
@@ -19,6 +19,8 @@ export class GooglePieChartComponent implements OnInit {
 
     this.scriptLoaderService.load('google-charts').then(() => {
       this.pieChartService._scriptsLoaded.next(true);
+      console.log('GooglePieChartComponent data', this.data$);
+      
       if (!!this.data$) {
         this.data$.subscribe(res => {
           if (!!res) {
@@ -27,6 +29,7 @@ export class GooglePieChartComponent implements OnInit {
           }
         });
       }
+
     });
 
   }

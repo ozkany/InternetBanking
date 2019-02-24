@@ -11,7 +11,7 @@ export interface Update {
     updateUrl: string;
 }
 
-export interface AuthToken {
+export interface AuthTokenObj {
     token: string;
     encryptionKey: string;
     locale: Locale;

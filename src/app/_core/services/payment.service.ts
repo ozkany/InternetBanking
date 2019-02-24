@@ -13,6 +13,7 @@ export class PaymentService {
   }
 
   getPaymentActivities() {
+    console.log('PaymentService getPaymentActivities acalling');
     return this.http.get<PaymentActivityRootObject>(`${environment.apiUrl}/payments/activities?typeGroup=invoice&limit=50`);
   }
 

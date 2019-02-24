@@ -1,4 +1,5 @@
 <div class="table-responsive">
+  <button class="btn btn-secondary" type="button" (click)="refreshButtonClicked()">Yenile</button>
   <table class="table table-hover table-striped table-bordered table-sm">
     <thead class="thead-dark">
       <tr>
@@ -13,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let account of accountStore.customerAccountsData$ | async">
+      <tr *ngFor="let account of (accountState$ | async)?.accounts">
         <!-- <td><input type="radio" name="accountRadio" id="accountRadio" value="accountRadio1"/></td> -->
         <td>{{ account.number }}</td>
         <td>{{ account.branchName }}</td>

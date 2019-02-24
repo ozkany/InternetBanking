@@ -10,8 +10,9 @@ import { AccountDetailComponent } from './account-detail/account-detail.componen
 import { RecentTransfersComponent } from './recent-transfers/recent-transfers.component';
 import { AssetsComponent } from './assets/assets.component';
 import { GooglePieChartComponent } from 'src/app/misc/google-charts/google-pie-chart/google-pie-chart.component';
-import { ScriptLoaderService } from 'src/app/_core/services/script-loader.service';
 import { SharedModule } from '../shared/shared.module';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from '../_core/store/account/account.reducers';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     AccountsRoutingModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forFeature('accounts', reducer)
   ],
   providers: []
 })

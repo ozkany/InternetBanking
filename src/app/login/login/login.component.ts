@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService } from '../../_core/services/auth.service';
-import { LoaderStore } from 'src/app/_core/stores/loader.store';
-import { ResourceStore } from 'src/app/_core/stores/resource.store';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+
+import { CommonStore } from 'src/app/_core/store/common/common.store';
+import * as fromApp from 'src/app/_core/store/app.state';
+import * as fromAuth from 'src/app/_core/store/auth/auth.reducers';
+import * as AuthActions from 'src/app/_core/store/auth/auth.actions';
 
 @Component({
   selector: 'app-login',
@@ -12,20 +15,11 @@ import { ResourceStore } from 'src/app/_core/stores/resource.store';
 })
 export class LoginComponent implements OnInit {
 
+  authState$: Observable<fromAuth.State>;
   formSignin: FormGroup;
   formOtpValidation: FormGroup;
-  loginStep = 1;
-  loginUserResponse: Object;
-  createOtpResponse: Object;
-  securityImageData = "";
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private authService: AuthService,
-    private loaderStore: LoaderStore,
-    private resourceStore: ResourceStore
-  ) {}
+  constructor(private commonStore: CommonStore, private store: Store<fromApp.AppState>) {}
 
   ngOnInit() {
     this.formSignin = new FormGroup({
@@ -36,39 +30,20 @@ export class LoginComponent implements OnInit {
       'smscode': new FormControl("123456", [Validators.required, Validators.minLength(6)])
     });
 
-    this.authService.createToken().subscribe();
+    this.authState$ = this.store.select('auth');
+    this.store.dispatch(new AuthActions.CallCreateToken());
   }
 
   onformSigninSubmit() {
-    this.authService.login(this.formSignin.value.username, this.formSignin.value.password).subscribe(
-      user => {
-        console.log("Login User Response", user);
-        this.loginUserResponse = user;
-        this.securityImageData = "data:image/png;base64, " + user.profileImageUrl;
-        this.loginStep = 2;
-      }
-    );
+    this.store.dispatch(new AuthActions.CallLogin({username: this.formSignin.value.username, password: this.formSignin.value.password}));
   }
 
   onCreateOTPButtonClicked() {
-    this.authService.createOtp().subscribe((data) => {
-      console.log(data);
-      this.createOtpResponse = data;
-      this.loginStep = 3;
-    }
-    );
+    this.store.dispatch(new AuthActions.CallCreateOtp());
   }
 
   onformOtpValidationSubmit() {
-    this.authService.validateOtp(this.formOtpValidation.value.smscode).subscribe(
-      (data) => {
-        console.log("onformOtpValidationSubmit:", data);
-        this.router.navigate([this.route.snapshot.queryParams['returnUrl'] || '/accounts/account-list']);
-      },
-      (error) => {
-        console.log("SMS şifresi hatalı girildi: " + error);
-      }
-    );
+    this.store.dispatch(new AuthActions.CallValidateOtp(this.formOtpValidation.value.smscode));
   }
 
 }

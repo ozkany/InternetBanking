@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApproveService } from 'src/app/_core/services/approve.service';
-import { LoaderStore } from 'src/app/_core/stores/loader.store';
+import { CommonStore } from 'src/app/_core/store/common/common.store';
 
 @Component({
   selector: 'app-approve',
@@ -12,7 +12,7 @@ export class ApproveComponent implements OnInit {
   transactionDetails;
 
   constructor(private approveService: ApproveService,
-    private loaderStore: LoaderStore) { }
+    private commonStore: CommonStore) { }
 
   ngOnInit() {
 

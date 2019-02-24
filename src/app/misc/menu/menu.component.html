@@ -1,4 +1,4 @@
-<nav id="sidebar" class="col-md-2 d-none d-md-block bg-light sidebar" *ngIf="authService.isLoggedIn$ | async">
+<nav id="sidebar" class="col-md-2 d-none d-md-block bg-light sidebar" *ngIf="(store.select('auth') | async)?.authenticated">
 
   <ul class="list-unstyled components nav flex-column" data-toggle="collapse" data-target="#hesaplaritems">
 

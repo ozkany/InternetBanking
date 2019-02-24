@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoaderStore } from './_core/stores/loader.store';
+import { CommonStore } from './_core/store/common/common.store';
 import { ActivatedRoute, Router, RoutesRecognized, NavigationEnd } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
 
@@ -11,7 +11,7 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 export class AppComponent implements OnInit {
   title = 'InternetBanking';
 
-  constructor(public loaderStore: LoaderStore, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(public commonStore: CommonStore, private activatedRoute: ActivatedRoute, private router: Router) {
     
   }
 

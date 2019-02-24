@@ -16,8 +16,8 @@
   <div class="row">
     <div class="col-md-8 order-md-2 mb-4">
       <button class="btn btn-lg btn-outline-primary btn-block" type="button" (click)="onApprove()">
-          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loaderStore.isLoading | async"></span>
-          {{ (loaderStore.isLoading | async) ? "Yükleniyor" : "Onayla" }}
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="commonStore.isLoading | async"></span>
+          {{ (commonStore.isLoading | async) ? "Yükleniyor" : "Onayla" }}
       </button>
     </div>
   </div>

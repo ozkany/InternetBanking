@@ -1,6 +1,6 @@
 <div style="text-align:center">
     <div class="container">
-      <h3 class="bg-primary text-white">Dönem İçi Hareketler <button class="btn btn-info" type="button" (click)="this.cardStore.fetchCardIntermList()">Yenile</button></h3>
+      <h3 class="bg-primary text-white">Dönem İçi Hareketler</h3>
     </div>
    
     <table class="table table-hover table-striped table-bordered table-sm">
@@ -18,7 +18,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of (cardStore?.cardIntermListData$ | async)?.selectedCardIntermRecordList?.intermRecordList">
+        <tr *ngFor="let item of (cardState$ | async)?.intermRecords?.selectedCardIntermRecordList?.intermRecordList">
           <td><input type="radio" name="itemRadio" id="itemRadio" value="itemRadio1"></td>
           <td>{{ item.provisionNumber }} </td>
           <td>{{ item.transactionDate }}</td>

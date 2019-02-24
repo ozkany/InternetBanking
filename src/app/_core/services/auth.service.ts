@@ -3,32 +3,40 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { User } from '../models/user.model';
-import { AuthToken } from '../models/auth-token.model';
+import { AuthTokenObj } from '../models/auth-token.model';
 import { environment } from 'src/environments/environment';
 import { tapLog } from '../extensions/tap-log';
-import { ResourceStore } from '../stores/resource.store';
+import { Store } from '@ngrx/store';
+import * as fromApp from 'src/app/_core/store/app.state';
+import * as AuthActions from 'src/app/_core/store/auth/auth.actions'
+import { CommonStore } from '../store/common/common.store';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-    private _authToken$ = new BehaviorSubject<AuthToken>(undefined);
-    public readonly authToken$ = this._authToken$.asObservable();
+    // private _authToken$ = new BehaviorSubject<AuthTokenObj>(undefined);
+    // public readonly authToken$ = this._authToken$.asObservable();
 
-    private _user$ = new BehaviorSubject<User>(undefined);
-    public readonly user$: Observable<User> = this._user$.asObservable();
-    public get currentUser(): User { return this._user$.value; }
+    // private _user$ = new BehaviorSubject<User>(undefined);
+    // public readonly user$: Observable<User> = this._user$.asObservable();
+    // public get currentUser(): User { return this._user$.value; }
 
-    private _isLoggedIn$ = new BehaviorSubject(false);
-    public readonly isLoggedIn$ = this._isLoggedIn$.asObservable().pipe(tapLog("isLoggedIn"));
-    public get isLoggedIn() : boolean { return this._isLoggedIn$.value }
+    // private _isLoggedIn$ = new BehaviorSubject(false);
+    // public readonly isLoggedIn$ = this._isLoggedIn$.asObservable().pipe(tapLog("isLoggedIn"));
+    // public get isLoggedIn() : boolean { return this._isLoggedIn$.value }
 
-    private _tokenStr = "";
-    public get tokenStr(): string {
-        return this._tokenStr;
-    }
+    // private _tokenStr = "";
+    // public get tokenStr(): string {
+    //     return this._tokenStr;
+    // }
 
-    constructor(private http: HttpClient, private resourceStore: ResourceStore) {
-        if(environment.useMockData) this._isLoggedIn$.next(true);
+    constructor(private http: HttpClient, 
+        private commonStore: CommonStore,
+        private store: Store<fromApp.AppState>) {
+        if(environment.useMockData) {
+            //this._isLoggedIn$.next(true);
+            //this.store.dispatch(new AuthActions.Login())
+        }
     }
 
     createToken() {
@@ -45,13 +53,15 @@ export class AuthService {
             "localeVersion": ""
         };
 
-        return this.http.post<AuthToken>(`${environment.apiUrl}/auth/token`, request)
+        return this.http.post<AuthTokenObj>(`${environment.apiUrl}/auth/token`, request)
             .pipe(tapLog("createToken"),
                 tap(tokenResponse => {
-                this._authToken$.next(tokenResponse);
-                this._tokenStr = tokenResponse.token;
+                //this.store.dispatch(new AuthActions.SetTokenObj(tokenResponse));
+                //this._authToken$.next(tokenResponse);
+                //this._tokenStr = tokenResponse.token;
                 
-                this.resourceStore.resources$.next(tokenResponse.locale.data);
+                this.commonStore.resources$.next(tokenResponse.locale.data);
+                tokenResponse.locale.data = null;
             }));
     }
 
@@ -65,7 +75,7 @@ export class AuthService {
         return this.http.patch<User>(`${environment.apiUrl}/auth/token`, request)
             .pipe(tap(user => {
                 if (user && user.userId) {
-                    this._user$.next(user);
+                    //this._user$.next(user);
                 }
 
                 return user;
@@ -79,15 +89,16 @@ export class AuthService {
     validateOtp(smscode: string) {
         return this.http.patch(`${environment.apiUrl}/auth/token?validationType=sms`, { "code": smscode })
             .pipe(map(res => {
-                this._isLoggedIn$.next(true);
+                //this._isLoggedIn$.next(true);
                 return true;
             }));
     }
 
     logout() {
-        this._tokenStr = "";
-        this._isLoggedIn$.next(false);
-        this._authToken$.next(null);
-        this._user$.next(null);
+        this.store.dispatch(new AuthActions.Logout());
+        // this._tokenStr = "";
+        // this._isLoggedIn$.next(false);
+        // this._authToken$.next(null);
+        // this._user$.next(null);
     }
 }

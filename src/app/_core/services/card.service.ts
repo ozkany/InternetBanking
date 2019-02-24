@@ -9,9 +9,7 @@ import { CardIntermListRootObject } from '../models/cards/card-interm-list.model
 })
 export class CardService {
 
-  constructor(private http: HttpClient) { 
-
-  }
+  constructor(private http: HttpClient) { }
 
   getCards() {
     return this.http.get<CardListRootResponse>(`${environment.apiUrl}/cards`);

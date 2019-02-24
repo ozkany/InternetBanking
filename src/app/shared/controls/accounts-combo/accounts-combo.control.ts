@@ -1,7 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { CustomerAccount } from 'src/app/_core/models/accounts/account.model';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import * as fromAccounts from 'src/app/_core/store/account/account.reducers';
+import * as fromApp from 'src/app/_core/store/app.state';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-accounts-combo-control',
@@ -22,12 +26,24 @@ export class AccountsComboControl implements OnInit, OnChanges {
   accountListToView: CustomerAccount[];
   accountsComboForm: FormGroup;
   currencyFilter$ = new BehaviorSubject<string>('');
+  
+  accountState$: Observable<fromAccounts.State>;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
+    this.accountsDataInit();
     this.createForm();
     this.setFilters();
+  }
+
+  accountsDataInit() {
+    this.accountState$ = this.store.select('accounts');
+    this.accountState$.pipe(take(1)).subscribe((res) => {
+      if(!this.accountList) {
+        this.accountListData = res.accounts;
+      }
+    });
   }
 
   createForm() {

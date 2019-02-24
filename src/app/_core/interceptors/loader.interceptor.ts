@@ -8,13 +8,13 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LoaderStore } from '../stores/loader.store';
+import { CommonStore } from '../store/common/common.store';
 
 @Injectable()
 export class LoaderInterceptor implements HttpInterceptor {
   private requests: HttpRequest<any>[] = [];
 
-  constructor(private loaderStore: LoaderStore) { }
+  constructor(private commonStore: CommonStore) { }
 
   removeRequest(req: HttpRequest<any>) {
     const i = this.requests.indexOf(req);
@@ -24,12 +24,12 @@ export class LoaderInterceptor implements HttpInterceptor {
 
     //console.log("LoaderInterceptor->removeRequest",i, this.requests.length);
 
-    this.loaderStore.isLoading.next(this.requests.length > 0);
+    this.commonStore.isLoading.next(this.requests.length > 0);
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.requests.push(req);
-    this.loaderStore.isLoading.next(true);
+    this.commonStore.isLoading.next(true);
 
     return Observable.create(observer => {
       const subscription = next.handle(req)

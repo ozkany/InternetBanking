@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AccountStore } from 'src/app/_core/stores/account.store';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import * as fromApp from '../../_core/store/app.state';
+import * as fromAccounts from '../../_core/store/account/account.reducers';
+import * as AccountActions from 'src/app/_core/store/account/account.actions';
 
 @Component({
   selector: 'app-account-list',
@@ -10,20 +14,27 @@ import { AccountStore } from 'src/app/_core/stores/account.store';
 export class AccountListComponent implements OnInit {
 
   selectedAccountForDetails;
+  accountState$: Observable<fromAccounts.State>;
 
-  constructor(public accountStore: AccountStore, private router: Router) { }
+  constructor(private router: Router, private store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
+    this.accountState$ = this.store.select('accounts');
+    this.store.dispatch(new AccountActions.CallGetAccounts());
   }
 
   onActivitiesButtonClick(id: string) {
-    this.accountStore.setSelectedAccountNumber(id);
-    this.router.navigate(['/accounts/account-activities']);
+    this.store.dispatch(new AccountActions.NavtoAccountActivities(id));
   }
 
   onDetailsButtonClick(account) {
     this.selectedAccountForDetails = account;
     console.log("selectedAccountForDetails", account);
   }
+
+  refreshButtonClicked() {
+    this.store.dispatch(new AccountActions.CallGetAccounts());
+  }
+
 
 }

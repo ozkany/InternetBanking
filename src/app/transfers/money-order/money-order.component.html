@@ -7,7 +7,7 @@
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 180px">Gönderen Hesap</span>
     </div>
-    <app-accounts-combo-control [accountListData]="accountStore.customerAccountsData$ | async"
+    <app-accounts-combo-control
       (accountSelectionChangeEvent)="sourceAccountChanged($event)" (formReady)="formReady('sourceAccount', $event)"></app-accounts-combo-control>
   </div>
 
@@ -15,7 +15,7 @@
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 180px">Alıcı Hesap</span>
     </div>
-    <app-accounts-combo-control [accountListData]="accountStore.customerAccountsData$ | async" [currencyFilter]="sourceAccountCurrencyCode"
+    <app-accounts-combo-control [currencyFilter]="sourceAccountCurrencyCode"
       (accountSelectionChangeEvent)="sourceAccountChanged($event)" (formReady)="formReady('destinationAccount', $event)"></app-accounts-combo-control>
   </div>
 
