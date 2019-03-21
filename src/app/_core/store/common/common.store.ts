@@ -20,10 +20,10 @@ export class CommonStore {
     const data = this.resources;
 
     if (!!data && !!data[resourceCode]) {
-        return data[resourceCode];
+      return data[resourceCode];
     } else {
-        return resourceCode;
+      return resourceCode;
     }
-}
+  }
 
 }
