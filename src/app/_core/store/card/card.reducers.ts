@@ -10,7 +10,7 @@ export interface State {
 const initialState: State = {
     cards: null,
     intermRecords: null
-}
+};
 
 export function reducer(state = initialState, action: CardActions.CardActions): State {
     switch (action.type) {
@@ -18,14 +18,13 @@ export function reducer(state = initialState, action: CardActions.CardActions): 
             return {
                 ...state,
                 cards: action.payload
-            }
+            };
         case CardActions.SET_INTERM_RECORDS:
             return {
                 ...state,
                 intermRecords: action.payload
-            }
+            };
         default:
             return state;
     }
-    
 }

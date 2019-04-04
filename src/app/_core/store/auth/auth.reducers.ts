@@ -1,11 +1,6 @@
 import * as AuthActions from './auth.actions';
 import { AuthTokenObj } from '../../models/auth-token.model';
-import { Action, createFeatureSelector, createSelector, StateObservable } from '@ngrx/store'
 import { User } from '../../models/user.model';
-
-// export interface State extends fromRoot.AppState {
-//     accounts: State
-// }
 
 export interface State {
     tokenStr: string;
@@ -64,5 +59,5 @@ export function reducer(state = initialState, action: AuthActions.AuthActions): 
             };
         default:
             return state;
-    }    
+    }
 }

@@ -8,14 +8,10 @@ import { PaymentActivityRootObject } from '../models/payment-activity.model';
 })
 export class PaymentService {
 
-  constructor(private http: HttpClient) { 
-
-  }
+  constructor(private http: HttpClient) { }
 
   getPaymentActivities() {
-    console.log('PaymentService getPaymentActivities acalling');
+    console.log('PaymentService getPaymentActivities calling');
     return this.http.get<PaymentActivityRootObject>(`${environment.apiUrl}/payments/activities?typeGroup=invoice&limit=50`);
   }
-
-
 }

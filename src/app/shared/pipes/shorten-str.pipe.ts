@@ -11,5 +11,5 @@ export class ShortenStr implements PipeTransform {
     }
     return value;
   }
-  
+
 }

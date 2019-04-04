@@ -1,8 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-@Pipe({ 
-    name: 'bypassImgResSecurity' 
+@Pipe({
+    name: 'bypassImgResSecurity'
 })
 export class BypassImgResSecurity implements PipeTransform {
 
@@ -10,7 +10,7 @@ export class BypassImgResSecurity implements PipeTransform {
 
     transform(value: string): SafeHtml {
 
-        if (value != "") {
+        if (value !== '') {
             return this.sanitizer.bypassSecurityTrustResourceUrl(value);
         }
 

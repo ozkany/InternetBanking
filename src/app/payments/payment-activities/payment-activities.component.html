@@ -3,10 +3,10 @@
   <table class="table table-hover table-striped table-bordered table-sm">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Kurum Kodu</th>
-        <th scope="col">Abone No</th>
-        <th scope="col">Ödeme Tarihi</th>
-        <th scope="col">Ödeme Tutarı</th>
+        <th scope="col">Association Code</th>
+        <th scope="col">Subscriber Number</th>
+        <th scope="col">Payment Date</th>
+        <th scope="col">Payment Amount</th>
       </tr>
     </thead>
     <tbody>
@@ -16,7 +16,6 @@
         <td>{{ p.paymentDate | dateFormat }}</td>
         <td class="text-right">{{ p.paymentAmount | number : '1.2-2' }} {{ p.currency }}</td>
       </tr>
-
     </tbody>
   </table>
 </div>

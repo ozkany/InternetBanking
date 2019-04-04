@@ -3,7 +3,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="accountDetailModalCenterTitle">Hesap Detayı</h5>
+        <h5 class="modal-title" id="accountDetailModalCenterTitle">Account Details</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -12,22 +12,22 @@
         <table class="table table-bordered table-striped" *ngIf="account != null">
 
             <tbody>
-              <tr><th>Hesap No</th><td class="text-nowrap" scope="row">{{ account.formattedNumber }}</td></tr>
+              <tr><th>Account No</th><td class="text-nowrap" scope="row">{{ account.formattedNumber }}</td></tr>
               <tr><th>IBAN</th><td>{{ account.iban }}</td></tr>
-              <tr><th>Hesap Tipi</th><td>{{ account.type }}</td></tr>
-              <tr><th>Şube Adı</th><td>{{ account.branchName }}</td></tr>
-              <tr><th>Bakiye</th><td>{{ account.balance }}</td></tr>
-              <tr><th>Kullanılabilir Bakiye</th><td>{{ account.availableBalance }}</td></tr>
-              <tr><th>Döviz Kodu</th><td>{{ account.currencyCode }}</td></tr>
-              <tr><th>Hesap İsmi</th><td>{{ account.name }}</td></tr>
-              <tr><th>Ürün Kodu</th><td>{{ account.originalProductCode }}</td></tr>
+              <tr><th>Account Type</th><td>{{ account.type }}</td></tr>
+              <tr><th>Branch Name</th><td>{{ account.branchName }}</td></tr>
+              <tr><th>Balance</th><td>{{ account.balance }}</td></tr>
+              <tr><th>Available Balance</th><td>{{ account.availableBalance }}</td></tr>
+              <tr><th>Currency Code</th><td>{{ account.currencyCode }}</td></tr>
+              <tr><th>Account Name</th><td>{{ account.name }}</td></tr>
+              <tr><th>Product Code</th><td>{{ account.originalProductCode }}</td></tr>
             </tbody>
           </table>
 
-          <span *ngIf="account == null">account is null</span>
+          <span *ngIf="account == null">account is not found</span>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Kapat</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TransferActivitiesComponent } from './transfer-activities.component';
 
-import { RecentTransfersComponent } from './recent-transfers.component';
-
-describe('RecentTransfersComponent', () => {
-  let component: RecentTransfersComponent;
-  let fixture: ComponentFixture<RecentTransfersComponent>;
+describe('TransferActivitiesComponent', () => {
+  let component: TransferActivitiesComponent;
+  let fixture: ComponentFixture<TransferActivitiesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecentTransfersComponent ]
+      declarations: [ TransferActivitiesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RecentTransfersComponent);
+    fixture = TestBed.createComponent(TransferActivitiesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

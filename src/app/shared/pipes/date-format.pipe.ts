@@ -12,11 +12,6 @@ export class DateFormatPipe implements PipeTransform {
       const date = new Date(value);
       const formatted = `${date.getDay()}.${date.getMonth()}.${date.getFullYear()}`;
       return formatted;
-    }
-    catch (ex) {
-      return value;
-    }
-
+    } catch (ex) { return value; }
   }
-
 }

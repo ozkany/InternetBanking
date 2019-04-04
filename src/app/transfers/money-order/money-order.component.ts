@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { CustomerAccount } from 'src/app/_core/models/accounts/account.model';
 import { TransferService } from 'src/app/_core/services/transfer.service';
+import { Store } from '@ngrx/store';
+import * as fromApp from '../../_core/store/app.state';
+import * as TransferActions from 'src/app/_core/store/transfer/transfer.actions';
 
 @Component({
   selector: 'app-money-order',
@@ -14,9 +17,7 @@ export class MoneyOrderComponent implements OnInit {
   formMoneyOrder: FormGroup;
   sourceAccountCurrencyCode: string;
 
-  constructor(
-    private fb: FormBuilder,
-    private transferService: TransferService) { }
+  constructor(private fb: FormBuilder, private store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
     this.createForm();
@@ -31,13 +32,22 @@ export class MoneyOrderComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("submit clicked", this.formMoneyOrder.value);
+    console.log('submit clicked', this.formMoneyOrder.value);
     const f = this.formMoneyOrder.value;
-    this.transferService.makeMoneyOrder(f.sourceAccount.accountId, f.destinationAccount.accountId, f.amount, f.explanation, f.transactionDate);
+
+    const request: MoneyOrderRequest = {
+      sourceAccountId: f.sourceAccount.accountId,
+      destinationAccountId: f.destinationAccount.accountId,
+      amount: f.amount,
+      explanation: f.explanation,
+      transactionDate: f.transactionDate
+    };
+
+    this.store.dispatch(new TransferActions.CallMakeMoneyOrder(request));
   }
 
   sourceAccountChanged(account: CustomerAccount) {
-    console.log("parent event received", account);
+    console.log('parent event received', account);
     this.sourceAccount = account;
     this.sourceAccountCurrencyCode = account.currencyCode;
   }

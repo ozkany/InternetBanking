@@ -1,31 +1,34 @@
-<div class="table-responsive">
-  <button class="btn btn-secondary" type="button" (click)="refreshButtonClicked()">Yenile</button>
+<div style="text-align:center">
+  <div style="text-align:right"><button class="btn btn-outline-secondary btn-sm" type="button"
+      (click)="refreshButtonClicked()">Refresh</button></div>
   <table class="table table-hover table-striped table-bordered table-sm">
     <thead class="thead-dark">
       <tr>
-        <!-- <th>#</th> -->
-        <th>{{ "MissingOrderList.AccountNo.Label" | res }}</th>
-        <th>Şube Adı</th>
-        <th>Hesap Adı</th>
-        <th>{{ "Accounts.TermDeposit.BalanceLabel" | res }}</th>
-        <th>{{ "Accounts.DemandDeposit.AvailableBalanceLabel" | res }}</th>
+        <!-- <th></th> -->
+        <th scope="col">{{ "MissingOrderList.AccountNo.Label" | res }}</th>
+        <th scope="col">Branch Name</th>
+        <th scope="col">Account Name</th>
+        <th scope="col">{{ "Accounts.TermDeposit.BalanceLabel" | res }}</th>
+        <th scope="col">{{ "Accounts.DemandDeposit.AvailableBalanceLabel" | res }}</th>
         <th></th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let account of (accountState$ | async)?.accounts">
-        <!-- <td><input type="radio" name="accountRadio" id="accountRadio" value="accountRadio1"/></td> -->
+        <!-- <td scope="row" style="align-content: center"><input type="radio" name="accountRadio" id="accountRadio"
+            value="accountRadio1"></td> -->
         <td>{{ account.number }}</td>
         <td>{{ account.branchName }}</td>
         <td>{{ account.name }}</td>
         <td>{{ account.balance }}</td>
         <td>{{ account.availableBalance }}</td>
         <td><button class="btn btn-info" type="button" (click)="onDetailsButtonClick(account)" data-toggle="modal"
-            data-target="#accountDetailModalCenter">Detay</button></td>
-        <td><button class="btn btn-info" type="button" (click)="onActivitiesButtonClick(account['id'])">{{"AccountDetail.AccountTransactionButton" | res}}</button></td>
+            data-target="#accountDetailModalCenter">Details</button></td>
+        <td><button class="btn btn-info" type="button"
+            (click)="onActivitiesButtonClick(account['id'])">{{"AccountDetail.AccountTransactionButton" | res}}</button>
+        </td>
       </tr>
-
     </tbody>
   </table>
 

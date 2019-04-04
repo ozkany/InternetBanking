@@ -5,9 +5,9 @@ import { ConfirmSmsComponent } from './confirm-sms/confirm-sms.component';
 import { FinishComponent } from './finish/finish.component';
 
 const routes: Routes = [
-  { path: 'approve', component: ApproveComponent, data: { title: 'İşlem Onay' } },
-  { path: 'confirm-sms', component: ConfirmSmsComponent, data: { title: 'Sms Şifre Girişi' } },
-  { path: 'finish', component: FinishComponent, data: { title: 'İşlem Tamamlandı' } }
+  { path: 'approve', component: ApproveComponent, data: { title: 'Transaction Approve' } },
+  { path: 'confirm-sms', component: ConfirmSmsComponent, data: { title: 'Sms Code Validation' } },
+  { path: 'finish', component: FinishComponent, data: { title: 'Transaction Completed' } }
 ];
 
 @NgModule({

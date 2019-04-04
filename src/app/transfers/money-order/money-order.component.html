@@ -1,27 +1,27 @@
 <!-- Form 1 -->
 <form class="form-signin" [formGroup]="formMoneyOrder" (ngSubmit)="onSubmit()" style="margin-left: 20px;">
 
-  <div class="shadow p-3 mb-5 bg-white rounded"><h6>Para transferi için gerekli bilgileri giriniz.</h6></div>
+  <div class="shadow p-3 mb-5 bg-white rounded"><h6>Enter the information for your money order below.</h6></div>
 
   <div class="input-group input-group-lg form-group col-md-8">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 180px">Gönderen Hesap</span>
+      <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 210px">Source Account</span>
     </div>
-    <app-accounts-combo-control
-      (accountSelectionChangeEvent)="sourceAccountChanged($event)" (formReady)="formReady('sourceAccount', $event)"></app-accounts-combo-control>
+    <app-account-combo
+      (accountSelectionChangeEvent)="sourceAccountChanged($event)" (formReady)="formReady('sourceAccount', $event)"></app-account-combo>
   </div>
 
   <div class="input-group input-group-lg form-group col-md-8">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 180px">Alıcı Hesap</span>
+      <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 210px">Destination Account</span>
     </div>
-    <app-accounts-combo-control [currencyFilter]="sourceAccountCurrencyCode"
-      (accountSelectionChangeEvent)="sourceAccountChanged($event)" (formReady)="formReady('destinationAccount', $event)"></app-accounts-combo-control>
+    <app-account-combo [currencyFilter]="sourceAccountCurrencyCode"
+      (accountSelectionChangeEvent)="sourceAccountChanged($event)" (formReady)="formReady('destinationAccount', $event)"></app-account-combo>
   </div>
 
   <div class="input-group input-group-lg form-group col-md-8">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 130px">Tutar</span>
+      <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 210px">Amount</span>
     </div>
     <input type="number" formControlName="amount" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
     <div class="input-group-append">
@@ -31,19 +31,19 @@
 
   <div class="input-group input-group-lg form-group col-md-8">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 130px">Açıklama</span>
+      <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 210px">Description</span>
     </div>
     <input type="text" formControlName="explanation" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
   </div>
 
   <div class="input-group input-group-lg form-group col-md-8">
     <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 130px">İşlem Tarihi</span>
+      <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 210px">Transaction Date</span>
     </div>
     <input type="text" formControlName="transactionDate" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
   </div>
 
   <div class="form-group col-md-8">
-    <button class="btn btn-lg btn-outline-primary btn-block" type="submit">Gönder</button>
+    <button class="btn btn-lg btn-outline-primary btn-block" type="submit">Continue</button>
   </div>
 </form>

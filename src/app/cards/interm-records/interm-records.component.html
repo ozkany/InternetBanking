@@ -1,37 +1,30 @@
 <div style="text-align:center">
-    <div class="container">
-      <h3 class="bg-primary text-white">Dönem İçi Hareketler</h3>
-    </div>
-   
-    <table class="table table-hover table-striped table-bordered table-sm">
-      <thead class="thead-dark">
-        <tr>
-          <th></th>
-          <th scope="col">provisionNumber</th>
-          <th scope="col">transactionDate</th>
-          <th scope="col">transactionName</th>
-          <th scope="col">transactionType</th>
-          <th scope="col">description</th>
-          <th scope="col">transactionAmount</th>
-          <th scope="col">installmentNumber</th>
-          <th scope="col">installmentCount</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of (cardState$ | async)?.intermRecords?.selectedCardIntermRecordList?.intermRecordList">
-          <td><input type="radio" name="itemRadio" id="itemRadio" value="itemRadio1"></td>
-          <td>{{ item.provisionNumber }} </td>
-          <td>{{ item.transactionDate }}</td>
-          <td>{{ item.transactionName }}</td>
-          <td>{{ item.transactionType }}</td>
-          <td>{{ item.description }}</td>
-          <td>{{ item.transactionAmount }}</td>
-          <td>{{ item.installmentNumber }}</td>
-          <td>{{ item.installmentCount }}</td>
-        </tr>
-      </tbody>
-    </table>
-   </div>
-   
-   
-   
+  <table class="table table-hover table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+      <tr>
+        <th></th>
+        <th scope="col">Provision Number</th>
+        <th scope="col">Transaction Date</th>
+        <th scope="col">Transaction Name</th>
+        <th scope="col">Transaction Type</th>
+        <th scope="col">Description</th>
+        <th scope="col">Transaction Amount</th>
+        <th scope="col">Installment Number</th>
+        <th scope="col">Installment Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of (cardState$ | async)?.intermRecords?.selectedCardIntermRecordList?.intermRecordList">
+        <td><input type="radio" name="itemRadio" id="itemRadio" value="itemRadio1"></td>
+        <td>{{ item.provisionNumber }} </td>
+        <td>{{ item.transactionDate }}</td>
+        <td>{{ item.transactionName }}</td>
+        <td>{{ item.transactionType }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.transactionAmount }}</td>
+        <td>{{ item.installmentNumber }}</td>
+        <td>{{ item.installmentCount }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -8,25 +8,25 @@ import * as fromApp from 'src/app/_core/store/app.state';
 import { take } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-accounts-combo-control',
-  templateUrl: './accounts-combo.control.html'
+  selector: 'app-account-combo',
+  templateUrl: './account-combo.component.html'
 })
-export class AccountsComboControl implements OnInit, OnChanges {
+export class AccountComboComponent implements OnInit, OnChanges {
 
   @Output() accountSelectionChangeEvent = new EventEmitter<CustomerAccount>();
-  @Output() formReady = new EventEmitter<FormGroup>()
-  @Input() set accountListData(value: CustomerAccount[]) { 
+  @Output() formReady = new EventEmitter<FormGroup>();
+  @Input() set accountListData(value: CustomerAccount[]) {
     this.accountList = this.accountListToView = value;
   }
-  @Input() set currencyFilter(value: string) { 
-    this.currencyFilter$.next(value); 
+  @Input() set currencyFilter(value: string) {
+    this.currencyFilter$.next(value);
   }
-  
-  accountList: CustomerAccount[]; 
+
+  accountList: CustomerAccount[];
   accountListToView: CustomerAccount[];
-  accountsComboForm: FormGroup;
+  accountComboForm: FormGroup;
   currencyFilter$ = new BehaviorSubject<string>('');
-  
+
   accountState$: Observable<fromAccounts.State>;
 
   constructor(private fb: FormBuilder, private store: Store<fromApp.AppState>) { }
@@ -40,18 +40,18 @@ export class AccountsComboControl implements OnInit, OnChanges {
   accountsDataInit() {
     this.accountState$ = this.store.select('accounts');
     this.accountState$.pipe(take(1)).subscribe((res) => {
-      if(!this.accountList) {
+      if (!this.accountList) {
         this.accountListData = res.accounts;
       }
     });
   }
 
   createForm() {
-    this.accountsComboForm = this.fb.group({
+    this.accountComboForm = this.fb.group({
       accountId: null
     });
 
-    this.formReady.emit(this.accountsComboForm);
+    this.formReady.emit(this.accountComboForm);
   }
 
   setFilters() {

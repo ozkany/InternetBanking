@@ -6,10 +6,10 @@ import { GetAssetsRootResponse } from '../../models/accounts/assets.model';
 export interface State {
     accounts: CustomerAccount[];
     isDirty: boolean;
-    selectedAccountId: string,
-    accountActivities: Object,
-    receipt: Object,
-    assets: GetAssetsRootResponse
+    selectedAccountId: string;
+    accountActivities: Object;
+    receipt: Object;
+    assets: GetAssetsRootResponse;
 }
 
 const initialState: State = {
@@ -19,32 +19,32 @@ const initialState: State = {
     accountActivities: null,
     receipt: null,
     assets: null
-}
+};
 
-//selectors
-const getAccountsFeatureState = createFeatureSelector<State>('accounts');
+// selectors >
+const getAccountsState = createFeatureSelector<State>('accounts');
 
 export const getAccounts = createSelector(
-    getAccountsFeatureState,
+    getAccountsState,
     state => state.accounts
 );
 
 export const getIsDirty = createSelector(
-    getAccountsFeatureState,
+    getAccountsState,
     state => state.isDirty
 );
 
 export const getSelectedAccountId = createSelector(
-    getAccountsFeatureState,
+    getAccountsState,
     state => state.selectedAccountId
 );
 
 export const getSelectedAccount = createSelector(
-    getAccountsFeatureState,
+    getAccountsState,
     getSelectedAccountId,
     (state, selectedAccountId) => state.accounts.find(a => a.id === selectedAccountId)
 );
-//selectors
+// < selectors
 
 
 export function reducer(state = initialState, action: AccountActions.AccountActions): State {

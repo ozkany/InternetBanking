@@ -35,5 +35,3 @@ import { fakeBackendProvider } from '../mocking/mock-backend.interceptor';
 })
 export class InterceptorModule {
 }
-
-//export * from '../stores/loader.store';

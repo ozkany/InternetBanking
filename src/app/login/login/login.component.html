@@ -2,26 +2,26 @@
 <form class="form-signin" style="margin-left: 20px;" [formGroup]="formSignin" (ngSubmit)="onformSigninSubmit()"
   *ngIf="(authState$ | async)?.loginStep == 1">
   <div class="text-center mb-4">
-    <h4 class="h5 mb-3 font-weight-normal">Kullanıcı adı ve şifrenizi giriniz.</h4>
+    <h4 class="h5 mb-3 font-weight-normal">Please enter username and password.</h4>
   </div>
 
   <div class="form-label-group">
-    <input type="text" id="username" formControlName="username" class="form-control" placeholder="Kullanıcı adı"
+    <input type="text" id="username" formControlName="username" class="form-control" placeholder="Username"
       required="" autofocus="">
-    <label for="username">Kullanıcı adı</label>
+    <label for="username">Username</label>
   </div>
 
   <div class="form-label-group">
-    <input type="password" id="password" formControlName="password" class="form-control" placeholder="Şifre"
+    <input type="password" id="password" formControlName="password" class="form-control" placeholder="Password"
       required="">
-    <label for="password">Şifre</label>
+    <label for="password">Password</label>
   </div>
 
   <button class="btn btn-lg btn-outline-primary btn-block" type="submit"
     [disabled]="!formSignin.valid || (commonStore.isLoading | async)">
     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
       *ngIf="commonStore.isLoading | async"></span>
-    {{ (commonStore.isLoading | async) ? "Yükleniyor" : commonStore.getResource('Login.ContinueButton') }}
+    {{ (commonStore.isLoading | async) ? "Loading" : commonStore.getResource('Login.ContinueButton') }}
   </button>
 
 </form>
@@ -34,7 +34,7 @@
   </div>
 
   <div class="text-center mb-4">
-    <p>Güvenlik Resminiz</p>
+    <p>Your security image</p>
     <img id="securityImage"
       [attr.src]="('data:image/png;base64, ' + authState.user.profileImageUrl) | bypassImgResSecurity " />
   </div>
@@ -44,25 +44,25 @@
       (click)="onCreateOTPButtonClicked()">
       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
         *ngIf="commonStore.isLoading | async"></span>
-      {{ (commonStore.isLoading | async) ? "Yükleniyor" : commonStore.getResource('Login.ContinueButton') }}</button>
+      {{ (commonStore.isLoading | async) ? "Loading" : commonStore.getResource('Login.ContinueButton') }}</button>
   </div>
 
   <div *ngIf="(authState$ | async)?.otpObj as otpObj">
     <div class="form-group">
-      <span>Sms şifreniz {{ otpObj['maskedPhoneNumber'] }} nolu telefona gönderilmiştir.</span><br />
-      <span>{{ otpObj['expiresIn'] }} sn. içerisinde şifrenizi giriniz.</span>
+      <span>Sms otp code is sent to your mobile phone. {{ otpObj['maskedPhoneNumber'] }}.</span><br />
+      <span>Please enter your code in {{ otpObj['expiresIn'] }} seconds.</span>
     </div>
 
     <div class="form-label-group">
-      <input type="smscode" id="smscode" formControlName="smscode" class="form-control" placeholder="SMS Şifre"
+      <input type="smscode" id="smscode" formControlName="smscode" class="form-control" placeholder="SMS Code"
         required="">
-      <label for="smscode">SMS Şifre</label>
+      <label for="smscode">SMS Code</label>
     </div>
 
     <button class="btn btn-lg btn-outline-primary btn-block" type="submit" [disabled]="!formOtpValidation.valid">
       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
         *ngIf="commonStore.isLoading | async"></span>
-      {{ (commonStore.isLoading | async) ? "Yükleniyor" : "Giriş" }}
+      {{ (commonStore.isLoading | async) ? "Loading" : "Continue" }}
     </button>
   </div>
 

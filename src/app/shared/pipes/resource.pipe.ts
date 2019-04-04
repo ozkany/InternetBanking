@@ -9,7 +9,7 @@ export class ResourcePipe implements PipeTransform {
   constructor(private commonStore: CommonStore) { }
 
   transform(resourceCode: string): any {
-        
+
     return this.commonStore.getResource(resourceCode);
 
   }

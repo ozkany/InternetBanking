@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApproveService } from 'src/app/_core/services/approve.service';
 import { CommonStore } from 'src/app/_core/store/common/common.store';
+import { ApproveFacade } from '../../_core/facades/approve.facade';
 
 @Component({
   selector: 'app-approve',
@@ -11,32 +12,15 @@ export class ApproveComponent implements OnInit {
 
   transactionDetails;
 
-  constructor(private approveService: ApproveService,
-    private commonStore: CommonStore) { }
+  constructor(private commonStore: CommonStore,
+    private approveFacade: ApproveFacade) { }
 
   ngOnInit() {
 
-    this.approveService.tranApproveData$.subscribe(res => {
-
-      this.transactionDetails = res['summaries'].reduce((r, a) => {
-        if(r!= null && r.find(x => x.groupName == a.groupName)) {
-          console.log(a.groupName);
-          r.find(x => x.groupName == a.groupName).summaries.push(a);
-        } else {
-          r.push({ "groupName": a.groupName, "summaries":[a]});
-          console.log(a.groupName);
-        }
-
-        return r;
-    }, Object.create([]));
-      
-      console.log("res['summaries']", res['summaries'])
-      console.log("this.transactionDetails", this.transactionDetails);
-    });
   }
 
   onApprove() {
     console.log("doApprove");
-    this.approveService.doApprove();
+    this.approveFacade.dispatch(new this.approveFacade.approveActions.DoApprove());
   }
 }

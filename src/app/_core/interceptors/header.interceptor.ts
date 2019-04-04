@@ -20,10 +20,10 @@ export class HeaderInterceptor implements HttpInterceptor {
         const authReq = req.clone({
           setHeaders: {
             'Content-Type': 'application/json',
-            'Accept-Language': 'TR',
+            'Accept-Language': 'EN',
             'X-Client-Id': '1969abe2b62c3a4a',
             'X-LoadTestReferer': '1',
-            'X-Token': authState.tokenStr
+            'X-Token': authState.tokenStr || ''
           }
         });
 

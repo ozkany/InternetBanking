@@ -13,7 +13,7 @@
       <div class="modal-body" *ngIf="accountState$ | async as accountState; else loadingTemplate">
         <img id="receiptImage" [attr.src]="('data:image/png;base64, ' + accountState?.receipt?.content) | bypassImgResSecurity" />
       </div>
-      <ng-template #loadingTemplate>Dekont Yükleniyor...</ng-template>
+      <ng-template #loadingTemplate>Your receipt is being loaded...</ng-template>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Kapat</button>
       </div>

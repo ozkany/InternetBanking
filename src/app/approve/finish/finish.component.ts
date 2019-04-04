@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApproveService } from 'src/app/_core/services/approve.service';
+import { ApproveFacade } from 'src/app/_core/facades/approve.facade';
 
 @Component({
   selector: 'app-finish',
@@ -8,7 +8,7 @@ import { ApproveService } from 'src/app/_core/services/approve.service';
 })
 export class FinishComponent implements OnInit {
 
-  constructor(public approveService: ApproveService) { }
+  constructor(public approveFacade: ApproveFacade) { }
 
   ngOnInit() {
   }

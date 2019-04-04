@@ -18,8 +18,4 @@ export class CardService {
   getIntermRecords(cardId: string) {
     return this.http.get<CardIntermListRootObject>(`${environment.apiUrl}/cards/GetIntermRecords/${cardId}`);
   }
-
-
-
-
 }

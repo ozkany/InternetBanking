@@ -5,6 +5,8 @@ import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from '../_core/store/auth/auth.effects';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     LoginRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    EffectsModule.forFeature([AuthEffects])
   ]
 })
 export class LoginModule { }

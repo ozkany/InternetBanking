@@ -3,19 +3,19 @@
   <div class="row">
     <div class="col-md-8 order-md-2 mb-4">
       <div class="text-center mb-4">
-        <h5 class="h5 mb-3 font-weight-normal">{{ (approveService.confirmSmsData$ | async)?.message }} nolu cep
-          telefonunuza gönderilen SMS şifresini giriniz. <br />
-          Kalan süreniz 180 sn.</h5>
-
+        <h5 class="h5 mb-3 font-weight-normal">
+          Please enter the sms code sent to your mobile number {{ (approveFacade.confirmSmsData$ | async)?.message }}
+          <br />
+          Remaining time 180 s.
+        </h5>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8 order-md-2 mb-4">
-
       <div class="input-group input-group-lg form-group">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 130px">SMS Şifre</span>
+          <span class="input-group-text" id="inputGroup-sizing-lg" style="width: 130px">SMS Code</span>
         </div>
         <input type="text" formControlName="smscode" class="form-control" aria-label="Large"
           aria-describedby="inputGroup-sizing-sm">
@@ -26,7 +26,7 @@
     <div class="col-md-8 order-md-2 mb-4">
       <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!formSms.valid">
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="commonStore.isLoading | async"></span>
-          {{ (commonStore.isLoading | async) ? "Yükleniyor" : "Devam" }}
+          {{ (commonStore.isLoading | async) ? "Loading" : "Continue" }}
       </button>
     </div>
   </div>

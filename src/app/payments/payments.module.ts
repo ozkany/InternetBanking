@@ -6,6 +6,8 @@ import { PaymentActivitiesComponent } from './payment-activities/payment-activit
 import { SharedModule } from '../shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from 'src/app/_core/store/payment/payment.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { PaymentEffects } from '../_core/store/payment/payment.effects';
 
 @NgModule({
   declarations: [PaymentActivitiesComponent],
@@ -13,7 +15,8 @@ import { reducer } from 'src/app/_core/store/payment/payment.reducers';
     CommonModule,
     PaymentsRoutingModule,
     SharedModule,
-    StoreModule.forFeature('payments', reducer)
+    StoreModule.forFeature('payments', reducer),
+    EffectsModule.forFeature([PaymentEffects]),
   ]
 })
 export class PaymentsModule { }

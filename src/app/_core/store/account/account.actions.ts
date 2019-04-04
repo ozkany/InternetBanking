@@ -19,7 +19,7 @@ export class CallGetAccounts implements Action {
 
 export class SetAccounts implements Action {
     readonly type = SET_ACCOUNTS;
-    
+
     constructor(public payload: CustomerAccount[]) {}
 }
 

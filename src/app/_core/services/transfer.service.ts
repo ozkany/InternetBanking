@@ -1,36 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Router } from '@angular/router';
-import { ApproveService } from './approve.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TransferService {
 
-  constructor(
-    private http: HttpClient,
-    private approveService: ApproveService
-    ) {}  
+  constructor(private http: HttpClient) { }
 
-  makeMoneyOrder(sourceAccountId: string, destinationAccountId: string, amount: number, explanation: string, transactionDate: string, ) {
+  makeMoneyOrder(moneyOrderRequest: MoneyOrderRequest) {
     const request = {
-        "SourceAccountId": sourceAccountId,
-        "DestinationAccountId": destinationAccountId,
-        "Amount": amount,
-        "Explanation": explanation,
-        "TransactionDate": transactionDate
+      'SourceAccountId': moneyOrderRequest.sourceAccountId,
+      'DestinationAccountId': moneyOrderRequest.destinationAccountId,
+      'Amount': moneyOrderRequest.amount,
+      'Explanation': moneyOrderRequest.explanation,
+      'TransactionDate': moneyOrderRequest.transactionDate
     };
-    
-    this.http.post(`${environment.apiUrl}/transfer/moneyorder`, request).subscribe(res => {
-        console.log("makeMoneyOrder", res);
-        if(res["type"] == 'Confirm') {
-            this.approveService.goToApproval(res, "/transfer/transferapprovev2");
-        } else  {
-            console.error("response [type] is not Confirm!");
-        }
-    });
+
+    return this.http.post<MoneyOrderResponse>(`${environment.apiUrl}/transfer/moneyorder`, request);
   }
 
+  getRecentTransfers() {
+    return this.http.get<TransferActivities>(`${environment.apiUrl}/transfer/activities`);
+  }
 }

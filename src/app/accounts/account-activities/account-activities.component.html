@@ -2,12 +2,12 @@
   <table class="table table-hover table-striped table-bordered table-sm">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Tarih</th>
-        <th scope="col">İşlem Türü</th>
-        <th scope="col">İşlem Tutarı</th>
-        <th scope="col">Döviz Kodu</th>
-        <th scope="col">Kalan Bakiye</th>
-        <th scope="col">İşlem Açıklaması</th>
+        <th scope="col">Date</th>
+        <th scope="col">Transaction Description</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Currency Code</th>
+        <th scope="col">Remaining Balance</th>
+        <th scope="col">Description</th>
         <th></th>
       </tr>
     </thead>
@@ -20,7 +20,7 @@
         <td>{{ activity['remainingBalance'] }}</td>
         <td>{{ activity['description'] }}</td>
         <td><button class="btn btn-info" type="button" (click)="onReceiptButtonClick(accountState.accountActivities.accountId, activity['receiptId'])"
-            data-toggle="modal" data-target="#receiptModalCenter">Dekont</button></td>
+            data-toggle="modal" data-target="#receiptModalCenter">Receipt</button></td>
       </tr>
     </tbody>
   </table>

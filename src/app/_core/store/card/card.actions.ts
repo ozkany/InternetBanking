@@ -15,19 +15,16 @@ export class CallGetCard implements Action {
 
 export class SetCards implements Action {
     readonly type = SET_CARDS;
-    
     constructor(public payload: CardListRootResponse) {}
 }
 
 export class NavtoIntermRecords implements Action {
     readonly type = NAVTO_INTERM_RECORDS;
-    
     constructor(public payload: { cardId: string }) {}
 }
 
 export class SetIntermRecords implements Action {
     readonly type = SET_INTERM_RECORDS;
-    
     constructor(public payload: CardIntermListRootObject) {}
 }
 

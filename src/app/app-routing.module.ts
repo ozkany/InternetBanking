@@ -7,10 +7,9 @@ import { ApproveComponent } from './approve/approve/approve.component';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   //{ path: 'login', component: LoginComponent, data: { title: 'İnternet Şube Login' } },
-  { path: 'login', loadChildren: './login/login.module#LoginModule', data: { title: 'İnternet Şube Login' } },
+  { path: 'login', loadChildren: './login/login.module#LoginModule', data: { title: 'Login' } },
   // { path: 'accounts/account-list', component: AccountListComponent },
   // { path: 'accounts/account-activities', component: AccountActivitiesComponent },
-  // { path: 'accounts/recent-transfers', component: RecentTransfersComponent },
   { path: 'accounts', loadChildren: './accounts/accounts.module#AccountsModule', canActivate: [AuthGuard] },
   //{ path: 'cards/card-list', component: CardListComponent },
   { path: 'cards', loadChildren: './cards/cards.module#CardsModule', canActivate: [AuthGuard] },

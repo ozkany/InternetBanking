@@ -1,6 +1,6 @@
-<ng-container *ngIf="approveService.finishData$ | async as data">
+<ng-container *ngIf="approveFacade.approveCompletedData$ | async as data">
   <div class="alert alert-success" role="alert">
-    <h6 class="alert-heading">İşleminiz başarıyla tamamlanmıştır !</h6>
+    <h6 class="alert-heading">Your transaction is successfully completed !</h6>
     <hr>
 
     <h5>
