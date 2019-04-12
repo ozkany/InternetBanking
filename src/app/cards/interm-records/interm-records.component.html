@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of (cardState$ | async)?.intermRecords?.selectedCardIntermRecordList?.intermRecordList">
+      <tr *ngFor="let item of (cardFacade.cardIntermRecords$ | async)?.selectedCardIntermRecordList?.intermRecordList">
         <td><input type="radio" name="itemRadio" id="itemRadio" value="itemRadio1"></td>
         <td>{{ item.provisionNumber }} </td>
         <td>{{ item.transactionDate }}</td>

@@ -1,69 +1,63 @@
 {
-    "type": "Confirm",
-    "isBaseControl": false,
-    "message": null,
-    "receiptId": null,
-    "summaries": [
-        {
-            "groupName": "GÖNDEREN HESAP",
-            "label": "Hesap",
-            "value": "9142-205487-351 \n ZİNCİRLİKUYU",
-            "order": 1,
-            "groupOrder": 1,
-            "key": "Janus.SummaryTransfer.MoneyOrder.Label.SenderAccountInfo",
-            "items": null
-        },
-        {
-            "groupName": "ALICI BİLGİLERİ",
-            "label": "Hesap",
-            "value": "9142-205487-352 \n ZİNCİRLİKUYU",
-            "order": 1,
-            "groupOrder": 2,
-            "key": "Janus.SummaryTransfer.MoneyOrder.Label.DestinationAccountInfo",
-            "items": null
-        },
-        {
-            "groupName": "İŞLEM BİLGİLERİ",
-            "label": "İşlem Adı",
-            "value": "Hesaba Virman",
-            "order": 1,
-            "groupOrder": 3,
-            "key": "Janus.SummaryTransfer.MoneyOrder.Label.TransactionDescription",
-            "items": null
-        },
-        {
-            "groupName": "İŞLEM BİLGİLERİ",
-            "label": "İşlem Tarihi",
-            "value": "28.01.2019",
-            "order": 2,
-            "groupOrder": 3,
-            "key": "Janus.SummaryTransfer.MoneyOrder.Label.TransactionDateString",
-            "items": null
-        },
-        {
-            "groupName": "İŞLEM BİLGİLERİ",
-            "label": "Açıklama",
-            "value": "test 2",
-            "order": 3,
-            "groupOrder": 3,
-            "key": "Janus.SummaryTransfer.MoneyOrder.Label.Explanation",
-            "items": null
-        },
-        {
-            "groupName": "İŞLEM BİLGİLERİ",
-            "label": "Tutar",
-            "value": "1,00 TL",
-            "order": 4,
-            "groupOrder": 3,
-            "key": "Janus.SummaryTransfer.MoneyOrder.Label.Amount",
-            "items": null
-        }
-    ],
-    "contracts": null,
-    "payments": null,
-    "menus": null,
-    "warningMessage": [],
-    "token": "6eDZiHKAUUUKQZSqdqT0Q2O7BtQoVJBeve6ifHV3thfg91ZctAW8b4DKk5ZSxyo3851O5ihCjjSNezrKbJBKHQFdIRcN9k_SCcuBKjnRKHu9eD9YVqVN8r_a9FH-bxb7y0WX-r8bdUJ4SwfM4MFoX8f-Gt2O9NC45nQ7QUuaTzAXtq87HYTxR6DerHKGsyYvjWXE4J9VFxBDCf7ffFr-pSPXPqLrhFg3DAVQPAjpTwwiFP6DJwVQvJVnAdKPtnI_LV9-m7uKf92eUh6jIIaeX7S1MTWNm7q5Oh7uuGImD9rGzBTQQD01xSBYtuoqg0GxAtoFddG8h2AbUAjD-7n_sb4Vq0jX6qLj1VvE2frR1TSF2BkBdBAZGOrMozx5ckBsWj4ABbYTPkGQWsLVhz_UWcw0NtU8GTIa5e1fkuVB6-TvDKhx2Ob9CrHIyjLBmJrFd1WZpcAK1tiHdM8k7tGDeTNUVGo_UJfLG-KfwA0x0jlucLfzmzBocI7-mpdhERSeShupJb_hr6qpuVC3HCMTmsH9GCwyiAGoeLxRzfW18S0",
-    "eTag": "6/Vn52BBkblJ5Epo1wq70d7NA/b6K+uck+1eGzm3I9qjRkN7uL5oDbfjj02L4L7Rt9M+HXKvVHNvR3jszCSdXA==",
-    "controlData": null
+	"type": "Confirm",
+	"isBaseControl": false,
+	"message": null,
+	"receiptId": null,
+	"summaries": [{
+			"groupName": "SENDING ACCOUNT",
+			"label": "Account",
+			"value": "4420-12695682-351 \n CEYHAN",
+			"order": 1,
+			"groupOrder": 1,
+			"key": "Janus.SummaryTransfer.MoneyOrder.Label.SenderAccountInfo",
+			"items": null
+		}, {
+			"groupName": "RECIPIENT'S INFORMATION",
+			"label": "Account",
+			"value": "4420-12695682-356 \n CEYHAN",
+			"order": 1,
+			"groupOrder": 2,
+			"key": "Janus.SummaryTransfer.MoneyOrder.Label.DestinationAccountInfo",
+			"items": null
+		}, {
+			"groupName": "TRANSACTION INFORMATION",
+			"label": "Name of Transaction",
+			"value": "Wire to Account",
+			"order": 1,
+			"groupOrder": 3,
+			"key": "Janus.SummaryTransfer.MoneyOrder.Label.TransactionDescription",
+			"items": null
+		}, {
+			"groupName": "TRANSACTION INFORMATION",
+			"label": "Transaction Date",
+			"value": "09.04.2019",
+			"order": 2,
+			"groupOrder": 3,
+			"key": "Janus.SummaryTransfer.MoneyOrder.Label.TransactionDateString",
+			"items": null
+		}, {
+			"groupName": "TRANSACTION INFORMATION",
+			"label": "Description",
+			"value": "test",
+			"order": 3,
+			"groupOrder": 3,
+			"key": "Janus.SummaryTransfer.MoneyOrder.Label.Explanation",
+			"items": null
+		}, {
+			"groupName": "TRANSACTION INFORMATION",
+			"label": "Amount",
+			"value": "4,00 TL",
+			"order": 4,
+			"groupOrder": 3,
+			"key": "Janus.SummaryTransfer.MoneyOrder.Label.Amount",
+			"items": null
+		}
+	],
+	"contracts": null,
+	"payments": null,
+	"menus": null,
+	"warningMessage": [],
+	"token": "6eDZiHKAUUUKQZSqdqT0Q2O7BtQoVJBeve6ifHV3thfg91ZctAW8b4DKk5ZSxyo3mVXU7FemOYSD7CyMF87wkbzxUfxntiL-KuWVMnbbioK3iXPeFf7IuwHUaNj1wOzcRWBfT-nBf9Sbw8D9E-RAm4WiCc3LL_OANp9KM_RiLwwU8-cQYlc9aeqi4iz72uvjGPjZtGm5H3uEoCj2OElWxKBqEmkI1IT8_yK69AJkxjAuNv1LpvAeyn9EMvl8rx9okdvcPTssjr0MtZuq9-oLnaLS2GmcQo0E6EGVD3U4ZLJ9GOaALsheK8gz4wljgT9sVAbog96yvx_qZ6OlG4CnW6vttYjezR56KaymjeL0NtLWEDMlQEcsxIOJg0Chsb8VTgQsyKjIotk36stbvo9TvCY6VKFoRIcuL3HC4IP7s1PmbIXz8uRPVlpZ8fVLWEtmFqZ0ONRQjaXwXY8IKyTU0YWrpre5TxxFKlQkqa-dZu5HzhQXbABqavqf8PXeiU9vcoWaJSdHTQ_Jy1PTkqSwMZ8cl0PH3F10rsKTVMwgrTI",
+	"eTag": "tYq7/cn9i7v0N/trnxSZSBHWZ+zYFc7BWYDNJ3tmSRC94ymoz3gZyDb5tc07T4PR5jHDdTYd9/XzHIMDteimcw==",
+	"controlData": null
 }

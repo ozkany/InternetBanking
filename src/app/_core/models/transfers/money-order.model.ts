@@ -1,4 +1,4 @@
-interface MoneyOrderRequest {
+export interface MoneyOrderRequest {
   sourceAccountId: string;
   destinationAccountId: string;
   amount: number;
@@ -6,7 +6,7 @@ interface MoneyOrderRequest {
   transactionDate: string;
 }
 
-interface MoneyOrderResponse {
+export interface MoneyOrderResponse {
   type: string;
   isBaseControl: boolean;
   message?: any;
@@ -21,7 +21,7 @@ interface MoneyOrderResponse {
   controlData?: any;
 }
 
-interface MoneyOrderResponseSummary {
+export interface MoneyOrderResponseSummary {
   groupName: string;
   label: string;
   value: string;

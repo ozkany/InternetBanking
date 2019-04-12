@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { TransfersRoutingModule } from './transfers-routing.module';
-import { MoneyOrderComponent } from './money-order/money-order.component';
-import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TransferActivitiesComponent } from './transfer-activities/transfer-activities.component';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from '../_core/store/transfer/transfer.reducers';
+import { reducer } from '@core/store/transfer/transfer.reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { TransferEffects } from '../_core/store/transfer/transfer.effects';
+import { TransferEffects } from '@core/store/transfer/transfer.effects';
+import { TransfersRoutingModule } from './transfers-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { MoneyOrderComponent } from './money-order/money-order.component';
+import { TransferActivitiesComponent } from './transfer-activities/transfer-activities.component';
 
 @NgModule({
   declarations: [

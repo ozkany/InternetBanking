@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApproveService } from 'src/app/_core/services/approve.service';
-import { CommonStore } from 'src/app/_core/store/common/common.store';
-import { ApproveFacade } from '../../_core/facades/approve.facade';
+import { CommonStore } from '@core/store/common/common.store';
+import { ApproveFacade, ApproveActions  } from '@core/facades/approve.facade';
 
 @Component({
   selector: 'app-approve',
@@ -10,17 +9,13 @@ import { ApproveFacade } from '../../_core/facades/approve.facade';
 })
 export class ApproveComponent implements OnInit {
 
-  transactionDetails;
-
-  constructor(private commonStore: CommonStore,
-    private approveFacade: ApproveFacade) { }
+  constructor(private approveFacade: ApproveFacade, private commonStore: CommonStore) { }
 
   ngOnInit() {
 
   }
 
   onApprove() {
-    console.log("doApprove");
-    this.approveFacade.dispatch(new this.approveFacade.approveActions.DoApprove());
+    this.approveFacade.dispatch(new ApproveActions.DoApprove());
   }
 }

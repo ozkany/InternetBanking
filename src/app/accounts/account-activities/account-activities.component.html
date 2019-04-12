@@ -1,4 +1,4 @@
-<div style="text-align:center" *ngIf="accountState$ | async as accountState">
+<div style="text-align:center" *ngIf="accountFacade.accountActivities$ | async as accountActivities">
   <table class="table table-hover table-striped table-bordered table-sm">
     <thead class="thead-dark">
       <tr>
@@ -12,14 +12,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let activity of accountState?.accountActivities?.activities">
+      <tr *ngFor="let activity of accountActivities.activities">
         <td>{{ activity['time'] | dateFormat }}</td>
         <td>{{ activity['transactionDescription'] }}</td>
         <td>{{ activity['amount'] }}</td>
         <td>{{ activity['currencyCode'] }}</td>
         <td>{{ activity['remainingBalance'] }}</td>
         <td>{{ activity['description'] }}</td>
-        <td><button class="btn btn-info" type="button" (click)="onReceiptButtonClick(accountState.accountActivities.accountId, activity['receiptId'])"
+        <td><button class="btn btn-info" type="button" (click)="onReceiptButtonClick(accountActivities.accountId, activity['receiptId'])"
             data-toggle="modal" data-target="#receiptModalCenter">Receipt</button></td>
       </tr>
     </tbody>

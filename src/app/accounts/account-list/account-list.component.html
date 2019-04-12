@@ -15,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let account of (accountState$ | async)?.accounts">
+      <tr *ngFor="let account of accountFacade.accounts$ | async">
         <!-- <td scope="row" style="align-content: center"><input type="radio" name="accountRadio" id="accountRadio"
             value="accountRadio1"></td> -->
         <td>{{ account.number }}</td>

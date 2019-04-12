@@ -1,13 +1,13 @@
 <!-- Form 1 -->
 <form class="form-signin" style="margin-left: 20px;" [formGroup]="formSignin" (ngSubmit)="onformSigninSubmit()"
-  *ngIf="(authState$ | async)?.loginStep == 1">
+  *ngIf="(authFacade.authLoginStep$ | async) == 1">
   <div class="text-center mb-4">
     <h4 class="h5 mb-3 font-weight-normal">Please enter username and password.</h4>
   </div>
 
   <div class="form-label-group">
-    <input type="text" id="username" formControlName="username" class="form-control" placeholder="Username"
-      required="" autofocus="">
+    <input type="text" id="username" formControlName="username" class="form-control" placeholder="Username" required=""
+      autofocus="">
     <label for="username">Username</label>
   </div>
 
@@ -18,36 +18,36 @@
   </div>
 
   <button class="btn btn-lg btn-outline-primary btn-block" type="submit"
-    [disabled]="!formSignin.valid || (commonStore.isLoading | async)">
+    [disabled]="!formSignin.valid || (commonStore.isLoading$ | async)">
     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
-      *ngIf="commonStore.isLoading | async"></span>
-    {{ (commonStore.isLoading | async) ? "Loading" : commonStore.getResource('Login.ContinueButton') }}
+      *ngIf="commonStore.isLoading$ | async"></span>
+    {{ (commonStore.isLoading$ | async) ? "Loading" : commonStore.getResource('Login.ContinueButton') | titlecase }}
   </button>
 
 </form>
 
 <!-- Form 2 -->
 <form class="form-signin" [formGroup]="formOtpValidation" (ngSubmit)="onformOtpValidationSubmit()"
-  *ngIf="(authState$ | async)?.loginStep == 2 && authState$ | async as authState" style="margin-left: 20px;">
+  *ngIf="(authFacade.authLoginStep$ | async) == 2 && authFacade.authUser$ | async as user" style="margin-left: 20px;">
   <div class="text-center mb-4">
-    <h1 class="h3 mb-3 font-weight-normal">{{ authState.user.firstName + ' ' + authState.user.lastName }}</h1>
+    <h1 class="h3 mb-3 font-weight-normal">{{ user.firstName + ' ' + user.lastName }}</h1>
   </div>
 
   <div class="text-center mb-4">
     <p>Your security image</p>
     <img id="securityImage"
-      [attr.src]="('data:image/png;base64, ' + authState.user.profileImageUrl) | bypassImgResSecurity " />
+      [attr.src]="('data:image/png;base64, ' + user.profileImageUrl) | bypassImgResSecurity " />
   </div>
 
   <div class="text-center mb-4">
     <button class="btn btn-lg btn-outline-info" type="button" id="createOTPButton" name="createOTPButton"
       (click)="onCreateOTPButtonClicked()">
       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
-        *ngIf="commonStore.isLoading | async"></span>
-      {{ (commonStore.isLoading | async) ? "Loading" : commonStore.getResource('Login.ContinueButton') }}</button>
+        *ngIf="commonStore.isLoading$ | async"></span>
+      {{ (commonStore.isLoading$ | async) ? "Loading" : commonStore.getResource('Login.ContinueButton') | titlecase }}</button>
   </div>
 
-  <div *ngIf="(authState$ | async)?.otpObj as otpObj">
+  <div *ngIf="(authFacade.authOtpObj$ | async) as otpObj">
     <div class="form-group">
       <span>Sms otp code is sent to your mobile phone. {{ otpObj['maskedPhoneNumber'] }}.</span><br />
       <span>Please enter your code in {{ otpObj['expiresIn'] }} seconds.</span>
@@ -61,8 +61,8 @@
 
     <button class="btn btn-lg btn-outline-primary btn-block" type="submit" [disabled]="!formOtpValidation.valid">
       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
-        *ngIf="commonStore.isLoading | async"></span>
-      {{ (commonStore.isLoading | async) ? "Loading" : "Continue" }}
+        *ngIf="commonStore.isLoading$ | async"></span>
+      {{ (commonStore.isLoading$ | async) ? "Loading" : "Continue" }}
     </button>
   </div>
 

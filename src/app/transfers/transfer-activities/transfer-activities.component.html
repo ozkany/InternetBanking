@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let t of (transferState$ | async)?.transferActivities?.transactions">
+      <tr *ngFor="let t of (transferFacade.transferActivities$ | async)?.transactions">
         <td style="align-content: center">
           <input type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
         </td>

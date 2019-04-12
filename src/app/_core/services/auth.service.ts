@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
-import { User } from '../models/user.model';
-import { AuthTokenObj } from '../models/auth-token.model';
 import { environment } from 'src/environments/environment';
 import { tapLog } from '../extensions/tap-log';
-import * as fromApp from 'src/app/_core/store/app.state';
-import * as AuthActions from 'src/app/_core/store/auth/auth.actions'
-import { CommonStore } from '../store/common/common.store';
+import * as fromApp from '@core/store/app.state';
+import * as AuthActions from '@core/store/auth/auth.actions';
+import { CommonStore } from '@core/store/common/common.store';
+import { AuthTokenObj, User } from '@core/models';
 
 @Injectable({
     providedIn: 'root'

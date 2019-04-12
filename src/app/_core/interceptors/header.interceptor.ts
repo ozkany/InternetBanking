@@ -3,8 +3,7 @@ import { HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http'
 import { Store } from '@ngrx/store';
 import * as fromApp from 'src/app/_core/store/app.state';
 import { switchMap, take, first, flatMap } from 'rxjs/operators';
-import * as fromAuth from 'src/app/_core/store/auth/auth.reducers';
-
+import { AuthState } from '../store';
 
 @Injectable()
 export class HeaderInterceptor implements HttpInterceptor {
@@ -16,7 +15,7 @@ export class HeaderInterceptor implements HttpInterceptor {
     return this.store.select('auth')
     .pipe(
       take(1),
-      switchMap((authState: fromAuth.State) => {
+      switchMap((authState: AuthState.State) => {
         const authReq = req.clone({
           setHeaders: {
             'Content-Type': 'application/json',

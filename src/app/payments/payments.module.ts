@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { PaymentsRoutingModule } from './payments-routing.module';
-import { PaymentActivitiesComponent } from './payment-activities/payment-activities.component';
-import { SharedModule } from '../shared/shared.module';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from 'src/app/_core/store/payment/payment.reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { PaymentEffects } from '../_core/store/payment/payment.effects';
+import { PaymentsRoutingModule } from './payments-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { reducer } from '@core/store/payment/payment.reducers';
+import { PaymentEffects } from '@core/store/payment/payment.effects';
+import { PaymentActivitiesComponent } from './payment-activities/payment-activities.component';
 
 @NgModule({
   declarations: [PaymentActivitiesComponent],

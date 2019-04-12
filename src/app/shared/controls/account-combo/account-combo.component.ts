@@ -3,7 +3,7 @@ import { CustomerAccount } from 'src/app/_core/models/accounts/account.model';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import * as fromAccounts from 'src/app/_core/store/account/account.reducers';
+import { AccountState } from 'src/app/_core/store/account';
 import * as fromApp from 'src/app/_core/store/app.state';
 import { take } from 'rxjs/operators';
 
@@ -27,7 +27,7 @@ export class AccountComboComponent implements OnInit, OnChanges {
   accountComboForm: FormGroup;
   currencyFilter$ = new BehaviorSubject<string>('');
 
-  accountState$: Observable<fromAccounts.State>;
+  accountState$: Observable<AccountState.State>;
 
   constructor(private fb: FormBuilder, private store: Store<fromApp.AppState>) { }
 
@@ -57,13 +57,13 @@ export class AccountComboComponent implements OnInit, OnChanges {
   setFilters() {
     this.currencyFilter$.subscribe(filter => {
       if (!!filter && !!this.accountList) {
-        this.accountListToView = this.accountList.filter(a => a.currencyCode == filter);
+        this.accountListToView = this.accountList.filter(a => a.currencyCode === filter);
       }
     });
   }
 
   onChange(accountId: string) {
-    this.accountSelectionChangeEvent.emit(this.accountList.find(a => a.id == accountId));
+    this.accountSelectionChangeEvent.emit(this.accountList.find(a => a.id === accountId));
   }
 
   ngOnChanges(changes: SimpleChanges) {

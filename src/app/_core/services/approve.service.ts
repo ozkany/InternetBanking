@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { ApproveTranData } from 'src/app/_core/models/approve/approve-tran-data.model';
+import { ApproveTranData, ApproveCompletedResponse } from '@core/models';
 
 @Injectable({
   providedIn: 'root'

@@ -17,7 +17,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         
         console.log("FakeBackendInterceptor entered");
         
-        this.commonStore.isLoading.next(true);
+        this.commonStore.isLoading$.next(true);
         const logMsg = `mocking service response of (${request.url}) with === >`;
 
         return of(null).pipe(mergeMap(() => {
@@ -30,13 +30,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             let foundMockResponse = this.mockDataService.jsonData.filter(d => url.lastIndexOf(d.path) > 0 && d.method == request.method).reverse()[0].data;
             console.log(logMsg, foundMockResponse);
-            //this.commonStore.isLoading.next(false);
+            //this.commonStore.isLoading$.next(false);
             return of(new HttpResponse({ status: 200, body: foundMockResponse }));
 
 
             //getAccounts
             if (request.url.endsWith('/auth/token?validationType=sms') && request.method === 'PATCH') {
-                this.commonStore.isLoading.next(false);
+                this.commonStore.isLoading$.next(false);
                 return of(new HttpResponse({ status: 200, body: null }));
             }
 

@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { CustomerAccount } from 'src/app/_core/models/accounts/account.model';
-import { TransferService } from 'src/app/_core/services/transfer.service';
-import { Store } from '@ngrx/store';
-import * as fromApp from '../../_core/store/app.state';
-import * as TransferActions from 'src/app/_core/store/transfer/transfer.actions';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { MoneyOrderRequest, CustomerAccount } from '@core/models';
+import { TransferFacade, TransferActions } from '@core/facades/transfer.facade';
 
 @Component({
   selector: 'app-money-order',
@@ -17,7 +14,7 @@ export class MoneyOrderComponent implements OnInit {
   formMoneyOrder: FormGroup;
   sourceAccountCurrencyCode: string;
 
-  constructor(private fb: FormBuilder, private store: Store<fromApp.AppState>) { }
+  constructor(private fb: FormBuilder, private transferFacade: TransferFacade) { }
 
   ngOnInit() {
     this.createForm();
@@ -43,7 +40,7 @@ export class MoneyOrderComponent implements OnInit {
       transactionDate: f.transactionDate
     };
 
-    this.store.dispatch(new TransferActions.CallMakeMoneyOrder(request));
+    this.transferFacade.dispatch(new TransferActions.CallMakeMoneyOrder(request));
   }
 
   sourceAccountChanged(account: CustomerAccount) {

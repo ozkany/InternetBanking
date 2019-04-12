@@ -1,7 +1,7 @@
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import * as AccountActions from './account.actions';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { switchMap, mergeMap, map, tap } from 'rxjs/operators';
 import { AccountService } from '../../services/account.service';
 
@@ -10,23 +10,18 @@ export class AccountEffects {
 
   @Effect()
   callGetAccounts = this.actions$.pipe(
-    ofType(AccountActions.CALL_GET_ACCOUNTS),
+    ofType(AccountActions.ActionTypes.CALL_GET_ACCOUNTS),
     switchMap(() => {
       return this.accountService.getAccountList();
     }),
     map((res) => {
-      return (
-        {
-          type: AccountActions.SET_ACCOUNTS,
-          payload: res.accounts
-        }
-      );
+      return new AccountActions.SetAccounts(res.accounts);
     })
   );
 
   @Effect()
   navtoAccountActivities = this.actions$.pipe(
-    ofType(AccountActions.NAVTO_ACCOUNT_ACTIVITIES),
+    ofType(AccountActions.ActionTypes.NAVTO_ACCOUNT_ACTIVITIES),
     map((action: AccountActions.NavtoAccountActivities) => {
       return action.payload;
     }),
@@ -34,21 +29,16 @@ export class AccountEffects {
       return this.accountService.getAccountActivities(accountId);
     }),
     map((res) => {
-      return (
-        {
-          type: AccountActions.SET_ACCOUNT_ACTIVITIES,
-          payload: res
-        }
-      );
+      return new AccountActions.SetAccountActivities(res);
     }),
     tap(() => {
-      this.router.navigate(['/accounts/account-activities'])
+      this.router.navigate(['/accounts/account-activities']);
     })
   );
 
   @Effect()
   callReceipt = this.actions$.pipe(
-    ofType(AccountActions.CALL_RECEIPT),
+    ofType(AccountActions.ActionTypes.CALL_RECEIPT),
     map((action: AccountActions.CallReceipt) => {
       return action.payload;
     }),
@@ -56,34 +46,23 @@ export class AccountEffects {
       return this.accountService.getReceipt(data.accountId, data.receiptId);
     }),
     map((res) => {
-      return (
-        {
-          type: AccountActions.SET_RECEIPT,
-          payload: res
-        }
-      );
+      return new AccountActions.SetReceipt(res);
     })
   );
 
   @Effect()
   callGetAssets = this.actions$.pipe(
-    ofType(AccountActions.CALL_GET_ASSETS),
+    ofType(AccountActions.ActionTypes.CALL_GET_ASSETS),
     switchMap(() => {
       return this.accountService.getAssets();
     }),
     map((res) => {
-      return (
-        {
-          type: AccountActions.SET_ASSETS,
-          payload: res
-        }
-      );
+      return new AccountActions.SetAssets(res);
     })
   );
 
   constructor(
     private actions$: Actions,
     private accountService: AccountService,
-    private router: Router,
-    private route: ActivatedRoute) { }
+    private router: Router) { }
 }

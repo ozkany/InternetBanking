@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CommonStore {
 
-  public isLoading = new BehaviorSubject(false);
+  public isLoading$ = new BehaviorSubject(false);
 
   public resources$ = new BehaviorSubject<any>(undefined);
 

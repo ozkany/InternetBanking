@@ -1,10 +1,11 @@
-import * as fromAuth from './auth/auth.reducers';
+import * as AuthReducers from './auth/auth.reducers';
+import * as AuthState from './auth/auth.state';
 import { ActionReducerMap } from '@ngrx/store';
 
 export interface AppState {
-    auth: fromAuth.State;
+  auth: AuthState.State;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-    auth: fromAuth.reducer
+  auth: AuthReducers.reducer
 };

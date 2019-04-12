@@ -3,7 +3,7 @@
     "totalDebt": -193.43,
     "assetTypes": [
         {
-            "title": "Vadesiz Hesaplarım",
+            "title": "Current Accounts",
             "totalAmount": 282332.25,
             "hexColor": "#663399",
             "assetContainers": [
@@ -52,7 +52,7 @@
             ]
         },
         {
-            "title": "Vadeli Hesaplarım",
+            "title": "Term Deposit Accounts",
             "totalAmount": 775813.5,
             "hexColor": "#2C3E50",
             "assetContainers": [
@@ -77,7 +77,7 @@
             ]
         },
         {
-            "title": "Yatırım Hesaplarım",
+            "title": "Investment Accounts",
             "totalAmount": 164073.05,
             "hexColor": "#F7CA18",
             "assetContainers": [
@@ -95,7 +95,7 @@
             "hexColor": "#049372",
             "assetContainers": [
                 {
-                    "title": "Bireysel / GBB",
+                    "title": "Individual / GBB",
                     "currencyCode": "TRY",
                     "orginalAmount": 87589.355293,
                     "exchanceBalance": 87589.355293
@@ -117,21 +117,21 @@
     ],
     "debtAssetTypes": [
         {
-            "title": "Krediler",
-            "totalAmount": 0,
+            "title": "Credits",
+            "totalAmount": -5744.28,
             "hexColor": "#ef4836",
             "assetContainers": []
         },
         {
-            "title": "Kartlar",
-            "totalAmount": -193.43,
+            "title": "Credit Cards",
+            "totalAmount": -2193.43,
             "hexColor": "#2c3e50",
             "assetContainers": [
                 {
                     "title": "",
                     "currencyCode": "TRY",
-                    "orginalAmount": -193.43,
-                    "exchanceBalance": -193.43
+                    "orginalAmount": -2193.43,
+                    "exchanceBalance": -2193.43
                 }
             ]
         }

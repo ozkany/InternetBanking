@@ -1,9 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Store } from '@ngrx/store';
-import * as fromApp from '../../_core/store/app.state';
-import * as fromTransfers from 'src/app/_core/store/transfer/transfer.reducers';
-import * as TransferActions from 'src/app/_core/store/transfer/transfer.actions';
-import { Observable } from 'rxjs';
+import { TransferFacade, TransferActions } from '@core/facades/transfer.facade';
 
 @Component({
   selector: 'app-transfer-activities',
@@ -12,18 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class TransferActivitiesComponent implements OnInit, OnDestroy {
 
-  transferState$: Observable<fromTransfers.State>;
-
-  constructor(private store: Store<fromApp.AppState>) { }
+  constructor(private transferFacade: TransferFacade) { }
 
   ngOnInit() {
-    this.transferState$ = this.store.select('transfers');
-
-    this.store.dispatch(new TransferActions.CallGetTransferActivities());
+    this.transferFacade.dispatch(new TransferActions.CallGetTransferActivities());
   }
 
   ngOnDestroy(): void {
-    
   }
 
 }

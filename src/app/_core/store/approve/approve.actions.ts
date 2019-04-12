@@ -1,11 +1,11 @@
 import { Action } from '@ngrx/store';
-import { ApproveTranData } from '../../models/approve/approve-tran-data.model';
+import { ApproveTranData, ApproveCompletedResponse } from '@core/models';
 
 export const enum ActionTypes {
   NAVTO_APPROVAL = 'NAVTO_APPROVAL',
   SET_TRAN_APPROVE_DATA = 'SET_TRAN_APPROVE_DATA',
-  SET_CONFIRM_SMS_DATA ='SET_CONFIRM_SMS_DATA',
-  SET_FINISH_DATA ='SET_FINISH_DATA',
+  SET_CONFIRM_SMS_DATA = 'SET_CONFIRM_SMS_DATA',
+  SET_FINISH_DATA = 'SET_FINISH_DATA',
   DO_APPROVE = 'DO_APPROVE',
   DO_APPROVE_SUCCESS = 'DO_APPROVE_SUCCESS',
   DO_APPROVE_FAIL = 'DO_APPROVE_FAIL',
@@ -45,7 +45,7 @@ export class NavToConfirmSms implements Action {
 
 export class SetConfirmSmsData implements Action {
   readonly type = ActionTypes.SET_CONFIRM_SMS_DATA;
-  constructor(public payload: { confirmSmsData: any }) {}
+  constructor(public payload: { confirmSmsData: any }) { }
 }
 
 export class DoConfirmSms implements Action {
@@ -65,4 +65,5 @@ export class DoConfirmSmsFail implements Action {
 
 
 export type ApproveActions = NavtoApproval | SetTranApproveData | DoApprove | DoApproveSuccess |
-  DoApproveFail | NavToConfirmSms | SetConfirmSmsData | DoConfirmSms | DoConfirmSmsSuccess | DoConfirmSmsFail;
+                             DoApproveFail | NavToConfirmSms | SetConfirmSmsData | DoConfirmSms |
+                             DoConfirmSmsSuccess | DoConfirmSmsFail;

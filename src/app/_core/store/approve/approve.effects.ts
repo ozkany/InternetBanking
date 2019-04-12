@@ -5,8 +5,8 @@ import { switchMap, mergeMap, map, tap, withLatestFrom, catchError } from 'rxjs/
 import { of } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as ApproveActions from './approve.actions';
-import * as fromApprove from 'src/app/_core/store/approve/approve.reducers';
 import { ApproveService } from '../../services/approve.service';
+import { ApproveSelectors, AppState } from 'src/app/_core/store';
 
 @Injectable()
 export class ApproveEffects {
@@ -16,10 +16,7 @@ export class ApproveEffects {
     ofType(ApproveActions.ActionTypes.NAVTO_APPROVAL),
     map((action: ApproveActions.NavtoApproval) => action.payload),
     map((data) => {
-      return ({
-        type: ApproveActions.ActionTypes.SET_TRAN_APPROVE_DATA,
-        payload: data
-      });
+      return new ApproveActions.SetTranApproveData(data);
     }),
     tap(() => {
       this.router.navigate(['/approve']);
@@ -29,7 +26,7 @@ export class ApproveEffects {
   @Effect()
   doApprove = this.actions$.pipe(
     ofType(ApproveActions.ActionTypes.DO_APPROVE),
-    withLatestFrom(this.store$.select(fromApprove.selectApproveTranData)),
+    withLatestFrom(this.store$.select(ApproveSelectors.TranData)),
     switchMap(([action, tranData]) => {
       return this.approveService.doApprove(tranData);
     }),
@@ -76,7 +73,8 @@ export class ApproveEffects {
   doConfirmSms = this.actions$.pipe(
     ofType(ApproveActions.ActionTypes.DO_CONFIRM_SMS),
     map((action: ApproveActions.DoConfirmSms) => action.payload),
-    withLatestFrom(this.store$.select(fromApprove.selectApproveTranData), this.store$.select(fromApprove.selectApproveConfirmSmsData)),
+    withLatestFrom(this.store$.select(ApproveSelectors.TranData),
+                   this.store$.select(ApproveSelectors.ConfirmSmsData)),
     switchMap(([data, tranData, confirmSmsData]) => {
       console.log('Effect doConfirmSms switchMap', data, tranData, confirmSmsData);
       return this.approveService.doConfirmSms(data.smsCode, confirmSmsData.token, tranData.approveApiPath, tranData.forceDuplicate);
@@ -112,8 +110,7 @@ export class ApproveEffects {
 
   constructor(
     private actions$: Actions,
-    private store$: Store<fromApprove.State>,
+    private store$: Store<AppState>,
     private approveService: ApproveService,
-    private router: Router,
-    private route: ActivatedRoute) { }
+    private router: Router) { }
 }

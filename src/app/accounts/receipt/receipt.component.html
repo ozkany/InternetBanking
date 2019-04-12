@@ -1,21 +1,21 @@
 <!-- Modal -->
 <div class="modal fade" id="receiptModalCenter" tabindex="-1" role="dialog" aria-labelledby="receiptModalCenterTitle"
-  aria-hidden="true" [class.show]="!!(accountState$ | async)">
-  <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:710px;"  >
+  aria-hidden="true" [class.show]="!!(accountFacade.receipt$ | async)">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:710px;">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="receiptModalCenterTitle">Dekont</h5>
+        <h5 class="modal-title" id="receiptModalCenterTitle">Receipt</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
 
-      <div class="modal-body" *ngIf="accountState$ | async as accountState; else loadingTemplate">
-        <img id="receiptImage" [attr.src]="('data:image/png;base64, ' + accountState?.receipt?.content) | bypassImgResSecurity" />
+      <div class="modal-body" *ngIf="accountFacade.receipt$ | async as receipt; else loadingTemplate">
+        <img id="receiptImage" [attr.src]="('data:image/png;base64, ' + receipt?.content) | bypassImgResSecurity" />
       </div>
       <ng-template #loadingTemplate>Your receipt is being loaded...</ng-template>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Kapat</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

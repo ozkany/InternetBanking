@@ -4,7 +4,7 @@
     <div class="col-md-8 order-md-2 mb-4">
       <div class="text-center mb-4">
         <h5 class="h5 mb-3 font-weight-normal">
-          Please enter the sms code sent to your mobile number {{ (approveFacade.confirmSmsData$ | async)?.message }}
+          Please enter the sms code sent to your mobile number {{ (approveFacade.approveConfirmSmsData$ | async)?.message }}
           <br />
           Remaining time 180 s.
         </h5>
@@ -25,8 +25,8 @@
   <div class="row">
     <div class="col-md-8 order-md-2 mb-4">
       <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!formSms.valid">
-          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="commonStore.isLoading | async"></span>
-          {{ (commonStore.isLoading | async) ? "Loading" : "Continue" }}
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="commonStore.isLoading$ | async"></span>
+          {{ (commonStore.isLoading$ | async) ? "Loading" : "Continue" }}
       </button>
     </div>
   </div>

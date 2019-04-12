@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { AccountsRootObject } from '../models/accounts/account.model';
-import { GetAssetsRootResponse } from '../models/accounts/assets.model';
 import { environment } from 'src/environments/environment';
+import { AccountsRootObject, GetAssetsRootResponse } from '@core/models';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,7 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   getAccountList() {
-    return this.http.get<AccountsRootObject>(`${environment.apiUrl}/accounts`)
+    return this.http.get<AccountsRootObject>(`${environment.apiUrl}/accounts`);
   }
 
   getReceipt(accountId: string, receiptId: string) {

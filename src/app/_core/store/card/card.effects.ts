@@ -1,32 +1,27 @@
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { switchMap, mergeMap, map, tap } from 'rxjs/operators';
+import { switchMap, map, tap } from 'rxjs/operators';
 import * as CardActions from './card.actions';
-import { CardService } from '../../services/card.service';
+import { CardService } from '@core/services/card.service';
 
 @Injectable()
 export class CardEffects {
 
   @Effect()
   callGetAccounts = this.actions$.pipe(
-    ofType(CardActions.CALL_GET_CARDS),
+    ofType(CardActions.ActionTypes.CALL_GET_CARDS),
     switchMap(() => {
       return this.cardService.getCards();
     }),
     map((res) => {
-      return (
-        {
-          type: CardActions.SET_CARDS,
-          payload: res
-        }
-      );
+      return new CardActions.SetCards(res);
     })
   );
 
   @Effect()
   navtoIntermRecords = this.actions$.pipe(
-    ofType(CardActions.NAVTO_INTERM_RECORDS),
+    ofType(CardActions.ActionTypes.NAVTO_INTERM_RECORDS),
     map((action: CardActions.NavtoIntermRecords) => {
       return action.payload;
     }),
@@ -34,12 +29,7 @@ export class CardEffects {
       return this.cardService.getIntermRecords(data.cardId);
     }),
     map((res) => {
-      return (
-        {
-          type: CardActions.SET_INTERM_RECORDS,
-          payload: res
-        }
-      );
+      return new CardActions.SetIntermRecords(res);
     }),
     tap(() => {
       this.router.navigate(['/cards/interm-records']);

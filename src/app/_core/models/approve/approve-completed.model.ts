@@ -1,4 +1,4 @@
-interface ApproveCompletedResponse {
+export interface ApproveCompletedResponse {
   type: string;
   isBaseControl: boolean;
   message: string;
@@ -13,7 +13,7 @@ interface ApproveCompletedResponse {
   controlData?: any;
 }
 
-interface Menu {
+export interface Menu {
   id: number;
   menuKey: number;
   controllerName: string;

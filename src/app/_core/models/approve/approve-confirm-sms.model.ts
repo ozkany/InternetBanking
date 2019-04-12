@@ -1,4 +1,4 @@
-interface ApproveConfirmSms {
+export interface ApproveConfirmSms {
   type: string;
   isBaseControl: boolean;
   message: string;

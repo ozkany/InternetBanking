@@ -7,22 +7,17 @@ import { PaymentService } from '../../services/payment.service';
 @Injectable()
 export class PaymentEffects {
 
-    @Effect()
-    callPaymentActivities = this.actions$.pipe(
-        ofType(PaymentActions.CALL_PAYMENT_ACTIVITIES),
-        switchMap(() => {
-            console.log('payment effects call avtivities');
-            return this.paymentService.getPaymentActivities();
-        }),
-        map((res) => {
-            return (
-                {
-                    type: PaymentActions.SET_PAYMENT_ACTIVITIES,
-                    payload: res
-                }
-            );
-        })
-    );
+  @Effect()
+  callPaymentActivities = this.actions$.pipe(
+    ofType(PaymentActions.ActionTypes.CALL_PAYMENT_ACTIVITIES),
+    switchMap(() => {
+      console.log('payment effects call avtivities');
+      return this.paymentService.getPaymentActivities();
+    }),
+    map((res) => {
+      return new PaymentActions.SetPaymentActivities(res);
+    })
+  );
 
-    constructor(private actions$: Actions, private paymentService: PaymentService) {}
+  constructor(private actions$: Actions, private paymentService: PaymentService) { }
 }

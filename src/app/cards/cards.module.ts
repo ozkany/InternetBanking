@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
-
+import { EffectsModule } from '@ngrx/effects';
 import { CardsRoutingModule } from './cards-routing.module';
+import { reducer } from '@core/store/card/card.reducers';
+import { CardEffects } from '@core/store/card/card.effects';
 import { CardListComponent } from './card-list/card-list.component';
 import { IntermRecordsComponent } from './interm-records/interm-records.component';
-import { reducer } from 'src/app/_core/store/card/card.reducers';
-import { EffectsModule } from '@ngrx/effects';
-import { CardEffects } from '../_core/store/card/card.effects';
 
 @NgModule({
  declarations: [

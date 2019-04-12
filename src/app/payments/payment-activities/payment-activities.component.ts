@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import * as fromApp from '../../_core/store/app.state';
-import * as PaymentActions from 'src/app/_core/store/payment/payment.actions';
-import * as fromPayment from 'src/app/_core/store/payment/payment.reducers';
+import { PaymentFacade, PaymentActions } from '@core/facades/payment.facade';
 
 @Component({
   selector: 'app-payment-activities',
@@ -12,15 +8,9 @@ import * as fromPayment from 'src/app/_core/store/payment/payment.reducers';
 })
 export class PaymentActivitiesComponent implements OnInit {
 
-  paymentState$: Observable<fromPayment.State>;
-
-  constructor(private store: Store<fromApp.AppState>) { }
+  constructor(private paymentFacade: PaymentFacade) { }
 
   ngOnInit() {
-
-    this.paymentState$ = this.store.select('payments');
-    this.store.dispatch(new PaymentActions.CallPaymentActivities());
-
+    this.paymentFacade.dispatch(new PaymentActions.CallPaymentActivities());
   }
-
 }

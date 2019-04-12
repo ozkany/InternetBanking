@@ -1,4 +1,4 @@
-<div class="container" *ngIf="approveFacade.approveTranDataForView$ | async as transactionDetails">
+<div class="container" *ngIf="approveFacade.approveTranSummaryForView$ | async as transactionDetails">
   <div class="row">
     <div class="col-md-8 order-md-2 mb-4" *ngFor="let detailGroup of transactionDetails">
       <h5 class="d-flex justify-content-between align-items-center mb-3">
@@ -15,10 +15,9 @@
   <div class="row">
     <div class="col-md-8 order-md-2 mb-4">
       <button class="btn btn-lg btn-outline-primary btn-block" type="button" (click)="onApprove()">
-        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="commonStore.isLoading | async"></span>
-        {{ (commonStore.isLoading | async) ? "Loading" : "Approve" }}
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="commonStore.isLoading$ | async"></span>
+        {{ (commonStore.isLoading$ | async) ? "Loading" : "Approve" }}
       </button>
     </div>
   </div>
 </div>
-

@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import * as fromApp from '../../_core/store/app.state';
-import * as fromAccounts from '../../_core/store/account/account.reducers';
-import * as AccountActions from 'src/app/_core/store/account/account.actions';
+import { AccountFacade, AccountActions } from '@core/facades/account.facade';
 
 @Component({
   selector: 'app-account-list',
@@ -14,27 +9,23 @@ import * as AccountActions from 'src/app/_core/store/account/account.actions';
 export class AccountListComponent implements OnInit {
 
   selectedAccountForDetails;
-  accountState$: Observable<fromAccounts.State>;
 
-  constructor(private router: Router, private store: Store<fromApp.AppState>) { }
+  constructor(private accountFacade: AccountFacade) { }
 
   ngOnInit() {
-    this.accountState$ = this.store.select('accounts');
-    this.store.dispatch(new AccountActions.CallGetAccounts());
+    this.accountFacade.dispatch(new AccountActions.CallGetAccounts());
   }
 
   onActivitiesButtonClick(id: string) {
-    this.store.dispatch(new AccountActions.NavtoAccountActivities(id));
+    this.accountFacade.dispatch(new AccountActions.NavtoAccountActivities(id));
   }
 
   onDetailsButtonClick(account) {
     this.selectedAccountForDetails = account;
-    console.log("selectedAccountForDetails", account);
   }
 
   refreshButtonClicked() {
-    this.store.dispatch(new AccountActions.CallGetAccounts());
+    this.accountFacade.dispatch(new AccountActions.CallGetAccounts());
   }
-
 
 }

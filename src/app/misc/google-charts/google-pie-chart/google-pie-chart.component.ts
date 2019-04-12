@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { GooglePieChartConfig } from 'src/app/misc/google-charts/google-pie-chart-config.model';
 import { GooglePieChartService } from 'src/app/misc/google-charts/google-pie-chart.service';
 import { ScriptLoaderService } from 'src/app/_core/services/script-loader.service';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-google-pie-chart',
@@ -15,26 +15,25 @@ export class GooglePieChartComponent implements OnInit {
   @Input() config: GooglePieChartConfig;
   @Input() elementId: string;
 
-  constructor(private pieChartService: GooglePieChartService, private scriptLoaderService: ScriptLoaderService) {
+  constructor(private pieChartService: GooglePieChartService,
+    private scriptLoaderService: ScriptLoaderService) {
+  }
+
+  ngOnInit() {
 
     this.scriptLoaderService.load('google-charts').then(() => {
       this.pieChartService._scriptsLoaded.next(true);
       console.log('GooglePieChartComponent data', this.data$);
-      
+
       if (!!this.data$) {
         this.data$.subscribe(res => {
           if (!!res) {
-            console.log("building pie chart with response", res);
+            console.log('building pie chart with response', res);
             this.pieChartService.BuildPieChart(this.elementId, res, this.config);
           }
         });
       }
-
     });
-
-  }
-
-  ngOnInit() {
   }
 
 }

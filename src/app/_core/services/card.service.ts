@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CardListRootResponse } from '../models/cards/card.model';
 import { environment } from 'src/environments/environment';
-import { CardIntermListRootObject } from '../models/cards/card-interm-list.model';
+import { CardListRootResponse, CardIntermListRootObject } from '@core/models';
 
 @Injectable({
   providedIn: 'root'

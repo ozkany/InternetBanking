@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let card of (cardState$ | async)?.cards?.creditCardListResponse?.creditCardList">
+      <tr *ngFor="let card of (cardFacade.cardList$ | async)?.creditCardListResponse?.creditCardList">
         <td scope="row" style="align-content: center"><input type="radio" name="cardRadio" id="cardRadio" value="cardRadio1"></td>
         <td>{{ card.maskedCardNumber }} </td>
         <td>{{ card.name }}</td>
@@ -23,7 +23,7 @@
         <td><img id="cardImage" [attr.src]="card.image" style="max-width: 100px" /></td>
         <td><button class="btn btn-info" type="button" (click)="onIntermRecordsButtonClick(card.guid)">Interm Records</button></td>
       </tr>
-      <tr *ngFor="let card of (cardState$ | async)?.cards?.extendCardListResponse?.extendCreditCardList">
+      <tr *ngFor="let card of (cardFacade.cardList$ | async)?.extendCardListResponse?.extendCreditCardList">
         <th scope="row" style="align-content: center"><input type="radio" name="cardRadio" id="cardRadio" value="cardRadio1"></th>
         <td>{{ card.maskedCardNumber }}</td>
         <td>{{ card.name }}</td>
@@ -52,7 +52,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let card of (cardState$ | async)?.cards?.virtualCardListResponse?.virtualCardList">
+      <tr *ngFor="let card of (cardFacade.cardList$ | async)?.virtualCardListResponse?.virtualCardList">
         <th scope="row" style="align-content: center"><input type="radio" name="cardRadio" id="cardRadio" value="cardRadio1"></th>
         <td>{{ card.clearCardNumber }} </td>
         <td>{{ card.cvv2 }} </td>

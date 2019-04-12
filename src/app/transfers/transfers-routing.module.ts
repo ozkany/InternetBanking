@@ -4,7 +4,7 @@ import { MoneyOrderComponent } from './money-order/money-order.component';
 import { TransferActivitiesComponent } from './transfer-activities/transfer-activities.component';
 
 const routes: Routes = [
-  { path: 'money-order', component: MoneyOrderComponent, data: { title: 'Money Order' } },
+  { path: 'money-order', component: MoneyOrderComponent, data: { title: 'Money Transfer Order' } },
   { path: 'transfer-activities', component: TransferActivitiesComponent, data: { title: 'Transfer Activities' } },
 ];
 

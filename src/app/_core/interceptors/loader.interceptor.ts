@@ -22,14 +22,12 @@ export class LoaderInterceptor implements HttpInterceptor {
       this.requests.splice(i, 1);
     }
 
-    //console.log("LoaderInterceptor->removeRequest",i, this.requests.length);
-
-    this.commonStore.isLoading.next(this.requests.length > 0);
+    this.commonStore.isLoading$.next(this.requests.length > 0);
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.requests.push(req);
-    this.commonStore.isLoading.next(true);
+    this.commonStore.isLoading$.next(true);
 
     return Observable.create(observer => {
       const subscription = next.handle(req)
