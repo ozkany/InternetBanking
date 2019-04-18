@@ -8,7 +8,7 @@ import { AccountFacade } from '@core/facades/account.facade';
 })
 export class ReceiptComponent implements OnInit {
 
-  constructor(private accountFacade: AccountFacade) { }
+  constructor(public accountFacade: AccountFacade) { }
 
   ngOnInit() {
 

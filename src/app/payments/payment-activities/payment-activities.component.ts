@@ -8,7 +8,7 @@ import { PaymentFacade, PaymentActions } from '@core/facades/payment.facade';
 })
 export class PaymentActivitiesComponent implements OnInit {
 
-  constructor(private paymentFacade: PaymentFacade) { }
+  constructor(public paymentFacade: PaymentFacade) { }
 
   ngOnInit() {
     this.paymentFacade.dispatch(new PaymentActions.CallPaymentActivities());

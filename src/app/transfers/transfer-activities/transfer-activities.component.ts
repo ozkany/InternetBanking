@@ -8,7 +8,7 @@ import { TransferFacade, TransferActions } from '@core/facades/transfer.facade';
 })
 export class TransferActivitiesComponent implements OnInit, OnDestroy {
 
-  constructor(private transferFacade: TransferFacade) { }
+  constructor(public transferFacade: TransferFacade) { }
 
   ngOnInit() {
     this.transferFacade.dispatch(new TransferActions.CallGetTransferActivities());

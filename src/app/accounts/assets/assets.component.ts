@@ -11,9 +11,7 @@ export class AssetsComponent implements OnInit, OnDestroy {
 
   config: GooglePieChartConfig;
 
-  constructor(private accountFacade: AccountFacade) {
-    this.loadChart();
-  }
+  constructor(public accountFacade: AccountFacade) { }
 
   loadChart() {
     this.config = new GooglePieChartConfig('', 0.4);
@@ -21,6 +19,7 @@ export class AssetsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.loadChart();
   }
 
   ngOnDestroy() {

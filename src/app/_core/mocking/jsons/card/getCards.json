@@ -12,9 +12,9 @@
                 "maskedCardNumber": "5101 18** **** 2250",
                 "statementDate": "10/10/2018",
                 "lastPaymentDate": "22/10/2018",
-                "remainingDebt": "1.175,81 TL",
+                "remainingDebt": "1.175,81 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "71.633,20 TL",
+                "availableLimit": "71.633,20 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardPaymentButton",
                     "AccountCard.Cards.CashAdvanceButton"
@@ -33,9 +33,9 @@
                 "maskedCardNumber": "4090 70** **** 9812",
                 "statementDate": "03/03/2018",
                 "lastPaymentDate": "13/03/2018",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "71.806,57 TL",
+                "availableLimit": "71.806,57 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardPaymentButton",
                     "AccountCard.Cards.CashAdvanceButton"
@@ -54,9 +54,9 @@
                 "maskedCardNumber": "5200 19** **** 7187",
                 "statementDate": "-",
                 "lastPaymentDate": "-",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "71.806,57 TL",
+                "availableLimit": "71.806,57 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardPaymentButton",
                     "AccountCard.Cards.CashAdvanceButton"
@@ -75,9 +75,9 @@
                 "maskedCardNumber": "4090 70** **** 5392",
                 "statementDate": "-",
                 "lastPaymentDate": "-",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "71.806,57 TL",
+                "availableLimit": "71.806,57 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardPaymentButton",
                     "AccountCard.Cards.CashAdvanceButton"
@@ -96,9 +96,9 @@
                 "maskedCardNumber": "5200 19** **** 1200",
                 "statementDate": "-",
                 "lastPaymentDate": "-",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "71.806,57 TL",
+                "availableLimit": "71.806,57 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardPaymentButton",
                     "AccountCard.Cards.CashAdvanceButton"
@@ -117,9 +117,9 @@
                 "maskedCardNumber": "4090 70** **** 6047",
                 "statementDate": "10/10/2018",
                 "lastPaymentDate": "22/10/2018",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "71.806,57 TL",
+                "availableLimit": "71.806,57 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardPaymentButton",
                     "AccountCard.Cards.CashAdvanceButton"
@@ -138,9 +138,9 @@
                 "maskedCardNumber": "5149 24** **** 5986",
                 "statementDate": "-",
                 "lastPaymentDate": "-",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "71.806,57 TL",
+                "availableLimit": "71.806,57 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardPaymentButton",
                     "AccountCard.Cards.CashAdvanceButton"
@@ -159,9 +159,9 @@
                 "maskedCardNumber": "4090 70** **** 6388",
                 "statementDate": "-",
                 "lastPaymentDate": "-",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "71.806,57 TL",
+                "availableLimit": "71.806,57 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardPaymentButton",
                     "AccountCard.Cards.CashAdvanceButton"
@@ -180,9 +180,9 @@
                 "maskedCardNumber": "4090 70** **** 7218",
                 "statementDate": "-",
                 "lastPaymentDate": "-",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "71.806,57 TL",
+                "availableLimit": "71.806,57 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardPaymentButton",
                     "AccountCard.Cards.CashAdvanceButton"
@@ -201,9 +201,9 @@
                 "maskedCardNumber": "4090 70** **** 4570",
                 "statementDate": "-",
                 "lastPaymentDate": "-",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "71.806,57 TL",
+                "availableLimit": "71.806,57 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardPaymentButton",
                     "AccountCard.Cards.CashAdvanceButton"
@@ -222,9 +222,9 @@
                 "maskedCardNumber": "5544 83** **** 1694",
                 "statementDate": "03/03/2018",
                 "lastPaymentDate": "13/03/2018",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "71.806,57 TL",
+                "availableLimit": "71.806,57 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardPaymentButton",
                     "AccountCard.Cards.CashAdvanceButton"
@@ -250,9 +250,9 @@
                 "maskedCardNumber": "4090 70** **** 5597",
                 "statementDate": "22/02/2017",
                 "lastPaymentDate": "22/02/2017",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "44.558,99 TL",
+                "availableLimit": "44.558,99 USD",
                 "swipeButtons": [],
                 "isCancelled": false,
                 "remainingDebtDomestic": 0,
@@ -268,9 +268,9 @@
                 "maskedCardNumber": "5585 14** **** 0586",
                 "statementDate": "-",
                 "lastPaymentDate": "-",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "1.100,00 TL",
+                "availableLimit": "1.100,00 USD",
                 "swipeButtons": [],
                 "isCancelled": false,
                 "remainingDebtDomestic": 0,
@@ -286,9 +286,9 @@
                 "maskedCardNumber": "5101 18** **** 5636",
                 "statementDate": "10/10/2018",
                 "lastPaymentDate": "22/10/2018",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "25.200,00 TL",
+                "availableLimit": "25.200,00 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardLimitUpdateButton",
                     "AccountCard.Cards.IntallmentsButton"
@@ -307,9 +307,9 @@
                 "maskedCardNumber": "5101 18** **** 9695",
                 "statementDate": "10/10/2018",
                 "lastPaymentDate": "22/10/2018",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "7.200,00 TL",
+                "availableLimit": "7.200,00 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardLimitUpdateButton",
                     "AccountCard.Cards.IntallmentsButton"
@@ -328,9 +328,9 @@
                 "maskedCardNumber": "5544 83** **** 3074",
                 "statementDate": "03/03/2018",
                 "lastPaymentDate": "13/03/2018",
-                "remainingDebt": "0,00 TL",
+                "remainingDebt": "0,00 USD",
                 "remainingDebtUsd": "",
-                "availableLimit": "21.600,00 TL",
+                "availableLimit": "21.600,00 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardLimitUpdateButton",
                     "AccountCard.Cards.IntallmentsButton"
@@ -355,7 +355,7 @@
                 "clearCardNumber": "5203 0300 0193 5361",
                 "expiryDate": "10/21",
                 "cvv2": "024",
-                "availableLimit": "35.000,00 TL",
+                "availableLimit": "35.000,00 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardLimitUpdateButton",
                     "AccountCard.Cards.CloseCardButton"
@@ -368,7 +368,7 @@
                 "clearCardNumber": "5203 0300 0208 4458",
                 "expiryDate": "10/21",
                 "cvv2": "412",
-                "availableLimit": "500,00 TL",
+                "availableLimit": "500,00 USD",
                 "swipeButtons": [
                     "AccountCard.Cards.CardLimitUpdateButton",
                     "AccountCard.Cards.CloseCardButton"

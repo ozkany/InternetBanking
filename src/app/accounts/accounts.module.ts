@@ -9,7 +9,7 @@ import { AccountEffects } from '@core/store/account/account.effects';
 import { AccountListComponent } from './account-list/account-list.component';
 import { AccountActivitiesComponent } from './account-activities/account-activities.component';
 import { ReceiptComponent } from './receipt/receipt.component';
-import { AccountDetailComponent } from './account-detail/account-detail.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 import { AssetsComponent } from './assets/assets.component';
 import { GooglePieChartComponent } from 'src/app/misc/google-charts/google-pie-chart/google-pie-chart.component';
 
@@ -18,7 +18,7 @@ import { GooglePieChartComponent } from 'src/app/misc/google-charts/google-pie-c
     AccountListComponent,
     AccountActivitiesComponent,
     ReceiptComponent,
-    AccountDetailComponent,
+    AccountDetailsComponent,
     AssetsComponent,
     GooglePieChartComponent
   ],

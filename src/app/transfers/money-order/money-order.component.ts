@@ -14,7 +14,7 @@ export class MoneyOrderComponent implements OnInit {
   formMoneyOrder: FormGroup;
   sourceAccountCurrencyCode: string;
 
-  constructor(private fb: FormBuilder, private transferFacade: TransferFacade) { }
+  constructor(private fb: FormBuilder, public transferFacade: TransferFacade) { }
 
   ngOnInit() {
     this.createForm();

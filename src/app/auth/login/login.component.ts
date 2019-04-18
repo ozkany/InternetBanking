@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   formSignin: FormGroup;
   formOtpValidation: FormGroup;
 
-  constructor(private authFacade: AuthFacade, private commonStore: CommonStore) {}
+  constructor(public authFacade: AuthFacade, public commonStore: CommonStore) {}
 
   ngOnInit() {
     this.formSignin = new FormGroup({

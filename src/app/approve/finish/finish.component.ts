@@ -8,7 +8,7 @@ import { ApproveFacade } from '@core/facades/approve.facade';
 })
 export class FinishComponent implements OnInit {
 
-  constructor(private approveFacade: ApproveFacade) { }
+  constructor(public approveFacade: ApproveFacade) { }
 
   ngOnInit() {
   }

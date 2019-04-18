@@ -1,7 +1,7 @@
 {
 	"type": "Completed",
 	"isBaseControl": false,
-	"message": "<div align=\"center\">YOUR CASH TRANSFER TRANSACTION HAS BEEN COMPLETED WITH THE REFERENCE NUMBERED 43876032</div> <br/><br/> <div align=\"center\">The remaining available balance of your account numbered 4420-12695682-352 is 225,00 TL after the transaction</div>",
+	"message": "<div align=\"center\">YOUR CASH TRANSFER TRANSACTION HAS BEEN COMPLETED WITH THE REFERENCE NUMBERED 43876032</div> <br/><br/> <div align=\"center\">The remaining available balance of your account numbered 4420-12695682-352 is 225,00 USD after the transaction</div>",
 	"receiptId": "IfNYYCh_S1tKaCZCctP3sk8S92BbNG-1jeIx14CK_O-vmf8JFQ1laTbRKzPpHPVg",
 	"summaries": [],
 	"contracts": null,

@@ -6,7 +6,8 @@ import { ShortenStr } from './pipes/shorten-str.pipe';
 import { TransformStr } from './pipes/transform-str.pipe';
 import { BypassImgResSecurity } from './pipes/bypass-img-res-security.pipe';
 import { ResourcePipe } from './pipes/resource.pipe';
-import { AccountComboComponent } from './controls/account-combo/account-combo.component';
+import { AccountComboComponent } from './components/account-combo/account-combo.component';
+import { AccountGridComponent } from './components/account-grid/account-grid.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AccountComboComponent } from './controls/account-combo/account-combo.co
     ShortenStr,
     TransformStr,
     BypassImgResSecurity,
-    AccountComboComponent
+    AccountComboComponent,
+    AccountGridComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { AccountComboComponent } from './controls/account-combo/account-combo.co
     ShortenStr,
     TransformStr,
     BypassImgResSecurity,
-    AccountComboComponent
+    AccountComboComponent,
+    AccountGridComponent
   ]
 })
 export class SharedModule { }

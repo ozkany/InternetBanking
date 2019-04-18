@@ -8,7 +8,7 @@ import { CardFacade, CardActions } from '@core/facades/card.facade';
 })
 export class CardListComponent implements OnInit {
 
-  constructor(private cardFacade: CardFacade) { }
+  constructor(public cardFacade: CardFacade) { }
 
   ngOnInit() {
     this.cardFacade.dispatch(new CardActions.CallGetCard());

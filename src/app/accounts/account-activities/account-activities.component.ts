@@ -8,7 +8,7 @@ import { AccountFacade, AccountActions } from '@core/facades/account.facade';
 })
 export class AccountActivitiesComponent implements OnInit, OnDestroy {
 
-  constructor(private accountFacade: AccountFacade) { }
+  constructor(public accountFacade: AccountFacade) { }
 
   ngOnInit() {
   }

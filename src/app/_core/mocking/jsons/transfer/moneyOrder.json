@@ -46,7 +46,7 @@
 		}, {
 			"groupName": "TRANSACTION INFORMATION",
 			"label": "Amount",
-			"value": "4,00 TL",
+			"value": "4,00 USD",
 			"order": 4,
 			"groupOrder": 3,
 			"key": "Janus.SummaryTransfer.MoneyOrder.Label.Amount",

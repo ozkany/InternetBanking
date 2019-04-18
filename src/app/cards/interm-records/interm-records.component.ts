@@ -10,7 +10,7 @@ export class IntermRecordsComponent implements OnInit {
 
   @Input() cardId: string;
 
-  constructor(private cardFacade: CardFacade) { }
+  constructor(public cardFacade: CardFacade) { }
 
   ngOnInit() {
   }

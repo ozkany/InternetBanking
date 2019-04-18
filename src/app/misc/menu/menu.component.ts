@@ -10,7 +10,7 @@ import * as fromAuth from 'src/app/_core/store/auth/auth.reducers';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private store: Store<fromApp.AppState>) { }
+  constructor(public store: Store<fromApp.AppState>) { }
 
   ngOnInit() {
   }

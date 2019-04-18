@@ -7,7 +7,7 @@
             "amount": 1000.00,
             "balance": 0.0,
             "remainingBalance": 15997083.50,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Income",
             "transactionDescription": "HESAPTAN HAVALE",
             "receiptId": "9yrurQ1zgdONTlsUKoH8TvlCfMrqpOgcC71JYrHT6IhVeUlBAU6XWqC3m1V3HSXF"
@@ -19,7 +19,7 @@
             "amount": -500.00,
             "balance": 0.0,
             "remainingBalance": 15996083.50,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Outcome",
             "transactionDescription": "VADELİ HESAP AÇILIŞI",
             "receiptId": "ikSFefgNh_A_nPFW6OwXRi6emIZnB7ID--m16499QR7KPMEyR9Ykmhg2liieP7DU"
@@ -31,7 +31,7 @@
             "amount": -30.00,
             "balance": 0.0,
             "remainingBalance": 15996583.50,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Outcome",
             "transactionDescription": "TURKCELL TL YÜKLEME",
             "receiptId": "Tz4CCf3sPvoBbdM2qOkBS83vTS2Z1esMG3PqJfAsEFfC-uSe7_6toSMDlmtnHjrI"
@@ -43,9 +43,9 @@
             "amount": -10.00,
             "balance": 0.0,
             "remainingBalance": 15996329.00,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Outcome",
-            "transactionDescription": "",
+            "transactionDescription": "Credit Card Payment",
             "receiptId": "J4pFAKPygXUzk3bXq_2v6aTpdh0W4quC-PrqA6U_sI9SLUObj7nDBiOXcTXvIJzH"
         },
         {
@@ -55,9 +55,9 @@
             "amount": -20.00,
             "balance": 0.0,
             "remainingBalance": 15996334.00,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Outcome",
-            "transactionDescription": "",
+            "transactionDescription": "Credit Card Payment",
             "receiptId": "erYpK-tiKtvGHjiK-R-Ehr8Qb7tIgn_puMs4HdP_n1tk94Sl2BqEEB1BifaxeDKt"
         },
         {
@@ -67,7 +67,7 @@
             "amount": 1200.00,
             "balance": 0.0,
             "remainingBalance": 15996613.50,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Income",
             "transactionDescription": "VADELİ HESAP KAPANIŞI",
             "receiptId": "ciTcOR1eVwcBdqfJ-qxpiqbhKRxagJ_dyYKB1BM6jbeXmpHWwWxvu6owxOr-YLHs"
@@ -79,7 +79,7 @@
             "amount": -1200.00,
             "balance": 0.0,
             "remainingBalance": 15995413.50,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Outcome",
             "transactionDescription": "VADELİ HESAP AÇILIŞI",
             "receiptId": "xImaVC6wWPkTArHDYMzHUG9vr4aBzBAwbQrTW6WYEneLuyF7xZmYzdixIy3eYalx"
@@ -91,7 +91,7 @@
             "amount": 1050.00,
             "balance": 0.0,
             "remainingBalance": 15996549.81,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Income",
             "transactionDescription": "VADELİ HESAP KAPANIŞI",
             "receiptId": "n-iG4Zz36ifOHxJ6Z_RzN_dDqCuI5Ykl5aGNely_5ejyo-aVxKtRMnXLTcpoJmiC"
@@ -103,7 +103,7 @@
             "amount": 63.69,
             "balance": 0.0,
             "remainingBalance": 15996613.50,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Income",
             "transactionDescription": "VADELİ HESAP KAPANIŞI",
             "receiptId": "n-iG4Zz36ifOHxJ6Z_RzN_dDqCuI5Ykl5aGNely_5ejyo-aVxKtRMnXLTcpoJmiC"
@@ -115,7 +115,7 @@
             "amount": -78.75,
             "balance": 0.0,
             "remainingBalance": 15995499.81,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Outcome",
             "transactionDescription": "",
             "receiptId": "4qTULi8JaLPbdozXH8xLJ0004SbgH-9FEeuYlk78uueMYoJxx9OoK4U0uNVwMcTI"
@@ -127,7 +127,7 @@
             "amount": -100.00,
             "balance": 0.0,
             "remainingBalance": 15995600.86,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Outcome",
             "transactionDescription": "HESAPTAN HAVALE",
             "receiptId": "wpGHvb4RRnBjVO4SpXHDaClWzSk1liKg0ppSn7HpzSuMssu3catjW6fs4Y1tRLBc"
@@ -139,7 +139,7 @@
             "amount": -7.50,
             "balance": 0.0,
             "remainingBalance": 15995593.36,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Outcome",
             "transactionDescription": "HESAPTAN HAVALE",
             "receiptId": "wpGHvb4RRnBjVO4SpXHDaClWzSk1liKg0ppSn7HpzSuMssu3catjW6fs4Y1tRLBc"
@@ -151,7 +151,7 @@
             "amount": -78.75,
             "balance": 0.0,
             "remainingBalance": 15996371.40,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Outcome",
             "transactionDescription": "",
             "receiptId": "4_cGf1RijIPfaXMDr4v322DjLA7aEjZ9VPKU6vmY_MauxEHNFKrR5wtOeRyyzltb"
@@ -163,7 +163,7 @@
             "amount": -250.00,
             "balance": 0.0,
             "remainingBalance": 15996124.00,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Outcome",
             "transactionDescription": "VADELİ HESAP AÇILIŞI",
             "receiptId": "nGGf-mZWlUHh8rhUQY_cUnqEXtEuHQzJSnkw4_YEPoIXOgf-i-TmzsVYGTqzd8Em"
@@ -175,7 +175,7 @@
             "amount": -3000.00,
             "balance": 0.0,
             "remainingBalance": 982482.85,
-            "currencyCode": "TRY",
+            "currencyCode": "USD",
             "usageType": "Outcome",
             "transactionDescription": "VADELİ HESAP AÇILIŞI",
             "receiptId": "mDpLh8VVK7GahTrmCbaniTutbECLosqoYtvVVZj41S747ijH4DT4z3T6Uq4t-1Fe"

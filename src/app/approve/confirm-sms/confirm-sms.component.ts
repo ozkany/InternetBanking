@@ -12,7 +12,7 @@ export class ConfirmSmsComponent implements OnInit {
 
   formSms: FormGroup;
 
-  constructor(private approveFacade: ApproveFacade, private commonStore: CommonStore) { }
+  constructor(public approveFacade: ApproveFacade, public commonStore: CommonStore) { }
 
   ngOnInit() {
     this.formSms = new FormGroup({

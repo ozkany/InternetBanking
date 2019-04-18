@@ -9,7 +9,7 @@ import { ApproveFacade, ApproveActions  } from '@core/facades/approve.facade';
 })
 export class ApproveComponent implements OnInit {
 
-  constructor(private approveFacade: ApproveFacade, private commonStore: CommonStore) { }
+  constructor(public approveFacade: ApproveFacade, public commonStore: CommonStore) { }
 
   ngOnInit() {
 

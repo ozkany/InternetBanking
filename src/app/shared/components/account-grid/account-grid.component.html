@@ -1,0 +1,27 @@
+<div>
+  <table class="table table-hover table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">{{ "MissingOrderList.AccountNo.Label" | res }}</th>
+        <th scope="col">Branch Name</th>
+        <th scope="col">Account Name</th>
+        <th scope="col">{{ "Accounts.TermDeposit.BalanceLabel" | res }}</th>
+        <th scope="col">{{ "Accounts.DemandDeposit.AvailableBalanceLabel" | res }}</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let account of accountListToView">
+        <td>{{ account.number }}</td>
+        <td>{{ account.branchName }}</td>
+        <td>{{ account.name }}</td>
+        <td>{{ account.balance }}</td>
+        <td>{{ account.availableBalance }}</td>
+        <td><button class="btn btn-info" type="button" (click)="onDetailsButtonClick(account)">{{ 'AccountList.DetailsButton' | res | titlecase }}</button></td>
+        <td><button class="btn btn-info" type="button" (click)="onActivitiesButtonClick(account['id'])">{{ 'AccountDetail.AccountTransactionButton' | res }}</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
