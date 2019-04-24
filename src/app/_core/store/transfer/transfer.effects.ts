@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { switchMap, map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { TransferService } from '../../services/transfer.service';
 import * as TransferActions from './transfer.actions';
-import * as ApproveActions from 'src/app/_core/store/approve/approve.actions';
+import * as ApproveActions from '../approve/approve.actions';
+import * as CommonActions from '../common/common.actions';
+import { TransferService } from '@core/services/transfer.service';
 import { ApproveTranData } from '@core/models';
 
 @Injectable()
@@ -15,10 +16,13 @@ export class TransferEffects {
   callGetTransferActivities = this.actions$.pipe(
     ofType(TransferActions.ActionTypes.CALL_GET_TRANSFER_ACTIVITIES),
     switchMap(() => {
-      return this.transferService.getRecentTransfers();
-    }),
-    map((res) => {
-      return new TransferActions.SetTransferActivities(res);
+      return this.transferService.getRecentTransfers().pipe(
+        map((res) => new TransferActions.SetTransferActivities(res)),
+        catchError(error => of(new CommonActions.EffectError({
+          detail: error,
+          location: TransferActions.ActionTypes.CALL_GET_TRANSFER_ACTIVITIES
+        })))
+      );
     })
   );
 
@@ -38,7 +42,7 @@ export class TransferEffects {
             return of(new TransferActions.MakeMoneyOrderFail('response [type] is not Confirm!'));
           }
         }),
-        catchError(error => of(new TransferActions.MakeMoneyOrderFail(error)))
+        catchError(error => of(new CommonActions.EffectError({ detail: error, location: TransferActions.ActionTypes.CALL_MONEY_ORDER })))
       );
     })
   );

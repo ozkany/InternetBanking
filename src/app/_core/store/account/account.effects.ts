@@ -1,9 +1,11 @@
-import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
-import * as AccountActions from './account.actions';
 import { Router } from '@angular/router';
-import { switchMap, mergeMap, map, tap } from 'rxjs/operators';
-import { AccountService } from '../../services/account.service';
+import { of } from 'rxjs';
+import { switchMap, map, tap, catchError } from 'rxjs/operators';
+import { Effect, Actions, ofType } from '@ngrx/effects';
+import * as AccountActions from './account.actions';
+import * as CommonActions from '../common/common.actions';
+import { AccountService } from '@core/services/account.service';
 
 @Injectable()
 export class AccountEffects {
@@ -12,10 +14,10 @@ export class AccountEffects {
   callGetAccounts = this.actions$.pipe(
     ofType(AccountActions.ActionTypes.CALL_GET_ACCOUNTS),
     switchMap(() => {
-      return this.accountService.getAccountList();
-    }),
-    map((res) => {
-      return new AccountActions.SetAccounts(res.accounts);
+      return this.accountService.getAccountList().pipe(
+        map(res => new AccountActions.SetAccounts(res.accounts)),
+        catchError(error => of(new CommonActions.EffectError({ detail: error, location: AccountActions.ActionTypes.CALL_GET_ACCOUNTS })))
+      );
     })
   );
 
@@ -26,13 +28,16 @@ export class AccountEffects {
       return action.payload;
     }),
     switchMap((accountId) => {
-      return this.accountService.getAccountActivities(accountId);
-    }),
-    map((res) => {
-      return new AccountActions.SetAccountActivities(res);
-    }),
-    tap(() => {
-      this.router.navigate(['/accounts/account-activities']);
+      return this.accountService.getAccountActivities(accountId).pipe(
+        map(res => new AccountActions.SetAccountActivities(res)),
+        tap(() => {
+          this.router.navigate(['/accounts/account-activities']);
+        }),
+        catchError(error => of(new CommonActions.EffectError({
+          detail: error,
+          location: AccountActions.ActionTypes.NAVTO_ACCOUNT_ACTIVITIES
+        })))
+      );
     })
   );
 
@@ -43,10 +48,10 @@ export class AccountEffects {
       return action.payload;
     }),
     switchMap((data) => {
-      return this.accountService.getReceipt(data.accountId, data.receiptId);
-    }),
-    map((res) => {
-      return new AccountActions.SetReceipt(res);
+      return this.accountService.getReceipt(data.accountId, data.receiptId).pipe(
+        map(res => new AccountActions.SetReceipt(res)),
+        catchError(error => of(new CommonActions.EffectError({ detail: error, location: AccountActions.ActionTypes.CALL_RECEIPT })))
+      );
     })
   );
 
@@ -54,10 +59,10 @@ export class AccountEffects {
   callGetAssets = this.actions$.pipe(
     ofType(AccountActions.ActionTypes.CALL_GET_ASSETS),
     switchMap(() => {
-      return this.accountService.getAssets();
-    }),
-    map((res) => {
-      return new AccountActions.SetAssets(res);
+      return this.accountService.getAssets().pipe(
+        map(res => new AccountActions.SetAssets(res)),
+        catchError(error => of(new CommonActions.EffectError({ detail: error, location: AccountActions.ActionTypes.CALL_GET_ASSETS })))
+      );
     })
   );
 

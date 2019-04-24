@@ -8,11 +8,15 @@ import { BypassImgResSecurity } from './pipes/bypass-img-res-security.pipe';
 import { ResourcePipe } from './pipes/resource.pipe';
 import { AccountComboComponent } from './components/account-combo/account-combo.component';
 import { AccountGridComponent } from './components/account-grid/account-grid.component';
+import { MoneyPipe } from './pipes/money.pipe';
+import { ResourceDirective } from './directives/resource.directive';
 
 @NgModule({
   declarations: [
     DateFormatPipe,
     ResourcePipe,
+    MoneyPipe,
+    ResourceDirective,
     ShortenStr,
     TransformStr,
     BypassImgResSecurity,
@@ -26,6 +30,8 @@ import { AccountGridComponent } from './components/account-grid/account-grid.com
   exports: [
     DateFormatPipe,
     ResourcePipe,
+    MoneyPipe,
+    ResourceDirective,
     ShortenStr,
     TransformStr,
     BypassImgResSecurity,

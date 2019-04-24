@@ -1,12 +1,13 @@
-import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { switchMap, mergeMap, map, tap, withLatestFrom, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { switchMap, mergeMap, map, tap, withLatestFrom, catchError } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
+import { Effect, Actions, ofType } from '@ngrx/effects';
 import * as ApproveActions from './approve.actions';
-import { ApproveService } from '../../services/approve.service';
-import { ApproveSelectors, AppState } from 'src/app/_core/store';
+import * as CommonActions from '../common/common.actions';
+import { ApproveService } from '@core/services/approve.service';
+import { ApproveSelectors, AppState } from '@core/store';
 
 @Injectable()
 export class ApproveEffects {
@@ -28,16 +29,17 @@ export class ApproveEffects {
     ofType(ApproveActions.ActionTypes.DO_APPROVE),
     withLatestFrom(this.store$.select(ApproveSelectors.TranData)),
     switchMap(([action, tranData]) => {
-      return this.approveService.doApprove(tranData);
-    }),
-    map((res) => {
-      if (res['type'] === 'ConfirmSms') {
-        return new ApproveActions.DoApproveSuccess(res);
-      } else {
-        return new ApproveActions.DoApproveFail(res['type']);
-      }
-    }),
-    catchError(error => of(new ApproveActions.DoApproveFail(error))),
+      return this.approveService.doApprove(tranData).pipe(
+        map((res) => {
+          if (res['type'] === 'ConfirmSms') {
+            return new ApproveActions.DoApproveSuccess(res);
+          } else {
+            return new ApproveActions.DoApproveFail(res['type']);
+          }
+        }),
+        catchError(error => of(new CommonActions.EffectError({ detail: error, location: ApproveActions.ActionTypes.DO_APPROVE })))
+      );
+    })
   );
 
   @Effect()
@@ -55,7 +57,7 @@ export class ApproveEffects {
   @Effect()
   doApproveFail = this.actions$.pipe(
     ofType(ApproveActions.ActionTypes.DO_APPROVE_FAIL),
-    map((action: ApproveActions.DoApproveSuccess) => action.payload),
+    map((action: ApproveActions.DoApproveFail) => action.payload),
     map((payload) => {
       return new ApproveActions.SetConfirmSmsData({ confirmSmsData: payload });
     })
@@ -77,17 +79,18 @@ export class ApproveEffects {
                    this.store$.select(ApproveSelectors.ConfirmSmsData)),
     switchMap(([data, tranData, confirmSmsData]) => {
       console.log('Effect doConfirmSms switchMap', data, tranData, confirmSmsData);
-      return this.approveService.doConfirmSms(data.smsCode, confirmSmsData.token, tranData.approveApiPath, tranData.forceDuplicate);
-    }),
-    map((res) => {
-      console.log('Effect doConfirmSms map', res);
-      if (res['type'] === 'Completed') {
-        return new ApproveActions.DoConfirmSmsSuccess(res);
-      } else {
-        return new ApproveActions.DoConfirmSmsFail(res);
-      }
-    }),
-    catchError(error => of(new ApproveActions.DoConfirmSmsFail(error))),
+      return this.approveService.doConfirmSms(data.smsCode, confirmSmsData.token, tranData.approveApiPath, tranData.forceDuplicate).pipe(
+        map((res) => {
+          console.log('Effect doConfirmSms map', res);
+          if (res['type'] === 'Completed') {
+            return new ApproveActions.DoConfirmSmsSuccess(res);
+          } else {
+            return new ApproveActions.DoConfirmSmsFail(res);
+          }
+        }),
+        catchError(error => of(new CommonActions.EffectError({ detail: error, location: ApproveActions.ActionTypes.DO_CONFIRM_SMS })))
+      );
+    })
   );
 
   @Effect()

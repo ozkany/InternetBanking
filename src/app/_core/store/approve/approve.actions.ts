@@ -65,5 +65,4 @@ export class DoConfirmSmsFail implements Action {
 
 
 export type ApproveActions = NavtoApproval | SetTranApproveData | DoApprove | DoApproveSuccess |
-                             DoApproveFail | NavToConfirmSms | SetConfirmSmsData | DoConfirmSms |
-                             DoConfirmSmsSuccess | DoConfirmSmsFail;
+  DoApproveFail | NavToConfirmSms | SetConfirmSmsData | DoConfirmSms | DoConfirmSmsSuccess | DoConfirmSmsFail;

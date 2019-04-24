@@ -18,7 +18,8 @@ export class ErrorInterceptor implements HttpInterceptor {
       }
 
       try {
-        this.alertService.error('Api call error: ' + err['error']['Message']);
+        console.log('Api call error catch: ', err);
+        this.alertService.error('Api call error: ' + err['message'] || err['error']);
       } catch {
         console.log('Api call error catch: ', err);
       }

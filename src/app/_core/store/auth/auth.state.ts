@@ -1,5 +1,5 @@
-import { AuthTokenObj } from '../../models/auth/auth-token.model';
-import { User } from '../../models/auth/user.model';
+import { AuthTokenObj } from '@core/models/auth/auth-token.model';
+import { User } from '@core/models/auth/user.model';
 
 export interface State {
   tokenStr: string;

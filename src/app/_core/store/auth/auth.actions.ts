@@ -62,4 +62,4 @@ export class Logout implements Action {
 }
 
 export type AuthActions = SetLoginStep | CallCreateToken | SetTokenObj | CallLogin | LoginSuccess |
-                          SetUser | CallCreateOtp | SetOtpObj | CallValidateOtp | Logout;
+  SetUser | CallCreateOtp | SetOtpObj | CallValidateOtp | Logout;

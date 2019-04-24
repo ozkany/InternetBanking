@@ -10,6 +10,9 @@ export class CommonStore {
 
   public resources$ = new BehaviorSubject<any>(undefined);
 
+  public localeAcceptLanguage = 'EN';
+  public localeNgId = 'en';
+
   public get resources() { return this.resources$.getValue(); }
 
   constructor() {
