@@ -29,9 +29,7 @@ export class TransferEffects {
   @Effect()
   callMakeMoneyOrder = this.actions$.pipe(
     ofType(TransferActions.ActionTypes.CALL_MONEY_ORDER),
-    map((action: TransferActions.CallMakeMoneyOrder) => {
-      return action.payload;
-    }),
+    map((action: TransferActions.CallMakeMoneyOrder) => action.payload),
     switchMap((request) => {
       return this.transferService.makeMoneyOrder(request).pipe(
         map(res => {

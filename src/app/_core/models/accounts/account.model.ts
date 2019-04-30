@@ -22,4 +22,4 @@ export interface AccountsRootObject {
     accounts: CustomerAccount[];
 }
 
-
+export type CustomerAccountThin = Pick<CustomerAccount, 'id' | 'iban' | 'formattedNumber'>;

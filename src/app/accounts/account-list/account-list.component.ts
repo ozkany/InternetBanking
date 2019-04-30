@@ -26,7 +26,7 @@ export class AccountListComponent implements OnInit {
   }
 
   accountGridActivitiesButtonClicked(accountId: string) {
-    this.accountFacade.dispatch(new AccountActions.NavtoAccountActivities(accountId));
+    this.accountFacade.dispatch(new AccountActions.NavtoAccountActivities({ accountId: accountId }));
   }
 
   refreshButtonClicked() {

@@ -24,9 +24,7 @@ export class AccountEffects {
   @Effect()
   navtoAccountActivities = this.actions$.pipe(
     ofType(AccountActions.ActionTypes.NAVTO_ACCOUNT_ACTIVITIES),
-    map((action: AccountActions.NavtoAccountActivities) => {
-      return action.payload;
-    }),
+    map((action: AccountActions.NavtoAccountActivities) => action.payload.accountId),
     switchMap((accountId) => {
       return this.accountService.getAccountActivities(accountId).pipe(
         map(res => new AccountActions.SetAccountActivities(res)),
@@ -44,9 +42,7 @@ export class AccountEffects {
   @Effect()
   callReceipt = this.actions$.pipe(
     ofType(AccountActions.ActionTypes.CALL_RECEIPT),
-    map((action: AccountActions.CallReceipt) => {
-      return action.payload;
-    }),
+    map((action: AccountActions.CallReceipt) => action.payload),
     switchMap((data) => {
       return this.accountService.getReceipt(data.accountId, data.receiptId).pipe(
         map(res => new AccountActions.SetReceipt(res)),

@@ -24,9 +24,7 @@ export class CardEffects {
   @Effect()
   navtoIntermRecords = this.actions$.pipe(
     ofType(CardActions.ActionTypes.NAVTO_INTERM_RECORDS),
-    map((action: CardActions.NavtoIntermRecords) => {
-      return action.payload;
-    }),
+    map((action: CardActions.NavtoIntermRecords) => action.payload),
     switchMap((data) => {
       return this.cardService.getIntermRecords(data.cardId).pipe(
         map((res) => new CardActions.SetIntermRecords(res)),

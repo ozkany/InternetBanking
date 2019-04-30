@@ -3,7 +3,7 @@ declare var google: any;
 import { Injectable } from '@angular/core';
 import { GoogleChartsBaseService } from './google-charts-base.service';
 import { GooglePieChartConfig } from './google-pie-chart-config.model';
-import { ScriptLoaderService } from 'src/app/_core/services/script-loader.service';
+import { ScriptLoaderService } from '@core/services/utility/script-loader.service';
 
 @Injectable({
   providedIn: 'root'

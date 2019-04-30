@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
@@ -14,6 +14,7 @@ import { ApproveModule } from './approve/approve.module';
 import { MiscModule } from './misc/misc.module';
 import { environment } from 'src/environments/environment';
 import { reducers } from './_core/store/app.state';
+import { GlobalErrorHandler } from '@core/services/utility/error-handler.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,12 @@ import { reducers } from './_core/store/app.state';
       logOnly: environment.production
     })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandler
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,6 +8,12 @@ export function reducer(state = initialState, action: CommonActions.CommonAction
         ...state,
         effectError: action.payload
       };
+      break;
+    case CommonActions.ActionTypes.GLOBAL_ERROR:
+      return {
+        ...state,
+        globalError: action.payload
+      };
     default:
       return state;
   }

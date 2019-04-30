@@ -1,7 +1,9 @@
 export interface State {
   effectError: {  detail: any, location: string };
+  globalError: any;
 }
 
 export const initialState: State = {
-  effectError: null
+  effectError: null,
+  globalError: null
 };

@@ -26,9 +26,7 @@ export class AuthEffects {
   @Effect()
   login = this.actions$.pipe(
     ofType(AuthActions.ActionTypes.CALL_LOGIN),
-    map((action: AuthActions.CallLogin) => {
-      return action.payload;
-    }),
+    map((action: AuthActions.CallLogin) => action.payload),
     switchMap((loginData) => {
       return this.authService.login(loginData.username, loginData.password).pipe(
         mergeMap((user: User) => {
@@ -58,9 +56,7 @@ export class AuthEffects {
   @Effect()
   validateOtp = this.actions$.pipe(
     ofType(AuthActions.ActionTypes.CALL_VALIDATE_OTP),
-    map((action: AuthActions.CallValidateOtp) => {
-      return action.payload;
-    }),
+    map((action: AuthActions.CallValidateOtp) => action.payload),
     switchMap((smscode: string) => {
       return this.authService.validateOtp(smscode).pipe(
         map(() => {

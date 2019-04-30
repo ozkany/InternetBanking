@@ -29,7 +29,7 @@ export class SetAccountActivities implements Action {
 
 export class NavtoAccountActivities implements Action {
   readonly type = ActionTypes.NAVTO_ACCOUNT_ACTIVITIES;
-  constructor(public payload: string) { }
+  constructor(public payload: { accountId: string }) { }
 }
 
 export class CallReceipt implements Action {

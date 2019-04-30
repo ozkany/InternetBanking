@@ -1,7 +1,8 @@
 import { Action } from '@ngrx/store';
 
 export const enum ActionTypes {
-  EFFECT_ERROR = 'EFFECT_ERROR'
+  EFFECT_ERROR = 'EFFECT_ERROR',
+  GLOBAL_ERROR = 'GLOBAL_ERROR'
 }
 
 export class EffectError implements Action {
@@ -9,4 +10,9 @@ export class EffectError implements Action {
   constructor(public payload: { detail: any, location: string }) { }
 }
 
-export type CommonActions = EffectError;
+export class GlobalError implements Action {
+  readonly type = ActionTypes.GLOBAL_ERROR;
+  constructor(public payload: any) { }
+}
+
+export type CommonActions = EffectError | GlobalError;
