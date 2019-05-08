@@ -10,6 +10,7 @@ import { AccountComboComponent } from './components/account-combo/account-combo.
 import { AccountGridComponent } from './components/account-grid/account-grid.component';
 import { MoneyPipe } from './pipes/money.pipe';
 import { ResourceDirective } from './directives/resource.directive';
+import { CardGridComponent } from './components/card-grid/card-grid.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ResourceDirective } from './directives/resource.directive';
     TransformStr,
     BypassImgResSecurity,
     AccountComboComponent,
-    AccountGridComponent
+    AccountGridComponent,
+    CardGridComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +38,8 @@ import { ResourceDirective } from './directives/resource.directive';
     TransformStr,
     BypassImgResSecurity,
     AccountComboComponent,
-    AccountGridComponent
+    AccountGridComponent,
+    CardGridComponent
   ]
 })
 export class SharedModule { }

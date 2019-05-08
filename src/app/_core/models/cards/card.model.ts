@@ -1,4 +1,4 @@
-export interface CreditCardList {
+export interface CreditCard {
     guid: string;
     ownerName: string;
     name: string;
@@ -21,33 +21,14 @@ export interface CreditCardListResponse {
     canApply: boolean;
     isVisible: boolean;
     order: number;
-    creditCardList: CreditCardList[];
-}
-
-export interface ExtendCreditCardList {
-    guid: string;
-    ownerName: string;
-    name: string;
-    image: string;
-    maskedCardNumber: string;
-    statementDate: string;
-    lastPaymentDate: string;
-    remainingDebt: string;
-    remainingDebtUsd: string;
-    availableLimit: string;
-    swipeButtons: string[];
-    isCancelled: boolean;
-    remainingDebtDomestic: number;
-    remainingDebtForeign: number;
-    totalSpendingDomestic: number;
-    totalSpendingForeign: number;
+    creditCardList: CreditCard[];
 }
 
 export interface ExtendCardListResponse {
     canApply: boolean;
     isVisible: boolean;
     order: number;
-    extendCreditCardList: ExtendCreditCardList[];
+    extendCreditCardList: CreditCard[];
 }
 
 export interface VirtualCardList {

@@ -8,7 +8,7 @@ export const enum ActionTypes {
   SET_INTERM_RECORDS = 'SET_INTERM_RECORDS'
 }
 
-export class CallGetCard implements Action {
+export class CallGetCards implements Action {
   readonly type = ActionTypes.CALL_GET_CARDS;
 }
 
@@ -27,4 +27,4 @@ export class SetIntermRecords implements Action {
   constructor(public payload: CardIntermListRootObject) { }
 }
 
-export type CardActions = CallGetCard | SetCards | NavtoIntermRecords | SetIntermRecords;
+export type CardActions = CallGetCards | SetCards | NavtoIntermRecords | SetIntermRecords;

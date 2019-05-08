@@ -11,7 +11,7 @@ export class CardListComponent implements OnInit {
   constructor(public cardFacade: CardFacade) { }
 
   ngOnInit() {
-    this.cardFacade.dispatch(new CardActions.CallGetCard());
+    this.cardFacade.dispatch(new CardActions.CallGetCards());
   }
 
   onIntermRecordsButtonClick(id: string) {
@@ -19,6 +19,3 @@ export class CardListComponent implements OnInit {
   }
 
 }
-
-
-

@@ -7,6 +7,7 @@ import { reducer } from '@core/store/card/card.reducers';
 import { CardEffects } from '@core/store/card/card.effects';
 import { CardListComponent } from './card-list/card-list.component';
 import { IntermRecordsComponent } from './interm-records/interm-records.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
  declarations: [
@@ -17,7 +18,8 @@ import { IntermRecordsComponent } from './interm-records/interm-records.componen
    CommonModule,
    CardsRoutingModule,
    StoreModule.forFeature('cards', reducer),
-   EffectsModule.forFeature([CardEffects])
+   EffectsModule.forFeature([CardEffects]),
+   SharedModule
  ]
 })
 export class CardsModule { }

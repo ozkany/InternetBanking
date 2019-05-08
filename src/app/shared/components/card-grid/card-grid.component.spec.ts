@@ -1,24 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Store, StoreModule } from '@ngrx/store';
 import { reducers } from '@core/store/app.state';
-import { CardListComponent } from './card-list.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { CardGridComponent } from './card-grid.component';
 
-describe('CardListComponent', () => {
-  let component: CardListComponent;
-  let fixture: ComponentFixture<CardListComponent>;
+describe('CardGridComponent', () => {
+  let component: CardGridComponent;
+  let fixture: ComponentFixture<CardGridComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardListComponent ],
-      imports: [StoreModule.forRoot(reducers), SharedModule],
+      declarations: [ CardGridComponent ],
+      imports: [StoreModule.forRoot(reducers)],
       providers: [Store]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CardListComponent);
+    fixture = TestBed.createComponent(CardGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

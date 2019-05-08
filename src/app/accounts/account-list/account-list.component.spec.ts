@@ -27,4 +27,9 @@ describe('AccountListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render AccountNo in table header span tag', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('span').textContent).toContain('AccountNo');
+  });
 });
