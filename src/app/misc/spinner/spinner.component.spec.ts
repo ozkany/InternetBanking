@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Store, StoreModule } from '@ngrx/store';
+import { reducers } from '@core/store/app.state';
 import { SpinnerComponent } from './spinner.component';
 
 describe('SpinnerComponent', () => {
@@ -8,7 +9,9 @@ describe('SpinnerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SpinnerComponent ]
+      declarations: [ SpinnerComponent ],
+      imports: [StoreModule.forRoot(reducers)],
+      providers: [Store]
     })
     .compileComponents();
   }));

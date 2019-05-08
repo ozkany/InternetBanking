@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MoneyOrderComponent } from './money-order.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { Store, StoreModule } from '@ngrx/store';
+import { reducers } from '@core/store/app.state';
 
 describe('MoneyOrderComponent', () => {
   let component: MoneyOrderComponent;
@@ -8,7 +11,9 @@ describe('MoneyOrderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MoneyOrderComponent ]
+      declarations: [ MoneyOrderComponent ],
+      imports: [FormsModule, ReactiveFormsModule, SharedModule, StoreModule.forRoot(reducers)],
+      providers: [Store]
     })
     .compileComponents();
   }));

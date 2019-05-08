@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Store, StoreModule } from '@ngrx/store';
+import { reducers } from '@core/store/app.state';
 import { IntermRecordsComponent } from './interm-records.component';
 
 describe('IntermRecordsComponent', () => {
@@ -8,7 +9,9 @@ describe('IntermRecordsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IntermRecordsComponent ]
+      declarations: [ IntermRecordsComponent ],
+      imports: [StoreModule.forRoot(reducers)],
+      providers: [Store]
     })
     .compileComponents();
   }));

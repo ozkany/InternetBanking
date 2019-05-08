@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Store, StoreModule } from '@ngrx/store';
+import { reducers } from '@core/store/app.state';
 import { CardListComponent } from './card-list.component';
 
 describe('CardListComponent', () => {
@@ -8,7 +9,9 @@ describe('CardListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardListComponent ]
+      declarations: [ CardListComponent ],
+      imports: [StoreModule.forRoot(reducers)],
+      providers: [Store]
     })
     .compileComponents();
   }));

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ApproveComponent } from './approve.component';
+import { Store, StoreModule } from '@ngrx/store';
+import { reducers } from '@core/store/app.state';
 
 describe('ApproveComponent', () => {
   let component: ApproveComponent;
@@ -8,7 +9,9 @@ describe('ApproveComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApproveComponent ]
+      declarations: [ ApproveComponent ],
+      imports: [StoreModule.forRoot(reducers)],
+      providers: [Store]
     })
     .compileComponents();
   }));

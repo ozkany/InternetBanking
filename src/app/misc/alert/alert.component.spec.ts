@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { AlertComponent } from './alert.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { Store, StoreModule } from '@ngrx/store';
 
 describe('AlertComponent', () => {
   let component: AlertComponent;
@@ -8,7 +10,9 @@ describe('AlertComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlertComponent ]
+      declarations: [ AlertComponent ],
+      imports: [RouterTestingModule, SharedModule, StoreModule.forRoot({})],
+      providers: [Store]
     })
     .compileComponents();
   }));

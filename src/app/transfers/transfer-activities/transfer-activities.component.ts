@@ -6,15 +6,12 @@ import { TransferFacade, TransferActions } from '@core/facades/transfer.facade';
   templateUrl: './transfer-activities.component.html',
   styleUrls: ['./transfer-activities.component.css']
 })
-export class TransferActivitiesComponent implements OnInit, OnDestroy {
+export class TransferActivitiesComponent implements OnInit {
 
   constructor(public transferFacade: TransferFacade) { }
 
   ngOnInit() {
     this.transferFacade.dispatch(new TransferActions.CallGetTransferActivities());
-  }
-
-  ngOnDestroy(): void {
   }
 
 }

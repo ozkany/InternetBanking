@@ -26,8 +26,6 @@ import { GlobalErrorHandler } from '@core/services/utility/error-handler.service
     ReactiveFormsModule,
     AppRoutingModule,
     InterceptorModule,
-    ApproveModule,
-    MiscModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([]),
     !environment.production ? StoreRouterConnectingModule : [],
@@ -35,7 +33,9 @@ import { GlobalErrorHandler } from '@core/services/utility/error-handler.service
       name: 'Internet Banking',
       maxAge: 50,
       logOnly: environment.production
-    })
+    }),
+    ApproveModule,
+    MiscModule
   ],
   providers: [
     {

@@ -41,7 +41,7 @@ export class AccountComboComponent implements OnInit, OnChanges {
     this.accountState$ = this.store.select('accounts');
     this.accountState$.pipe(take(1)).subscribe((res) => {
       if (!this.accountList) {
-        this.accountListData = res.accounts;
+        this.accountListData = res && res.accounts;
       }
     });
   }

@@ -1,4 +1,4 @@
-<div style="text-align:center">
+<div style="text-align:center" *ngIf="transferFacade.transferActivities$ | async as transferActivities">
   <table class="table table-hover table-striped table-bordered table-sm">
     <thead class="thead-dark">
       <tr>
@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let t of (transferFacade.transferActivities$ | async)?.transactions">
+      <tr *ngFor="let t of transferActivities?.transactions">
         <td style="align-content: center">
           <input type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
         </td>
