@@ -9,7 +9,7 @@ declare var $: any;
 })
 export class AccountListComponent implements OnInit {
 
-  @ViewChild('accountDetailsComponent', { read: ElementRef })
+  @ViewChild('accountDetailsComponent', { read: ElementRef, static: true })
   accountDetailsComponentDOM: ElementRef<HTMLDivElement>;
 
   selectedAccountForDetails;
